@@ -1,0 +1,39 @@
+services:
+  eco-police-web:
+    build: .
+    container_name: eco-police-web
+    restart: unless-stopped
+    # 直接对公网提供 8080；如需域名/HTTPS，请在前面加 Caddy/Nginx。
+    ports:
+      - "8080:8080"
+    environment:
+      TZ: Asia/Shanghai
+      POLICE_DEMO_MODE: "${POLICE_DEMO_MODE:-1}"
+      POLICE_PUBLIC_BASE_URL: "${POLICE_PUBLIC_BASE_URL:-}"
+      POLICE_COOKIE_SECURE: "${POLICE_COOKIE_SECURE:-0}"
+      POLICE_TRUST_PROXY: "${POLICE_TRUST_PROXY:-0}"
+      POLICE_HSTS: "${POLICE_HSTS:-0}"
+      POLICE_DISABLE_DOCS: "${POLICE_DISABLE_DOCS:-0}"
+      POLICE_CORS_ORIGINS: "${POLICE_CORS_ORIGINS:-}"
+      POLICE_EVIDENCE_KEY: "${POLICE_EVIDENCE_KEY:-}"
+      POLICE_MAX_EVIDENCE_MB: "${POLICE_MAX_EVIDENCE_MB:-50}"
+      POLICE_RATE_LOGIN_PER_MIN: "${POLICE_RATE_LOGIN_PER_MIN:-10}"
+      POLICE_RATE_API_PER_MIN: "${POLICE_RATE_API_PER_MIN:-300}"
+      POLICE_RATE_EXPENSIVE_PER_MIN: "${POLICE_RATE_EXPENSIVE_PER_MIN:-30}"
+      POLICE_RATE_REFRESH_PER_5MIN: "${POLICE_RATE_REFRESH_PER_5MIN:-6}"
+      POLICE_OSRM_BASE: "${POLICE_OSRM_BASE:-https://router.project-osrm.org}"
+      POLICE_DRONE_MAX_WAYPOINTS: "${POLICE_DRONE_MAX_WAYPOINTS:-800}"
+    volumes:
+      - ./instance:/app/instance
+      - ./logs:/app/logs
+      - ./data/cache:/app/data/cache
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/api/health/ready', timeout=4)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3

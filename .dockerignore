@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+instance/
+instance_*/
+logs/
+data/cache/
+refs/
+tools/
+*.log
+*.mp4
+学习视频.mp4
+学习图片.jpg
+public_url*.txt
+deploy/huggingface/

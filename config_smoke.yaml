@@ -1,0 +1,27 @@
+# 冒烟测试配置：小范围、单景，用于验证链路连通
+stac:
+  endpoint: https://earth-search.aws.element84.com/v1
+  collection: sentinel-2-l2a
+  max_cloud: 25
+  max_scenes: 1
+
+dates:
+  target: "2025-06-01/2025-08-31"
+  baseline: "2024-06-01/2024-08-31"
+
+thresholds:
+  delta_bsi: 0.12
+  ndvi_drop: 0.12
+  bsi_abs: 0.30
+  z: 2.5
+  min_area_m2: 2000
+  max_mndwi: 0.0
+
+resolution: 20
+out_dir: out_smoke
+
+aois:
+  zhaoyuan:
+    # 蚕庄—焦家一带，金矿采选与民采集中区，做链路验证用
+    name: 招远蚕庄试跑区
+    bbox: [120.34, 37.30, 120.44, 37.38]

@@ -1,0 +1,72 @@
+# 烟台非法采矿/采砂/采石 遥感预警流水线配置
+# 注意：以下 bbox 为示意范围（经纬度，WGS84），实际作业请替换为项目边界 shapefile
+
+stac:
+  endpoint: https://earth-search.aws.element84.com/v1
+  collection: sentinel-2-l2a
+  max_cloud: 20          # 云量上限 %
+  max_scenes: 3          # 每个时段最多取几景做合成
+
+dates:
+  # 目标期：要检出的时段
+  target: "2025-06-01/2025-08-31"
+  # 基线期：作为“正常状态”参照，建议取上一年同季节，避免物候干扰
+  baseline: "2024-06-01/2024-08-31"
+
+thresholds:
+  delta_bsi: 0.15        # 裸地指数相对基线的最小增量
+  ndvi_drop: 0.15        # 植被指数最小跌幅
+  bsi_abs: 0.35          # 当期裸地指数绝对值下限（排除本来就裸的地）
+  z: 3.0                 # 稳健 z 分数下限
+  min_area_m2: 3000      # 图斑最小面积（平方米），过滤零散噪声
+  max_mndwi: 0.0         # 水体掩膜阈值，大于此值视为水体，不参与判定
+
+resolution: 20           # 输出分辨率（米）
+out_dir: out
+
+# 重点区域（近似范围，需按实际行政区/矿区边界校准）
+aois:
+  zhaoyuan:               # 招远—莱州金矿带北段
+    name: 招远金矿带
+    bbox: [120.30, 37.25, 120.52, 37.45]
+  laizhou:                # 莱州金矿带南段 + 近岸
+    name: 莱州金矿带
+    bbox: [119.85, 37.10, 120.10, 37.30]
+  longkou:                # 龙口采煤沉陷区 + 海砂
+    name: 龙口沉陷区
+    bbox: [120.35, 37.55, 120.60, 37.75]
+  penglai:                # 蓬莱采石/废弃矿山
+    name: 蓬莱采石区
+    bbox: [120.65, 37.70, 120.90, 37.90]
+  qixia:                  # 栖霞废弃矿山治理区
+    name: 栖霞矿区
+    bbox: [120.70, 37.20, 120.95, 37.40]
+  jiehe:                  # 界河河道采砂
+    name: 界河河道
+    bbox: [120.30, 37.35, 120.55, 37.55]
+  wulonghe:               # 五龙河河道采砂
+    name: 五龙河河道
+    bbox: [120.55, 36.85, 120.85, 37.05]
+
+# 气候增强分析（Open-Meteo 历史日值）
+# 用于评估云/雨/雪对光学观测的影响，并按采矿类型调整探测能力与候选排序。
+climate:
+  enabled: true
+  cache_dir: data/climate
+  endpoint: https://archive-api.open-meteo.com/v1/archive
+  baseline_years: [2024]
+  # 模拟 Sentinel-2 重访的天气抽样间隔（天）
+  revisit_days: 5
+  # 观测能力分级所需的最少可用光学观测数（按类型覆盖见 mining_watch/climate.py）
+  min_samples: 10
+  score_threshold: 25.0
+
+# 各区域主采矿类型，决定气候敏感度、主模态与探测门限
+aoi_types:
+  zhaoyuan: open_pit
+  laizhou: open_pit
+  longkou: underground
+  penglai: open_pit
+  qixia: remining
+  jiehe: river_sand
+  wulonghe: river_sand

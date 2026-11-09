@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv_mw/
+
+# Local runtime
+logs/
+out/
+out_smoke/
+dist/
+installer/
+_tmp/
+instance/*.db-wal
+instance/*.db-shm
+_cookies.txt
+cookies.txt
+_server.log
+_server.pid
+*.log
+
+# Local-only large data / caches
+data/tile_cache/
+data/thumbs/
+data/cache/
+data/yantai_2025*/
+data/yantai_mvp/
+data/landcover/
+data/insar/
+*.zip
+*.7z
+
+# Local submission material (not part of the public repo)
+提交材料/
+学习视频.mp4
+学习图片.jpg
+附件*.pdf
+ppt/
+docs/video/
+docs/report/
+docs/style-lab/
+
+# Secrets
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
