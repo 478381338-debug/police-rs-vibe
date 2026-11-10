@@ -1,0 +1,73 @@
+{
+  "type": "open_pit",
+  "modality": "optical",
+  "n_scenes": 45,
+  "n_usable": 45,
+  "first_usable": "2025-01-05",
+  "last_usable": "2025-12-28",
+  "max_gap_days": 35,
+  "median_gap_days": 5,
+  "gaps_gt_limit": 0,
+  "detection": {
+    "n_usable": 45,
+    "required": 6,
+    "max_gap_days": 45,
+    "observed_gap_days": 35,
+    "gap_factor": 1.0,
+    "power": 0.9994,
+    "level": "adequate"
+  },
+  "months": {
+    "1": {
+      "n": 4,
+      "usable": 4
+    },
+    "2": {
+      "n": 4,
+      "usable": 4
+    },
+    "3": {
+      "n": 4,
+      "usable": 4
+    },
+    "4": {
+      "n": 4,
+      "usable": 4
+    },
+    "5": {
+      "n": 4,
+      "usable": 4
+    },
+    "6": {
+      "n": 3,
+      "usable": 3
+    },
+    "7": {
+      "n": 4,
+      "usable": 4
+    },
+    "8": {
+      "n": 4,
+      "usable": 4
+    },
+    "9": {
+      "n": 3,
+      "usable": 3
+    },
+    "10": {
+      "n": 3,
+      "usable": 3
+    },
+    "11": {
+      "n": 4,
+      "usable": 4
+    },
+    "12": {
+      "n": 4,
+      "usable": 4
+    }
+  },
+  "note": "n_usable 为天气/SAR 适用观测数，不是全部影像数",
+  "aoi": "A_control",
+  "target_year": 2025
+}

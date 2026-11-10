@@ -1,0 +1,2161 @@
+{
+  "type": "FeatureCollection",
+  "name": "本地历史异常核查样本（弱标签）",
+  "metadata": {
+    "generated_at": "2026-11-17T14:43:02.826576+00:00",
+    "source": "青山卫士任务二历史检测结果 + AOI 背景格网",
+    "label_quality": "weak_retrospective",
+    "verified_count": 0,
+    "verification_records": 0,
+    "verification_source": "无现场核查记录",
+    "counts": {
+      "total": 83,
+      "incidents": 53,
+      "background_controls": 30,
+      "top4_hotspots": 4
+    },
+    "historical_screening": {
+      "top4_ids": [
+        "HS-026",
+        "HS-014",
+        "HS-025",
+        "HS-017"
+      ],
+      "incidents_near_top4": 12,
+      "incidents_total": 53,
+      "recall_at_top4": 0.226,
+      "note": "这是对历史异常的回溯覆盖率，不是对未来灾害的命中率。"
+    },
+    "disclaimer": "未标记 field_verified 的样本仍是弱标签；不能据此宣称预报准确率。只有经过现场核查并写入 verification_records.csv 后，才可用于时间外验证和概率校准。"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.279159,
+          40.379797
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-001",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "debris_flow",
+        "hazard_name": "泥石流",
+        "severity": 0.7,
+        "area_ha": 40.4,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-001",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.821017,
+          40.366421
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-002",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 25.98,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-002",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.230192,
+          40.350077
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-003",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 13.7,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-001",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.923435,
+          40.303899
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-004",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 22.73,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-002",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.977199,
+          40.074468
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-005",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 26.09,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-003",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.652081,
+          40.051015
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-006",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 2.57,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-004",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.912581,
+          40.012089
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-007",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 4.56,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-005",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.704245,
+          41.38221
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-008",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 4.98,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-006",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.667482,
+          41.127368
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-009",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 17.09,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-007",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.343106,
+          40.931858
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-010",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 8.96,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-008",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.601699,
+          40.805711
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-011",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 28.65,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-009",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.555183,
+          40.760985
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-012",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 6.7,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-009",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.648913,
+          40.694852
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-013",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "debris_flow",
+        "hazard_name": "泥石流",
+        "severity": 0.7,
+        "area_ha": 21.78,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-009",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.257137,
+          40.671267
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-014",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 7.5,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-010",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.618832,
+          40.611506
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-015",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 6.89,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-011",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.147047,
+          40.543464
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-016",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 11.2,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-012",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.939717,
+          40.407749
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-017",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "debris_flow",
+        "hazard_name": "泥石流",
+        "severity": 0.7,
+        "area_ha": 23.55,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-013",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.379454,
+          40.257374
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-018",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 12.48,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-014",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.357809,
+          40.164891
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-019",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 11.49,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-014",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.927873,
+          41.534254
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-020",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "debris_flow",
+        "hazard_name": "泥石流",
+        "severity": 0.7,
+        "area_ha": 57.02,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-015",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.970751,
+          41.463321
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-021",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 8.35,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-015",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.86742,
+          41.42645
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-022",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 3.95,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-015",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.043163,
+          41.140908
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-023",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 2.12,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-016",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.09153,
+          40.946755
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-024",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 21.02,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-017",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.241541,
+          40.567947
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-025",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 5.04,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-018",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.693411,
+          40.480854
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-026",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 12.13,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-019",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.633363,
+          40.335243
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-027",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "debris_flow",
+        "hazard_name": "泥石流",
+        "severity": 0.7,
+        "area_ha": 39.02,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-020",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.215667,
+          39.985138
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-028",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 22.38,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-021",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.238677,
+          41.473905
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-029",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 2.7,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-022",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.221901,
+          41.21207
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-030",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "debris_flow",
+        "hazard_name": "泥石流",
+        "severity": 0.7,
+        "area_ha": 56.8,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-023",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.496994,
+          40.748423
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-031",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 4.59,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-024",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.880424,
+          40.592667
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-032",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 4.74,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-025",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.879787,
+          40.590988
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-033",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 3.59,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-025",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.295699,
+          40.637724
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-034",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 4.07,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-018",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.228313,
+          40.577232
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-035",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 14.07,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-018",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.18248,
+          40.29196
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-036",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 19.34,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-026",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.221782,
+          40.244522
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-037",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "debris_flow",
+        "hazard_name": "泥石流",
+        "severity": 0.7,
+        "area_ha": 29.46,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-026",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.650715,
+          41.535748
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-038",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "debris_flow",
+        "hazard_name": "泥石流",
+        "severity": 0.7,
+        "area_ha": 123.06,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-027",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.736625,
+          41.501993
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-039",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 6.8,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-027",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.733701,
+          41.497235
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-040",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "fire_scar",
+        "hazard_name": "火烧迹地",
+        "severity": 0.9,
+        "area_ha": 7.57,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-027",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.47129,
+          41.251462
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-041",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "landslide",
+        "hazard_name": "滑坡",
+        "severity": 0.7,
+        "area_ha": 6.81,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-028",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.545591,
+          41.238713
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-042",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2023-09-30",
+        "hazard_id": "mining",
+        "hazard_name": "盗采痕迹",
+        "severity": 1.0,
+        "area_ha": 23.88,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-028",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.438225,
+          40.328019
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-043",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 38743.32,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-014",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.971403,
+          40.901387
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-044",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 1604.74,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-017",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.838223,
+          40.886615
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-045",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 5441.84,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-017",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.334963,
+          40.827615
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-046",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 3473.92,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-008",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.227777,
+          41.085327
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-047",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 3185.25,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-029",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.112259,
+          41.157964
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-048",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 1761.49,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-029",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.500812,
+          40.393461
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-049",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 26843.83,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-020",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.949748,
+          40.674911
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-050",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 5757.81,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-025",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.289986,
+          40.211889
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-051",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 744.61,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-026",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.334145,
+          40.405942
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-052",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 1225.16,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-030",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.479617,
+          40.874319
+        ]
+      },
+      "properties": {
+        "sample_id": "S-INC-053",
+        "label": 1,
+        "label_type": "historical_incident",
+        "verified": false,
+        "quality": "weak_retrospective",
+        "date": "2024-01-28",
+        "hazard_id": "snowline",
+        "hazard_name": "雪线变化",
+        "severity": 0.4,
+        "area_ha": 1269.63,
+        "source": "青山卫士任务二检测结果（历史）",
+        "nearest_hotspot_id": "HS-031",
+        "nearest_hotspot_priority": 0.0,
+        "note": "历史遥感检测结果，非现场核实真值；用于回溯检查覆盖，不用于宣称预报精度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.18000000000002,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-001",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-01",
+        "priority": 25.1,
+        "current_danger": 56.7,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.38000000000002,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-002",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-02",
+        "priority": 23.5,
+        "current_danger": 64.6,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.18000000000002,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-003",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-06",
+        "priority": 33.7,
+        "current_danger": 62.0,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.38000000000002,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-004",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-07",
+        "priority": 38.3,
+        "current_danger": 61.4,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.58000000000001,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-005",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-08",
+        "priority": 21.0,
+        "current_danger": 54.6,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.78000000000004,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-006",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-09",
+        "priority": 12.3,
+        "current_danger": 51.4,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.98000000000005,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-007",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-10",
+        "priority": 23.0,
+        "current_danger": 65.2,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.58000000000004,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-008",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-13",
+        "priority": 16.9,
+        "current_danger": 62.3,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.78000000000004,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-009",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-14",
+        "priority": 16.6,
+        "current_danger": 61.9,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.98000000000005,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-010",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-15",
+        "priority": 21.5,
+        "current_danger": 62.1,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.18000000000006,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-011",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-16",
+        "priority": 28.6,
+        "current_danger": 65.1,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.38000000000007,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-012",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-17",
+        "priority": 25.3,
+        "current_danger": 65.4,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.58000000000007,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-013",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-18",
+        "priority": 16.3,
+        "current_danger": 64.5,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.78000000000006,
+          40.03000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-014",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-00-19",
+        "priority": 11.7,
+        "current_danger": 63.8,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.98000000000002,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-015",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-00",
+        "priority": 30.1,
+        "current_danger": 59.2,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.38000000000002,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-016",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-02",
+        "priority": 34.1,
+        "current_danger": 62.9,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.58000000000001,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-017",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-03",
+        "priority": 28.8,
+        "current_danger": 52.7,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.18000000000002,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-018",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-06",
+        "priority": 51.5,
+        "current_danger": 66.9,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.58000000000001,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-019",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-08",
+        "priority": 36.6,
+        "current_danger": 64.6,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.78000000000004,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-020",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-09",
+        "priority": 25.6,
+        "current_danger": 65.0,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.98000000000005,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-021",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-10",
+        "priority": 23.5,
+        "current_danger": 63.1,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.18000000000004,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-022",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-11",
+        "priority": 21.2,
+        "current_danger": 65.7,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.38000000000004,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-023",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-12",
+        "priority": 27.7,
+        "current_danger": 66.7,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.78000000000004,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-024",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-14",
+        "priority": 37.2,
+        "current_danger": 60.8,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.98000000000005,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-025",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-15",
+        "priority": 46.1,
+        "current_danger": 61.0,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.58000000000007,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-026",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-18",
+        "priority": 22.4,
+        "current_danger": 62.5,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.78000000000006,
+          40.230000000000004
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-027",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-01-19",
+        "priority": 11.8,
+        "current_danger": 55.1,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.98000000000002,
+          40.43000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-028",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-02-00",
+        "priority": 27.0,
+        "current_danger": 67.4,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.58000000000001,
+          40.43000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-029",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-02-03",
+        "priority": 37.6,
+        "current_danger": 66.4,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.58000000000001,
+          40.43000000000001
+        ]
+      },
+      "properties": {
+        "sample_id": "S-CTRL-030",
+        "label": 0,
+        "label_type": "background_control",
+        "verified": false,
+        "quality": "background_control_not_confirmed_absence",
+        "date": null,
+        "hazard_id": null,
+        "hazard_name": null,
+        "cell_id": "G-02-08",
+        "priority": 34.2,
+        "current_danger": 66.3,
+        "source": "AOI 背景格网（距离历史异常 ≥15 km）",
+        "note": "背景对照不等于已确认无灾；仅用于检查筛查集中度。"
+      }
+    }
+  ]
+}

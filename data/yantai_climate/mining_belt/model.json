@@ -1,0 +1,109 @@
+{
+  "aoi": "mining_belt",
+  "generated_at": "2026-11-16T22:44:35",
+  "covariates": [
+    "precip_7d",
+    "soil_moisture",
+    "snow_depth_cm",
+    "cloud_cover"
+  ],
+  "design": "annual+semiannual harmonics + standardized weather covariates, Huber IRLS",
+  "validation": "leave-one-out CV; applied only when LOO-RMSE improves >= threshold",
+  "models": {
+    "bsi": {
+      "index": "bsi",
+      "n": 80,
+      "applied": true,
+      "reason": "天气协变量使 LOO-RMSE 下降 3.00%",
+      "coefficients": {
+        "intercept": 0.06186684,
+        "sin_annual": 0.07288625,
+        "cos_annual": 0.13586041,
+        "sin_semiannual": -0.05296093,
+        "cos_semiannual": 0.00562518,
+        "precip_7d": -0.02612042,
+        "soil_moisture": -0.01226535,
+        "snow_depth_cm": -0.00832868,
+        "cloud_cover": -0.0018832
+      },
+      "weather_coefficients": {
+        "precip_7d": -0.02612042,
+        "soil_moisture": -0.01226535,
+        "snow_depth_cm": -0.00832868,
+        "cloud_cover": -0.0018832
+      },
+      "scaler": {
+        "precip_7d": [
+          9.86375,
+          17.92007424
+        ],
+        "soil_moisture": [
+          0.24325,
+          0.07776849
+        ],
+        "snow_depth_cm": [
+          0.2125,
+          1.0451525
+        ],
+        "cloud_cover": [
+          25.4625,
+          23.46004249
+        ]
+      },
+      "harmonic_r2": 0.8241,
+      "full_r2": 0.8748,
+      "loo_rmse_harmonic": 0.063085,
+      "loo_rmse_full": 0.061195,
+      "improvement_pct": 3.0,
+      "residual_scale": 0.049327
+    },
+    "ndvi": {
+      "index": "ndvi",
+      "n": 80,
+      "applied": true,
+      "reason": "天气协变量使 LOO-RMSE 下降 3.54%",
+      "coefficients": {
+        "intercept": 0.41505178,
+        "sin_annual": -0.14822973,
+        "cos_annual": -0.17583587,
+        "sin_semiannual": 0.0538361,
+        "cos_semiannual": -0.00010432,
+        "precip_7d": 0.01615281,
+        "soil_moisture": 0.02405034,
+        "snow_depth_cm": -0.00873707,
+        "cloud_cover": -0.01398259
+      },
+      "weather_coefficients": {
+        "precip_7d": 0.01615281,
+        "soil_moisture": 0.02405034,
+        "snow_depth_cm": -0.00873707,
+        "cloud_cover": -0.01398259
+      },
+      "scaler": {
+        "precip_7d": [
+          9.86375,
+          17.92007424
+        ],
+        "soil_moisture": [
+          0.24325,
+          0.07776849
+        ],
+        "snow_depth_cm": [
+          0.2125,
+          1.0451525
+        ],
+        "cloud_cover": [
+          25.4625,
+          23.46004249
+        ]
+      },
+      "harmonic_r2": 0.8493,
+      "full_r2": 0.8678,
+      "loo_rmse_harmonic": 0.076793,
+      "loo_rmse_full": 0.074073,
+      "improvement_pct": 3.54,
+      "residual_scale": 0.050834
+    }
+  },
+  "note": "场景级 AOI 中值序列模型；候选校正为 first_alarm 当日相对基线同季均值的近似"
+}

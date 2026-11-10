@@ -1,0 +1,73 @@
+{
+  "type": "open_pit",
+  "modality": "optical",
+  "n_scenes": 45,
+  "n_usable": 41,
+  "first_usable": "2025-01-05",
+  "last_usable": "2025-12-28",
+  "max_gap_days": 35,
+  "median_gap_days": 6,
+  "gaps_gt_limit": 0,
+  "detection": {
+    "n_usable": 41,
+    "required": 6,
+    "max_gap_days": 45,
+    "observed_gap_days": 35,
+    "gap_factor": 1.0,
+    "power": 0.9989,
+    "level": "adequate"
+  },
+  "months": {
+    "1": {
+      "n": 4,
+      "usable": 3
+    },
+    "2": {
+      "n": 4,
+      "usable": 3
+    },
+    "3": {
+      "n": 4,
+      "usable": 3
+    },
+    "4": {
+      "n": 4,
+      "usable": 4
+    },
+    "5": {
+      "n": 4,
+      "usable": 4
+    },
+    "6": {
+      "n": 3,
+      "usable": 3
+    },
+    "7": {
+      "n": 4,
+      "usable": 4
+    },
+    "8": {
+      "n": 4,
+      "usable": 3
+    },
+    "9": {
+      "n": 3,
+      "usable": 3
+    },
+    "10": {
+      "n": 3,
+      "usable": 3
+    },
+    "11": {
+      "n": 4,
+      "usable": 4
+    },
+    "12": {
+      "n": 4,
+      "usable": 4
+    }
+  },
+  "note": "n_usable 为天气/SAR 适用观测数，不是全部影像数",
+  "aoi": "mining_belt",
+  "target_year": 2025
+}

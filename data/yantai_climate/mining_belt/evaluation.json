@@ -1,0 +1,138 @@
+{
+  "aoi": "mining_belt",
+  "type": "open_pit",
+  "n_candidates": 39,
+  "known_sites": {
+    "n_sites_matched": 3,
+    "mean_rank_change": 0.33,
+    "n_improved": 1,
+    "n_worse": 2,
+    "rows": [
+      {
+        "site": "YT-007",
+        "kind": "quarry",
+        "nearest_candidate_layer": "mine_candidate",
+        "distance_m": 490.7,
+        "evidence_rank": 1,
+        "climate_rank": 12,
+        "rank_change": -11,
+        "delta_bsi_raw": null,
+        "delta_bsi_adj": null,
+        "flags": []
+      },
+      {
+        "site": "B-quarry-1",
+        "kind": "quarry",
+        "nearest_candidate_layer": "uncertain",
+        "distance_m": 1449.7,
+        "evidence_rank": 23,
+        "climate_rank": 25,
+        "rank_change": -2,
+        "delta_bsi_raw": -0.0507,
+        "delta_bsi_adj": 0.046562,
+        "flags": []
+      },
+      {
+        "site": "B-quarry-2",
+        "kind": "quarry",
+        "nearest_candidate_layer": "other_bare",
+        "distance_m": 1224.1,
+        "evidence_rank": 19,
+        "climate_rank": 5,
+        "rank_change": 14,
+        "delta_bsi_raw": 0.3135,
+        "delta_bsi_adj": 0.336964,
+        "flags": []
+      }
+    ],
+    "note": "只反映最近候选的排序变化，不构成命中/精度"
+  },
+  "negative_control": {
+    "n_candidates": 39,
+    "area_ha": 167.96,
+    "n_weather_explained": 0,
+    "area_weather_explained_ha": 0,
+    "n_no_usable_optical": 0,
+    "mean_pre_score": 19.06,
+    "mean_adjusted_score": 18.27,
+    "n_below_threshold_after": 28,
+    "note": "负对照不应出现采矿命中；这里只统计被天气解释/降级的候选"
+  },
+  "rain_correlation": {
+    "monthly_rain_mm": {
+      "2025-01": 3.5,
+      "2025-02": 4.4,
+      "2025-03": 36.6,
+      "2025-04": 32.6,
+      "2025-05": 72.4,
+      "2025-06": 77.7,
+      "2025-07": 127.0,
+      "2025-08": 209.2,
+      "2025-09": 177.6,
+      "2025-10": 140.9,
+      "2025-11": 6.9,
+      "2025-12": 14.4
+    },
+    "candidate_counts_before": {
+      "2025-01": 0,
+      "2025-02": 0,
+      "2025-03": 5,
+      "2025-04": 7,
+      "2025-05": 13,
+      "2025-06": 5,
+      "2025-07": 1,
+      "2025-08": 0,
+      "2025-09": 0,
+      "2025-10": 0,
+      "2025-11": 0,
+      "2025-12": 0
+    },
+    "candidate_counts_after": {
+      "2025-01": 0,
+      "2025-02": 0,
+      "2025-03": 3,
+      "2025-04": 5,
+      "2025-05": 2,
+      "2025-06": 1,
+      "2025-07": 0,
+      "2025-08": 0,
+      "2025-09": 0,
+      "2025-10": 0,
+      "2025-11": 0,
+      "2025-12": 0
+    },
+    "spearman_before": 0.0703,
+    "spearman_after": -0.0416,
+    "delta": -0.1119,
+    "threshold": 25.0,
+    "note": "12 个月样本；相关性下降只说明天气驱动减少，不等于精度提升"
+  },
+  "models": {
+    "bsi": {
+      "n": 80,
+      "applied": true,
+      "harmonic_r2": 0.8241,
+      "full_r2": 0.8748,
+      "loo_rmse_harmonic": 0.063085,
+      "loo_rmse_full": 0.061195,
+      "improvement_pct": 3.0,
+      "reason": "天气协变量使 LOO-RMSE 下降 3.00%"
+    },
+    "ndvi": {
+      "n": 80,
+      "applied": true,
+      "harmonic_r2": 0.8493,
+      "full_r2": 0.8678,
+      "loo_rmse_harmonic": 0.076793,
+      "loo_rmse_full": 0.074073,
+      "improvement_pct": 3.54,
+      "reason": "天气协变量使 LOO-RMSE 下降 3.54%"
+    }
+  },
+  "score_distribution": {
+    "pre_max": 41.49,
+    "adjusted_max": 41.48,
+    "adjusted_ge_threshold": 11
+  },
+  "note": "无独立标签；不报告精度/F1，只报告排序、负对照和可观测性变化"
+}

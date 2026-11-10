@@ -1,0 +1,13 @@
+{
+  "aoi": "mining_belt",
+  "center": [
+    120.255,
+    37.145
+  ],
+  "start": "2022-01-01",
+  "end": "2025-12-31",
+  "n_days": 1461,
+  "provider": "open-meteo-archive",
+  "fetched_at": "2026-11-16T22:44:35",
+  "cache": "data\\climate\\mining_belt\\open_meteo.json"
+}

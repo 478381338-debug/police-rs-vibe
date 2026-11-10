@@ -1,0 +1,704 @@
+{
+  "generated_at": "2026-11-16T22:44:38",
+  "target_year": 2025,
+  "data_sources": {
+    "weather": "Open-Meteo Archive (ERA5)",
+    "optical_catalog": "data\\yantai_2025_v2\\catalog_2025.json",
+    "scl": "Sentinel-2 L2A SCL via Planetary Computer SAS (optional)"
+  },
+  "aois": {
+    "mining_belt": {
+      "label": "莱州东南—p07 采石群",
+      "type": "露天采坑/采石",
+      "bbox": [
+        120.15,
+        37.08,
+        120.36,
+        37.21
+      ],
+      "n_scenes": 81,
+      "n_candidates": 39,
+      "model": {
+        "bsi": {
+          "index": "bsi",
+          "n": 80,
+          "applied": true,
+          "reason": "天气协变量使 LOO-RMSE 下降 3.00%",
+          "coefficients": {
+            "intercept": 0.06186684,
+            "sin_annual": 0.07288625,
+            "cos_annual": 0.13586041,
+            "sin_semiannual": -0.05296093,
+            "cos_semiannual": 0.00562518,
+            "precip_7d": -0.02612042,
+            "soil_moisture": -0.01226535,
+            "snow_depth_cm": -0.00832868,
+            "cloud_cover": -0.0018832
+          },
+          "weather_coefficients": {
+            "precip_7d": -0.02612042,
+            "soil_moisture": -0.01226535,
+            "snow_depth_cm": -0.00832868,
+            "cloud_cover": -0.0018832
+          },
+          "scaler": {
+            "precip_7d": [
+              9.86375,
+              17.92007424
+            ],
+            "soil_moisture": [
+              0.24325,
+              0.07776849
+            ],
+            "snow_depth_cm": [
+              0.2125,
+              1.0451525
+            ],
+            "cloud_cover": [
+              25.4625,
+              23.46004249
+            ]
+          },
+          "harmonic_r2": 0.8241,
+          "full_r2": 0.8748,
+          "loo_rmse_harmonic": 0.063085,
+          "loo_rmse_full": 0.061195,
+          "improvement_pct": 3.0,
+          "residual_scale": 0.049327
+        },
+        "ndvi": {
+          "index": "ndvi",
+          "n": 80,
+          "applied": true,
+          "reason": "天气协变量使 LOO-RMSE 下降 3.54%",
+          "coefficients": {
+            "intercept": 0.41505178,
+            "sin_annual": -0.14822973,
+            "cos_annual": -0.17583587,
+            "sin_semiannual": 0.0538361,
+            "cos_semiannual": -0.00010432,
+            "precip_7d": 0.01615281,
+            "soil_moisture": 0.02405034,
+            "snow_depth_cm": -0.00873707,
+            "cloud_cover": -0.01398259
+          },
+          "weather_coefficients": {
+            "precip_7d": 0.01615281,
+            "soil_moisture": 0.02405034,
+            "snow_depth_cm": -0.00873707,
+            "cloud_cover": -0.01398259
+          },
+          "scaler": {
+            "precip_7d": [
+              9.86375,
+              17.92007424
+            ],
+            "soil_moisture": [
+              0.24325,
+              0.07776849
+            ],
+            "snow_depth_cm": [
+              0.2125,
+              1.0451525
+            ],
+            "cloud_cover": [
+              25.4625,
+              23.46004249
+            ]
+          },
+          "harmonic_r2": 0.8493,
+          "full_r2": 0.8678,
+          "loo_rmse_harmonic": 0.076793,
+          "loo_rmse_full": 0.074073,
+          "improvement_pct": 3.54,
+          "residual_scale": 0.050834
+        }
+      },
+      "observation": {
+        "n_usable": 41,
+        "n_scenes": 45,
+        "max_gap_days": 35,
+        "detection": {
+          "n_usable": 41,
+          "required": 6,
+          "max_gap_days": 45,
+          "observed_gap_days": 35,
+          "gap_factor": 1.0,
+          "power": 0.9989,
+          "level": "adequate"
+        }
+      },
+      "target_weather": {
+        "monthly": [
+          {
+            "month": "2025-01",
+            "precip_mm": 3.5,
+            "snowfall_cm": 2.4,
+            "snow_depth_max_cm": 8.0,
+            "cloud_cover_mean_pct": 33.9,
+            "temp_mean_c": -0.8
+          },
+          {
+            "month": "2025-02",
+            "precip_mm": 4.4,
+            "snowfall_cm": 1.4,
+            "snow_depth_max_cm": 1.0,
+            "cloud_cover_mean_pct": 38.2,
+            "temp_mean_c": -0.7
+          },
+          {
+            "month": "2025-03",
+            "precip_mm": 36.6,
+            "snowfall_cm": 3.6,
+            "snow_depth_max_cm": 4.0,
+            "cloud_cover_mean_pct": 50.2,
+            "temp_mean_c": 7.1
+          },
+          {
+            "month": "2025-04",
+            "precip_mm": 32.6,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 38.2,
+            "temp_mean_c": 13.9
+          },
+          {
+            "month": "2025-05",
+            "precip_mm": 72.4,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 51.6,
+            "temp_mean_c": 18.0
+          },
+          {
+            "month": "2025-06",
+            "precip_mm": 77.7,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 61.7,
+            "temp_mean_c": 23.9
+          },
+          {
+            "month": "2025-07",
+            "precip_mm": 127.0,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 50.9,
+            "temp_mean_c": 27.5
+          },
+          {
+            "month": "2025-08",
+            "precip_mm": 209.2,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 69.2,
+            "temp_mean_c": 26.7
+          },
+          {
+            "month": "2025-09",
+            "precip_mm": 177.6,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 61.0,
+            "temp_mean_c": 21.7
+          },
+          {
+            "month": "2025-10",
+            "precip_mm": 140.9,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 69.8,
+            "temp_mean_c": 14.4
+          },
+          {
+            "month": "2025-11",
+            "precip_mm": 6.9,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 34.1,
+            "temp_mean_c": 8.4
+          },
+          {
+            "month": "2025-12",
+            "precip_mm": 14.4,
+            "snowfall_cm": 3.9,
+            "snow_depth_max_cm": 2.0,
+            "cloud_cover_mean_pct": 40.6,
+            "temp_mean_c": 1.2
+          }
+        ],
+        "scl": {
+          "n_scenes": 81,
+          "cloud_frac_mean": 0.1134,
+          "snow_frac_mean": 0.0057,
+          "valid_frac_mean": 0.8543
+        }
+      },
+      "evaluation": {
+        "aoi": "mining_belt",
+        "type": "open_pit",
+        "n_candidates": 39,
+        "known_sites": {
+          "n_sites_matched": 3,
+          "mean_rank_change": 0.33,
+          "n_improved": 1,
+          "n_worse": 2,
+          "rows": [
+            {
+              "site": "YT-007",
+              "kind": "quarry",
+              "nearest_candidate_layer": "mine_candidate",
+              "distance_m": 490.7,
+              "evidence_rank": 1,
+              "climate_rank": 12,
+              "rank_change": -11,
+              "delta_bsi_raw": null,
+              "delta_bsi_adj": null,
+              "flags": []
+            },
+            {
+              "site": "B-quarry-1",
+              "kind": "quarry",
+              "nearest_candidate_layer": "uncertain",
+              "distance_m": 1449.7,
+              "evidence_rank": 23,
+              "climate_rank": 25,
+              "rank_change": -2,
+              "delta_bsi_raw": -0.0507,
+              "delta_bsi_adj": 0.046562,
+              "flags": []
+            },
+            {
+              "site": "B-quarry-2",
+              "kind": "quarry",
+              "nearest_candidate_layer": "other_bare",
+              "distance_m": 1224.1,
+              "evidence_rank": 19,
+              "climate_rank": 5,
+              "rank_change": 14,
+              "delta_bsi_raw": 0.3135,
+              "delta_bsi_adj": 0.336964,
+              "flags": []
+            }
+          ],
+          "note": "只反映最近候选的排序变化，不构成命中/精度"
+        },
+        "negative_control": {
+          "n_candidates": 39,
+          "area_ha": 167.96,
+          "n_weather_explained": 0,
+          "area_weather_explained_ha": 0,
+          "n_no_usable_optical": 0,
+          "mean_pre_score": 19.06,
+          "mean_adjusted_score": 18.27,
+          "n_below_threshold_after": 28,
+          "note": "负对照不应出现采矿命中；这里只统计被天气解释/降级的候选"
+        },
+        "rain_correlation": {
+          "monthly_rain_mm": {
+            "2025-01": 3.5,
+            "2025-02": 4.4,
+            "2025-03": 36.6,
+            "2025-04": 32.6,
+            "2025-05": 72.4,
+            "2025-06": 77.7,
+            "2025-07": 127.0,
+            "2025-08": 209.2,
+            "2025-09": 177.6,
+            "2025-10": 140.9,
+            "2025-11": 6.9,
+            "2025-12": 14.4
+          },
+          "candidate_counts_before": {
+            "2025-01": 0,
+            "2025-02": 0,
+            "2025-03": 5,
+            "2025-04": 7,
+            "2025-05": 13,
+            "2025-06": 5,
+            "2025-07": 1,
+            "2025-08": 0,
+            "2025-09": 0,
+            "2025-10": 0,
+            "2025-11": 0,
+            "2025-12": 0
+          },
+          "candidate_counts_after": {
+            "2025-01": 0,
+            "2025-02": 0,
+            "2025-03": 3,
+            "2025-04": 5,
+            "2025-05": 2,
+            "2025-06": 1,
+            "2025-07": 0,
+            "2025-08": 0,
+            "2025-09": 0,
+            "2025-10": 0,
+            "2025-11": 0,
+            "2025-12": 0
+          },
+          "spearman_before": 0.0703,
+          "spearman_after": -0.0416,
+          "delta": -0.1119,
+          "threshold": 25.0,
+          "note": "12 个月样本；相关性下降只说明天气驱动减少，不等于精度提升"
+        },
+        "models": {
+          "bsi": {
+            "n": 80,
+            "applied": true,
+            "harmonic_r2": 0.8241,
+            "full_r2": 0.8748,
+            "loo_rmse_harmonic": 0.063085,
+            "loo_rmse_full": 0.061195,
+            "improvement_pct": 3.0,
+            "reason": "天气协变量使 LOO-RMSE 下降 3.00%"
+          },
+          "ndvi": {
+            "n": 80,
+            "applied": true,
+            "harmonic_r2": 0.8493,
+            "full_r2": 0.8678,
+            "loo_rmse_harmonic": 0.076793,
+            "loo_rmse_full": 0.074073,
+            "improvement_pct": 3.54,
+            "reason": "天气协变量使 LOO-RMSE 下降 3.54%"
+          }
+        },
+        "score_distribution": {
+          "pre_max": 41.49,
+          "adjusted_max": 41.48,
+          "adjusted_ge_threshold": 11
+        },
+        "note": "无独立标签；不报告精度/F1，只报告排序、负对照和可观测性变化"
+      }
+    },
+    "A_control": {
+      "label": "招远北部农田负对照",
+      "type": "露天采坑/采石",
+      "bbox": [
+        120.06,
+        37.4,
+        120.13,
+        37.47
+      ],
+      "n_scenes": 81,
+      "n_candidates": 29,
+      "model": {
+        "bsi": {
+          "index": "bsi",
+          "n": 80,
+          "applied": false,
+          "reason": "LOO-RMSE 仅下降 -2.08%，低于阈值 2.0%，不启用校正",
+          "coefficients": {
+            "intercept": 0.01698096,
+            "sin_annual": 0.05867737,
+            "cos_annual": 0.12543869,
+            "sin_semiannual": -0.04694767,
+            "cos_semiannual": 0.05145274,
+            "precip_7d": -0.02849012,
+            "soil_moisture": 0.00945951,
+            "snow_depth_cm": -0.01161116,
+            "cloud_cover": -0.00422246
+          },
+          "weather_coefficients": {
+            "precip_7d": -0.02849012,
+            "soil_moisture": 0.00945951,
+            "snow_depth_cm": -0.01161116,
+            "cloud_cover": -0.00422246
+          },
+          "scaler": {
+            "precip_7d": [
+              10.8525,
+              18.62854647
+            ],
+            "soil_moisture": [
+              0.205675,
+              0.09383866
+            ],
+            "snow_depth_cm": [
+              0.15,
+              0.74330344
+            ],
+            "cloud_cover": [
+              25.15,
+              22.82274085
+            ]
+          },
+          "harmonic_r2": 0.7326,
+          "full_r2": 0.7635,
+          "loo_rmse_harmonic": 0.077219,
+          "loo_rmse_full": 0.078827,
+          "improvement_pct": -2.08,
+          "residual_scale": 0.084843
+        },
+        "ndvi": {
+          "index": "ndvi",
+          "n": 80,
+          "applied": false,
+          "reason": "LOO-RMSE 仅下降 -4.54%，低于阈值 2.0%，不启用校正",
+          "coefficients": {
+            "intercept": 0.42693283,
+            "sin_annual": -0.08286375,
+            "cos_annual": -0.16056625,
+            "sin_semiannual": 0.05254629,
+            "cos_semiannual": -0.04261966,
+            "precip_7d": 0.02457733,
+            "soil_moisture": 0.00296843,
+            "snow_depth_cm": -0.0163186,
+            "cloud_cover": 0.00088278
+          },
+          "weather_coefficients": {
+            "precip_7d": 0.02457733,
+            "soil_moisture": 0.00296843,
+            "snow_depth_cm": -0.0163186,
+            "cloud_cover": 0.00088278
+          },
+          "scaler": {
+            "precip_7d": [
+              10.8525,
+              18.62854647
+            ],
+            "soil_moisture": [
+              0.205675,
+              0.09383866
+            ],
+            "snow_depth_cm": [
+              0.15,
+              0.74330344
+            ],
+            "cloud_cover": [
+              25.15,
+              22.82274085
+            ]
+          },
+          "harmonic_r2": 0.6539,
+          "full_r2": 0.6682,
+          "loo_rmse_harmonic": 0.112308,
+          "loo_rmse_full": 0.117407,
+          "improvement_pct": -4.54,
+          "residual_scale": 0.110229
+        }
+      },
+      "observation": {
+        "n_usable": 45,
+        "n_scenes": 45,
+        "max_gap_days": 35,
+        "detection": {
+          "n_usable": 45,
+          "required": 6,
+          "max_gap_days": 45,
+          "observed_gap_days": 35,
+          "gap_factor": 1.0,
+          "power": 0.9994,
+          "level": "adequate"
+        }
+      },
+      "target_weather": {
+        "monthly": [
+          {
+            "month": "2025-01",
+            "precip_mm": 3.7,
+            "snowfall_cm": 2.7,
+            "snow_depth_max_cm": 4.0,
+            "cloud_cover_mean_pct": 34.5,
+            "temp_mean_c": 0.3
+          },
+          {
+            "month": "2025-02",
+            "precip_mm": 4.5,
+            "snowfall_cm": 1.5,
+            "snow_depth_max_cm": 1.0,
+            "cloud_cover_mean_pct": 34.9,
+            "temp_mean_c": 0.5
+          },
+          {
+            "month": "2025-03",
+            "precip_mm": 27.1,
+            "snowfall_cm": 7.6,
+            "snow_depth_max_cm": 5.0,
+            "cloud_cover_mean_pct": 46.5,
+            "temp_mean_c": 7.7
+          },
+          {
+            "month": "2025-04",
+            "precip_mm": 15.8,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 35.6,
+            "temp_mean_c": 14.7
+          },
+          {
+            "month": "2025-05",
+            "precip_mm": 46.5,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 49.1,
+            "temp_mean_c": 19.3
+          },
+          {
+            "month": "2025-06",
+            "precip_mm": 101.0,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 56.5,
+            "temp_mean_c": 25.3
+          },
+          {
+            "month": "2025-07",
+            "precip_mm": 148.8,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 48.4,
+            "temp_mean_c": 28.3
+          },
+          {
+            "month": "2025-08",
+            "precip_mm": 181.0,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 65.4,
+            "temp_mean_c": 28.0
+          },
+          {
+            "month": "2025-09",
+            "precip_mm": 134.1,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 57.5,
+            "temp_mean_c": 23.1
+          },
+          {
+            "month": "2025-10",
+            "precip_mm": 149.1,
+            "snowfall_cm": 0.0,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 72.3,
+            "temp_mean_c": 15.9
+          },
+          {
+            "month": "2025-11",
+            "precip_mm": 11.6,
+            "snowfall_cm": 0.6,
+            "snow_depth_max_cm": 0.0,
+            "cloud_cover_mean_pct": 33.7,
+            "temp_mean_c": 9.6
+          },
+          {
+            "month": "2025-12",
+            "precip_mm": 18.9,
+            "snowfall_cm": 7.5,
+            "snow_depth_max_cm": 3.0,
+            "cloud_cover_mean_pct": 42.2,
+            "temp_mean_c": 2.6
+          }
+        ],
+        "scl": {
+          "n_scenes": 81,
+          "cloud_frac_mean": 0.0499,
+          "snow_frac_mean": 0.0014,
+          "valid_frac_mean": 0.6893
+        }
+      },
+      "evaluation": {
+        "aoi": "A_control",
+        "type": "open_pit",
+        "n_candidates": 29,
+        "known_sites": {
+          "n_sites_matched": 0,
+          "rows": [],
+          "note": "3 km 内无候选"
+        },
+        "negative_control": {
+          "n_candidates": 29,
+          "area_ha": 195.32,
+          "n_weather_explained": 0,
+          "area_weather_explained_ha": 0,
+          "n_no_usable_optical": 0,
+          "mean_pre_score": 20.6,
+          "mean_adjusted_score": 19.51,
+          "n_below_threshold_after": 23,
+          "note": "负对照不应出现采矿命中；这里只统计被天气解释/降级的候选"
+        },
+        "rain_correlation": {
+          "monthly_rain_mm": {
+            "2025-01": 3.7,
+            "2025-02": 4.5,
+            "2025-03": 27.1,
+            "2025-04": 15.8,
+            "2025-05": 46.5,
+            "2025-06": 101.0,
+            "2025-07": 148.8,
+            "2025-08": 181.0,
+            "2025-09": 134.1,
+            "2025-10": 149.1,
+            "2025-11": 11.6,
+            "2025-12": 18.9
+          },
+          "candidate_counts_before": {
+            "2025-01": 0,
+            "2025-02": 3,
+            "2025-03": 1,
+            "2025-04": 4,
+            "2025-05": 5,
+            "2025-06": 3,
+            "2025-07": 0,
+            "2025-08": 0,
+            "2025-09": 0,
+            "2025-10": 0,
+            "2025-11": 0,
+            "2025-12": 0
+          },
+          "candidate_counts_after": {
+            "2025-01": 0,
+            "2025-02": 0,
+            "2025-03": 1,
+            "2025-04": 2,
+            "2025-05": 1,
+            "2025-06": 2,
+            "2025-07": 0,
+            "2025-08": 0,
+            "2025-09": 0,
+            "2025-10": 0,
+            "2025-11": 0,
+            "2025-12": 0
+          },
+          "spearman_before": -0.2501,
+          "spearman_after": -0.0585,
+          "delta": 0.1916,
+          "threshold": 25.0,
+          "note": "12 个月样本；相关性下降只说明天气驱动减少，不等于精度提升"
+        },
+        "models": {
+          "bsi": {
+            "n": 80,
+            "applied": false,
+            "harmonic_r2": 0.7326,
+            "full_r2": 0.7635,
+            "loo_rmse_harmonic": 0.077219,
+            "loo_rmse_full": 0.078827,
+            "improvement_pct": -2.08,
+            "reason": "LOO-RMSE 仅下降 -2.08%，低于阈值 2.0%，不启用校正"
+          },
+          "ndvi": {
+            "n": 80,
+            "applied": false,
+            "harmonic_r2": 0.6539,
+            "full_r2": 0.6682,
+            "loo_rmse_harmonic": 0.112308,
+            "loo_rmse_full": 0.117407,
+            "improvement_pct": -4.54,
+            "reason": "LOO-RMSE 仅下降 -4.54%，低于阈值 2.0%，不启用校正"
+          }
+        },
+        "score_distribution": {
+          "pre_max": 39.91,
+          "adjusted_max": 39.66,
+          "adjusted_ge_threshold": 6
+        },
+        "note": "无独立标签；不报告精度/F1，只报告排序、负对照和可观测性变化"
+      }
+    }
+  },
+  "disclaimer": "所有分数为排序分，不是概率、置信度或 F1；无独立标签，不声称精度提升。"
+}

@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-11-07T09:15:44",
+  "thematic_map": "arcgis_open_data_map.png",
+  "terrain_3d": "arcgis_terrain_3d.png",
+  "engine": "ArcGIS Pro 3.5 / ArcPy",
+  "notes": [
+    "专题图为 ArcGIS Pro 导出；3D 地形为本地 DEM 透视渲染。",
+    "ArcGIS Pro Scene 相机在无界面 ArcPy 会话中不可写，未将其伪造成 ArcGIS 3D 截图。"
+  ],
+  "attribution": [
+    "© OpenStreetMap contributors (ODbL 1.0)",
+    "WorldPop 2020 (CC BY 4.0)",
+    "Microsoft Planetary Computer / ESA / NASA / JAXA",
+    "AWS Terrain Tiles / Mapzen Terrarium"
+  ]
+}

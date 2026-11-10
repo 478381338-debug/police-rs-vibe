@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-11-17T14:43:02.826576+00:00",
+  "source": "青山卫士任务二历史检测结果 + AOI 背景格网",
+  "label_quality": "weak_retrospective",
+  "verified_count": 0,
+  "verification_records": 0,
+  "verification_source": "无现场核查记录",
+  "counts": {
+    "total": 83,
+    "incidents": 53,
+    "background_controls": 30,
+    "top4_hotspots": 4
+  },
+  "historical_screening": {
+    "top4_ids": [
+      "HS-026",
+      "HS-014",
+      "HS-025",
+      "HS-017"
+    ],
+    "incidents_near_top4": 12,
+    "incidents_total": 53,
+    "recall_at_top4": 0.226,
+    "note": "这是对历史异常的回溯覆盖率，不是对未来灾害的命中率。"
+  },
+  "disclaimer": "未标记 field_verified 的样本仍是弱标签；不能据此宣称预报准确率。只有经过现场核查并写入 verification_records.csv 后，才可用于时间外验证和概率校准。"
+}

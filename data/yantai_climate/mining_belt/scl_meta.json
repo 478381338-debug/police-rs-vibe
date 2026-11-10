@@ -1,0 +1,8 @@
+{
+  "aoi": "mining_belt",
+  "n_items": 81,
+  "n_ok": 81,
+  "n_failed": 0,
+  "source": "Planetary Computer SAS + Sentinel-2 L2A SCL",
+  "note": "SCL 占比用于逐景云/雪/阴影质量；失败时回退 valid_frac + 天气代理"
+}

@@ -1,0 +1,226 @@
+{
+  "open_pit": {
+    "label": "露天采坑/采石",
+    "primary": [
+      "光学 ΔBSI/NDVI 季节归一化",
+      "NBR 扰动",
+      "高分纹理与边界"
+    ],
+    "secondary": [
+      "SAR 后向散射",
+      "运输/夜间灯光",
+      "用地手续"
+    ],
+    "family_weights": {
+      "O": 0.4,
+      "S": 0.25,
+      "L": 0.1,
+      "D": 0.08,
+      "T": 0.02,
+      "C": 0.1,
+      "H": 0.05
+    },
+    "primary_modality": "optical",
+    "clear_min": 6,
+    "max_gap_days": 45,
+    "weather_sensitivity": {
+      "cloud": 0.9,
+      "snow": 1.0,
+      "rain": 0.5,
+      "soil": 0.4,
+      "freeze": 0.2
+    },
+    "confounders": [
+      "雨后湿土反照率下降",
+      "积雪/融雪覆盖",
+      "云影残留",
+      "农田翻耕"
+    ]
+  },
+  "river_sand": {
+    "label": "河道采砂",
+    "primary": [
+      "水体/沙洲指数与河道形态",
+      "采砂船/设备",
+      "运输链路"
+    ],
+    "secondary": [
+      "光学裸沙变化",
+      "SAR 水面/沙洲对比",
+      "水政/许可"
+    ],
+    "family_weights": {
+      "O": 0.3,
+      "S": 0.25,
+      "L": 0.15,
+      "D": 0.05,
+      "T": 0.15,
+      "C": 0.05,
+      "H": 0.05
+    },
+    "primary_modality": "optical",
+    "clear_min": 4,
+    "max_gap_days": 60,
+    "weather_sensitivity": {
+      "cloud": 0.8,
+      "snow": 0.7,
+      "rain": 0.9,
+      "soil": 0.1,
+      "freeze": 0.3
+    },
+    "confounders": [
+      "洪水冲淤",
+      "水体浑浊",
+      "枯水期沙洲自然出露",
+      "河道整治"
+    ]
+  },
+  "underground": {
+    "label": "硐采/井工",
+    "primary": [
+      "InSAR 形变/相干",
+      "井口与厂房",
+      "运输/用电异常"
+    ],
+    "secondary": [
+      "光学设施变化",
+      "夜间灯光",
+      "矿权与台账"
+    ],
+    "family_weights": {
+      "O": 0.1,
+      "S": 0.15,
+      "L": 0.2,
+      "D": 0.3,
+      "T": 0.1,
+      "C": 0.1,
+      "H": 0.05
+    },
+    "primary_modality": "sar",
+    "clear_min": 3,
+    "max_gap_days": 60,
+    "weather_sensitivity": {
+      "cloud": 0.05,
+      "snow": 0.6,
+      "rain": 0.7,
+      "soil": 0.1,
+      "freeze": 0.8
+    },
+    "confounders": [
+      "冻融",
+      "降水去相干",
+      "农田灌溉",
+      "采煤沉陷"
+    ]
+  },
+  "stockpile": {
+    "label": "堆场/排土场/尾矿",
+    "primary": [
+      "堆体几何/DSM 体积",
+      "纹理与阴影",
+      "运输频次"
+    ],
+    "secondary": [
+      "光学裸地变化",
+      "SAR 后向散射",
+      "环保台账"
+    ],
+    "family_weights": {
+      "O": 0.3,
+      "S": 0.3,
+      "L": 0.15,
+      "D": 0.1,
+      "T": 0.05,
+      "C": 0.05,
+      "H": 0.05
+    },
+    "primary_modality": "hybrid",
+    "clear_min": 4,
+    "max_gap_days": 60,
+    "weather_sensitivity": {
+      "cloud": 0.7,
+      "snow": 0.9,
+      "rain": 0.4,
+      "soil": 0.2,
+      "freeze": 0.1
+    },
+    "confounders": [
+      "雨蚀沟",
+      "雪覆盖",
+      "物料正常周转"
+    ]
+  },
+  "remining": {
+    "label": "废弃矿山复采",
+    "primary": [
+      "历史扰动底图 + 新增道路/设备",
+      "光学裸地再扩张"
+    ],
+    "secondary": [
+      "SAR 后向散射",
+      "运输链路",
+      "复垦/治理台账"
+    ],
+    "family_weights": {
+      "O": 0.3,
+      "S": 0.2,
+      "L": 0.2,
+      "D": 0.1,
+      "T": 0.1,
+      "C": 0.05,
+      "H": 0.05
+    },
+    "primary_modality": "optical",
+    "clear_min": 6,
+    "max_gap_days": 45,
+    "weather_sensitivity": {
+      "cloud": 0.8,
+      "snow": 1.0,
+      "rain": 0.5,
+      "soil": 0.4,
+      "freeze": 0.2
+    },
+    "confounders": [
+      "季节返绿",
+      "复垦工程",
+      "历史裸地纹理"
+    ]
+  },
+  "transport": {
+    "label": "运输/外运异常",
+    "primary": [
+      "卡口/称重/AIS/夜光",
+      "道路轨迹",
+      "时段异常"
+    ],
+    "secondary": [
+      "光学车辆/道路",
+      "SAR 车辆检测",
+      "矿权台账"
+    ],
+    "family_weights": {
+      "O": 0.1,
+      "S": 0.1,
+      "L": 0.4,
+      "D": 0.1,
+      "T": 0.2,
+      "C": 0.05,
+      "H": 0.05
+    },
+    "primary_modality": "logistics",
+    "clear_min": 0,
+    "max_gap_days": 30,
+    "weather_sensitivity": {
+      "cloud": 0.1,
+      "snow": 0.4,
+      "rain": 0.6,
+      "soil": 0.0,
+      "freeze": 0.3
+    },
+    "confounders": [
+      "雨雪停运",
+      "节假日",
+      "农忙"
+    ]
+  }
+}

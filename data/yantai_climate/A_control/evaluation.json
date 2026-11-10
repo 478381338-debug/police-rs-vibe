@@ -1,0 +1,98 @@
+{
+  "aoi": "A_control",
+  "type": "open_pit",
+  "n_candidates": 29,
+  "known_sites": {
+    "n_sites_matched": 0,
+    "rows": [],
+    "note": "3 km 内无候选"
+  },
+  "negative_control": {
+    "n_candidates": 29,
+    "area_ha": 195.32,
+    "n_weather_explained": 0,
+    "area_weather_explained_ha": 0,
+    "n_no_usable_optical": 0,
+    "mean_pre_score": 20.6,
+    "mean_adjusted_score": 19.51,
+    "n_below_threshold_after": 23,
+    "note": "负对照不应出现采矿命中；这里只统计被天气解释/降级的候选"
+  },
+  "rain_correlation": {
+    "monthly_rain_mm": {
+      "2025-01": 3.7,
+      "2025-02": 4.5,
+      "2025-03": 27.1,
+      "2025-04": 15.8,
+      "2025-05": 46.5,
+      "2025-06": 101.0,
+      "2025-07": 148.8,
+      "2025-08": 181.0,
+      "2025-09": 134.1,
+      "2025-10": 149.1,
+      "2025-11": 11.6,
+      "2025-12": 18.9
+    },
+    "candidate_counts_before": {
+      "2025-01": 0,
+      "2025-02": 3,
+      "2025-03": 1,
+      "2025-04": 4,
+      "2025-05": 5,
+      "2025-06": 3,
+      "2025-07": 0,
+      "2025-08": 0,
+      "2025-09": 0,
+      "2025-10": 0,
+      "2025-11": 0,
+      "2025-12": 0
+    },
+    "candidate_counts_after": {
+      "2025-01": 0,
+      "2025-02": 0,
+      "2025-03": 1,
+      "2025-04": 2,
+      "2025-05": 1,
+      "2025-06": 2,
+      "2025-07": 0,
+      "2025-08": 0,
+      "2025-09": 0,
+      "2025-10": 0,
+      "2025-11": 0,
+      "2025-12": 0
+    },
+    "spearman_before": -0.2501,
+    "spearman_after": -0.0585,
+    "delta": 0.1916,
+    "threshold": 25.0,
+    "note": "12 个月样本；相关性下降只说明天气驱动减少，不等于精度提升"
+  },
+  "models": {
+    "bsi": {
+      "n": 80,
+      "applied": false,
+      "harmonic_r2": 0.7326,
+      "full_r2": 0.7635,
+      "loo_rmse_harmonic": 0.077219,
+      "loo_rmse_full": 0.078827,
+      "improvement_pct": -2.08,
+      "reason": "LOO-RMSE 仅下降 -2.08%，低于阈值 2.0%，不启用校正"
+    },
+    "ndvi": {
+      "n": 80,
+      "applied": false,
+      "harmonic_r2": 0.6539,
+      "full_r2": 0.6682,
+      "loo_rmse_harmonic": 0.112308,
+      "loo_rmse_full": 0.117407,
+      "improvement_pct": -4.54,
+      "reason": "LOO-RMSE 仅下降 -4.54%，低于阈值 2.0%，不启用校正"
+    }
+  },
+  "score_distribution": {
+    "pre_max": 39.91,
+    "adjusted_max": 39.66,
+    "adjusted_ge_threshold": 6
+  },
+  "note": "无独立标签；不报告精度/F1，只报告排序、负对照和可观测性变化"
+}

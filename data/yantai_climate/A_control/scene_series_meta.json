@@ -1,0 +1,11 @@
+{
+  "aoi": "A_control",
+  "n_scenes": 81,
+  "grid_shape": [
+    398,
+    322
+  ],
+  "stable_pixels": 96476,
+  "stable_rule": "valid in >= 57/81 scenes",
+  "note": "AOI 稳定像元中值；用于场景级天气归一化，不替代像元级变化检测"
+}

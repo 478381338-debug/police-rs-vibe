@@ -1,0 +1,13 @@
+{
+  "aoi": "A_control",
+  "center": [
+    120.095,
+    37.435
+  ],
+  "start": "2022-01-01",
+  "end": "2025-12-31",
+  "n_days": 1461,
+  "provider": "open-meteo-archive",
+  "fetched_at": "2026-11-16T22:44:37",
+  "cache": "data\\climate\\A_control\\open_meteo.json"
+}
