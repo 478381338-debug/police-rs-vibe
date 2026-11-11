@@ -1,0 +1,259 @@
+/* 浅色主题层（Tabler 风格）：工作台与工作台弹窗专用。
+ * 引入顺序必须在 workspace.css 之后，保证同优先级规则后者覆盖。
+ * 复用方式：页面容器使用 #app-view，或在业务样式后追加同等特异度的覆盖。
+ */
+/* Tabler 风格浅色案件页：只作用于工作台与工作台弹窗，登录页保持原深色 */
+#app-view{
+  --bg:#f5f7fb;--bg2:#eef2f7;--panel:#ffffff;--panel2:#f8fafc;
+  --border:#e3e8ef;--border2:#d7dee8;--text:#182433;--muted:#66758a;--muted2:#8a96a8;
+  --accent:#206bc4;--accent2:#206bc4;--green:#2fb344;--red:#d63939;
+  --orange:#f76707;--yellow:#f59f00;--blue:#206bc4;
+  --shadow:0 1px 2px rgba(24,36,51,.04),0 6px 18px rgba(24,36,51,.05);
+  background:#f5f7fb;color:#182433;
+}
+#app-view ::-webkit-scrollbar-thumb{background:#c9d4e2}
+#app-view .app-header{
+  height:64px;flex-basis:64px;padding:0 24px;background:#fff;border-bottom:1px solid #e3e8ef;
+  box-shadow:0 1px 2px rgba(24,36,51,.03);
+}
+#app-view .app-brand img{width:34px;height:34px;filter:none}
+#app-view .app-brand h1{font-size:16px;color:#182433;letter-spacing:0;font-weight:700}
+#app-view .app-brand p{color:#8a96a8;font-size:10px;letter-spacing:.02em}
+#app-view .app-header-right{gap:8px}
+#app-view .app-nav{display:flex;align-items:center;gap:2px;margin-right:8px}
+#app-view .app-nav a{
+  padding:8px 11px;border-radius:6px;color:#66758a;font-size:12px;font-weight:600;transition:.15s;
+}
+#app-view .app-nav a:hover{background:#f0f4f9;color:#206bc4}
+#app-view .app-nav a.active{background:#e8f1fb;color:#206bc4}
+#app-view .app-header-right .btn-ghost{
+  border-color:transparent;background:transparent;color:#66758a;padding:8px 10px;box-shadow:none;
+}
+#app-view .app-header-right .btn-ghost:hover{background:#f0f4f9;color:#206bc4}
+#app-view .user-chip{background:#f0f4f9;border-color:#e3e8ef;color:#206bc4}
+#app-view .count-badge{background:#f76707;color:#fff}
+
+#app-view .app-body{grid-template-columns:320px minmax(0,1fr)}
+#app-view .case-sidebar{background:#fff;border-right:1px solid #e3e8ef}
+#app-view .side-head{padding:18px 16px 12px}
+#app-view .side-head .eyebrow{color:#8a96a8;letter-spacing:.14em}
+#app-view .side-head h2{font-size:16px;color:#182433}
+#app-view .case-stats{
+  margin:0 14px 12px;border-color:#e3e8ef;background:#e3e8ef;border-radius:8px;
+}
+#app-view .stat-cell{background:#f8fafc;padding:9px 5px}
+#app-view .stat-cell b{color:#182433;font-size:16px}
+#app-view .stat-cell span{color:#8a96a8}
+#app-view .stat-cell.hot b{color:#f76707}
+#app-view .stat-cell.ok b{color:#2fb344}
+#app-view .side-tools input,#app-view .side-tools select{
+  background:#fff;border-color:#d7dee8;color:#182433;border-radius:6px;
+}
+#app-view .case-list{padding:0 10px 12px}
+#app-view .case-item{
+  background:#fff;border-color:#e8ecf2;border-radius:8px;box-shadow:0 1px 1px rgba(24,36,51,.03);
+}
+#app-view .case-item:hover{background:#f8fafc;border-color:#c9d4e2}
+#app-view .case-item.active{
+  background:#eef4fb;border-color:#9fc0e8;box-shadow:inset 3px 0 0 #206bc4;
+}
+#app-view .case-item h3{color:#182433}
+#app-view .case-item-no{color:#8a96a8}
+#app-view .case-item-meta{color:#8a96a8}
+#app-view .case-item-meta b{color:#44546a}
+#app-view .status-pill{font-weight:700}
+#app-view .st-待派单{color:#9a6700;background:#fff8e1;border-color:#f5d78e}
+#app-view .st-核查中{color:#b54708;background:#fff3e8;border-color:#f7c9a3}
+#app-view .st-待复核{color:#175cd3;background:#eff6ff;border-color:#bfd6f6}
+#app-view .st-已复核{color:#067647;background:#ecfdf3;border-color:#a9e3c3}
+#app-view .st-已归档{color:#475467;background:#f2f4f7;border-color:#d9dee7}
+#app-view .quadrant-wrap{background:#f8fafc;border-top-color:#e3e8ef}
+#app-view .quadrant-head span{color:#344054}
+#app-view .quadrant-head em,#app-view .quadrant-note{color:#8a96a8}
+
+#app-view .case-main{background:#f5f7fb;padding:22px 28px 48px}
+#app-view .empty-state img{opacity:.22}
+#app-view .empty-state h2{color:#344054}
+#app-view .empty-state p{color:#8a96a8}
+#app-view .crumbs{
+  display:flex;align-items:center;gap:6px;margin-bottom:8px;color:#8a96a8;font-size:10.5px;
+}
+#app-view .crumbs b{color:#44546a;font-weight:600}
+#app-view .case-head{margin-bottom:16px;align-items:flex-start}
+#app-view .case-head h2{font-size:24px;color:#182433;font-weight:700;letter-spacing:-.01em}
+#app-view .case-sub{color:#66758a;font-size:11px}
+#app-view .case-sub b{color:#344054}
+#app-view .head-actions{gap:8px}
+#app-view .btn{
+  background:#fff;border-color:#d7dee8;color:#344054;border-radius:6px;
+  box-shadow:0 1px 1px rgba(24,36,51,.03);font-weight:600;
+}
+#app-view .btn:hover{border-color:#9fb3c8;background:#f8fafc}
+#app-view .btn-primary{background:#206bc4;border-color:#206bc4;color:#fff;box-shadow:0 1px 2px rgba(32,107,196,.25)}
+#app-view .btn-primary:hover{background:#1a5aa8;border-color:#1a5aa8;filter:none}
+#app-view .btn-ghost{background:transparent;border-color:#d7dee8;color:#66758a;box-shadow:none}
+#app-view .btn-ghost:hover{background:#f0f4f9;color:#206bc4}
+
+#app-view .score-grid{gap:12px;margin-bottom:16px}
+#app-view .score-card{
+  background:#fff;border:1px solid #e3e8ef;border-top:3px solid #206bc4;border-radius:8px;
+  padding:13px 15px;box-shadow:var(--shadow);
+}
+#app-view .score-card.priority{border-top-color:#f76707;background:#fff}
+#app-view .score-card.danger{border-top-color:#d63939;background:#fff}
+#app-view .score-card .label{color:#8a96a8;font-size:10px;font-weight:600;letter-spacing:.02em}
+#app-view .score-card .value b{color:#182433;font-size:27px}
+#app-view .score-card.priority .value b{color:#f76707}
+#app-view .score-card.danger .value b{color:#d63939}
+#app-view .score-card .value em,#app-view .score-card .foot{color:#8a96a8}
+#app-view .case-progress{
+  display:flex;align-items:center;background:#fff;border:1px solid #e3e8ef;border-radius:8px;
+  padding:13px 16px;margin-bottom:16px;box-shadow:var(--shadow);overflow:auto;
+}
+#app-view .case-progress .step{display:flex;align-items:center;gap:7px;color:#8a96a8;font-size:11px;white-space:nowrap}
+#app-view .case-progress .step span{
+  width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+  background:#f0f4f9;border:1px solid #e3e8ef;color:#8a96a8;font-size:9px;font-weight:700;
+}
+#app-view .case-progress .step b{font-weight:600}
+#app-view .case-progress .step.done span{background:#2fb344;border-color:#2fb344;color:#fff}
+#app-view .case-progress .step.done b{color:#2fb344}
+#app-view .case-progress .step.current span{
+  background:#206bc4;border-color:#206bc4;color:#fff;box-shadow:0 0 0 3px rgba(32,107,196,.14);
+}
+#app-view .case-progress .step.current b{color:#206bc4}
+#app-view .case-progress .step-line{flex:1;min-width:18px;height:1px;background:#e3e8ef;margin:0 10px}
+
+#app-view .case-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:16px;align-items:start;margin-bottom:14px}
+#app-view .case-col{min-width:0;display:grid;gap:14px;align-content:start}
+#app-view .case-col > .section{margin-bottom:0}
+#app-view .case-col > .dual-note{margin-bottom:0}
+#app-view .dual-note{
+  background:#f2f7fd;border:1px solid #d6e4f5;border-radius:8px;color:#44546a;
+  padding:12px 14px;font-size:10.5px;line-height:1.7;
+}
+#app-view .dual-note b{color:#182433}
+#app-view .dual-note .tag{background:#206bc4;color:#fff;border-radius:4px}
+
+#app-view .section{
+  background:#fff;border:1px solid #e3e8ef;border-radius:8px;box-shadow:var(--shadow);
+  margin-bottom:14px;overflow:hidden;
+}
+#app-view .section-head{background:#fff;border-bottom:1px solid #eef2f7;padding:11px 15px}
+#app-view .section-head h3{color:#182433;font-size:12px;font-weight:700;letter-spacing:.01em}
+#app-view .section-head .hint{color:#8a96a8}
+#app-view .section-body{padding:14px 15px}
+#app-view .kv span{color:#8a96a8}
+#app-view .kv b{color:#344054}
+#app-view .factor-track{background:#eef2f7}
+#app-view .factor-track i{background:#206bc4}
+#app-view .factor-row span{color:#66758a}
+#app-view .factor-row b{color:#206bc4}
+#app-view .item-card{background:#f8fafc;border-color:#e3e8ef;border-radius:7px}
+#app-view .item-top b{color:#182433}
+#app-view .item-meta{color:#8a96a8}
+#app-view .item-note{color:#66758a}
+#app-view .note-line{background:#f8fafc;border-left-color:#d7dee8;color:#66758a}
+#app-view .note-line b{color:#344054}
+#app-view .mini-btn{background:#fff;border-color:#d7dee8;color:#44546a;border-radius:5px}
+#app-view .mini-btn:hover{border-color:#206bc4;color:#206bc4}
+#app-view .mini-btn.ok{color:#067647;border-color:#a9e3c3;background:#ecfdf3}
+#app-view .mini-btn.warn{color:#b54708;border-color:#f7c9a3;background:#fff3e8}
+#app-view .mini-btn.bad{color:#b42318;border-color:#f3b4ae;background:#fef3f2}
+#app-view .inline-form{border-top-color:#e3e8ef}
+#app-view input,#app-view select,#app-view textarea{
+  background:#fff;border-color:#d7dee8;color:#182433;border-radius:6px;
+}
+#app-view input:focus,#app-view select:focus,#app-view textarea:focus{
+  border-color:#206bc4;box-shadow:0 0 0 3px rgba(32,107,196,.12);
+}
+#app-view input::placeholder,#app-view textarea::placeholder{color:#a4afbf}
+#app-view .mono.hash{color:#0f766e}
+#app-view .file-link{color:#206bc4}
+#app-view .ok-text{color:#2fb344}
+#app-view .bad-text{color:#d63939}
+#app-view .sep{border-top-color:#e3e8ef}
+#app-view .audit-item{border-bottom-color:#eef2f7;color:#8a96a8}
+#app-view .audit-item b{color:#344054}
+#app-view .empty-small{color:#8a96a8}
+#app-view .form-note{color:#8a96a8}
+#app-view .report-strip p{color:#66758a!important}
+#app-view .qr-box{border:1px solid #e3e8ef}
+#app-view .arrival-card{background:#f8fafc;border-color:#e3e8ef}
+#app-view .arrival-svg{background:#fff;border-color:#e3e8ef}
+#app-view .arrival-ring{stroke:#e3e8ef}
+#app-view .arrival-area{fill:rgba(32,107,196,.12);stroke:#206bc4}
+#app-view .arrival-area-warn{fill:rgba(247,103,7,.12);stroke:#f76707}
+#app-view .arrival-center{fill:#206bc4;stroke:#fff}
+#app-view .arrival-label,#app-view .arrival-north{fill:#66758a}
+#app-view .arrival-north-arrow{fill:#66758a}
+#app-view .arrival-zone{stroke:#d6e4f5}
+#app-view .drone-svg{background:#fff;border-color:#e3e8ef}
+#app-view .drone-grid{stroke:#e3e8ef}
+#app-view .drone-path{stroke:#206bc4}
+#app-view .legal-banner > div,#app-view .legal-checklist,#app-view .legal-entry{
+  background:#f8fafc;border-color:#e3e8ef;
+}
+#app-view .legal-checklist summary,#app-view .legal-details summary{color:#206bc4}
+#app-view .legal-index{background:#e8f1fb;color:#206bc4}
+#app-view .legal-entry.primary{
+  border-color:#206bc4;background:#f3f8ff;
+  box-shadow:inset 0 0 0 1px rgba(32,107,196,.16);
+}
+#app-view .legal-primary{background:#f3f8ff;border-color:#d6e4f5}
+#app-view .legal-primary-tag{background:#e8f1fb;color:#206bc4}
+#app-view .legal-primary b{color:#182433}
+#app-view .legal-primary span{color:#344054}
+#app-view .legal-primary em{color:#66758a}
+#app-view .legal-primary-badge{border-color:#206bc4;background:#e8f1fb;color:#206bc4}
+#app-view .legal-match{border-left-color:#206bc4;color:#206bc4}
+#app-view .legal-controls label{color:#66758a}
+#app-view .token-text{background:#f8fafc;color:#175cd3}
+
+/* 工作台弹窗同步浅色 */
+.modal-backdrop{background:rgba(24,36,51,.38)}
+.modal{
+  background:#fff;border-color:#e3e8ef;color:#182433;
+  box-shadow:0 18px 46px rgba(24,36,51,.18);
+}
+.modal .modal-head{border-bottom-color:#eef2f7}
+.modal .modal-head h2{color:#182433}
+.modal .modal-body label{color:#66758a}
+.modal input,.modal select,.modal textarea{
+  background:#fff;border-color:#d7dee8;color:#182433;border-radius:6px;
+}
+.modal input:focus,.modal select:focus,.modal textarea:focus{
+  border-color:#206bc4;box-shadow:0 0 0 3px rgba(32,107,196,.12);
+}
+.modal .btn{background:#fff;border-color:#d7dee8;color:#344054}
+.modal .btn-primary{background:#206bc4;border-color:#206bc4;color:#fff}
+.modal .btn-ghost{background:transparent;color:#66758a}
+.modal .icon-btn{background:#fff;border-color:#d7dee8;color:#66758a}
+.modal .icon-btn:hover{color:#182433;border-color:#9fb3c8}
+.modal .source-preview{background:#f8fafc;border-color:#d7dee8;color:#66758a}
+.modal .source-preview b{color:#182433}
+.modal .form-note{color:#8a96a8}
+.modal .form-error{color:#d63939}
+.modal .imagery-status{background:#f8fafc;border-color:#d7dee8;color:#66758a}
+.modal .imagery-item{background:#f8fafc;border-color:#e3e8ef}
+.modal .imagery-item h4{color:#182433}
+.modal .imagery-item p{color:#8a96a8}
+.modal .imagery-item .scene-id{color:#8a96a8}
+.modal .imagery-thumb{border-color:#e3e8ef;background:#fff}
+.modal #imagery-meta{color:#8a96a8}
+
+@media (max-width:1320px){
+  #app-view .case-grid{grid-template-columns:1fr}
+}
+@media (max-width:1180px){
+  #app-view .app-body{grid-template-columns:300px minmax(0,1fr)}
+  #app-view .case-main{padding:18px 18px 40px}
+}
+@media (max-width:860px){
+  #app-view .app-header{height:auto;min-height:64px;flex:0 0 auto;position:relative;z-index:30;padding:10px 12px}
+  #app-view .app-header-right{flex-wrap:wrap;justify-content:flex-end}
+  #app-view .app-nav{order:3;width:100%;justify-content:flex-start;margin:2px 0 0;padding-top:6px;border-top:1px solid #eef2f7}
+  #app-view .case-main{padding:14px 12px 32px}
+  #app-view .case-progress{padding:10px 12px}
+  #app-view .case-progress .step b{display:none}
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>案件工作台 · 警务遥感</title>
+  <link rel="icon" type="image/png" href="/assets/police-badge-160.png">
+  <link rel="stylesheet" href="/static/workspace.css?v=20261110p5">
+  <link rel="stylesheet" href="/static/light-theme.css?v=20261111light1">
+  <script src="/vendor/echarts.min.js"></script>
+</head>
+<body>
+  <div id="boot-screen" role="status" aria-label="正在进入案件工作台">
+    <div class="boot-stage">
+      <span class="boot-orbit" aria-hidden="true"></span>
+      <img class="boot-badge" src="/assets/police-badge-learning.png" alt="中国人民警察警徽">
+    </div>
+  </div>
+
+  <div id="login-view" class="login-view">
+    <div class="login-bg" aria-hidden="true"></div>
+    <section class="login-card">
+      <div class="login-brand">
+        <img src="/assets/police-badge-learning.png" alt="中国人民警察警徽">
+        <div>
+          <p class="eyebrow">POLICE REMOTE SENSING · CASE WORKBENCH</p>
+          <h1>案件工作台</h1>
+          <p class="login-sub">把卫星发现变成可派单、可取证、可复核、可归档的核查案件。</p>
+        </div>
+      </div>
+      <form id="login-form" class="login-form" autocomplete="on">
+        <label>账号<input id="login-username" name="username" type="text" autocomplete="username" required placeholder="请输入账号"></label>
+        <label>密码<input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="请输入密码"></label>
+        <p id="login-error" class="form-error" role="alert"></p>
+        <button type="submit" class="btn btn-primary btn-block">进入工作台</button>
+      </form>
+      <div class="demo-box">
+        <div class="demo-head"><b>演示账号</b><span>仅用于功能验证，生产环境必须关闭</span></div>
+        <div class="demo-grid">
+          <button type="button" class="demo-chip" data-user="commander" data-pass="Commander@12345"><b>指挥员</b><span>commander</span></button>
+          <button type="button" class="demo-chip" data-user="officer" data-pass="Officer@12345"><b>民警</b><span>officer</span></button>
+          <button type="button" class="demo-chip" data-user="reviewer" data-pass="Reviewer@12345"><b>复核员</b><span>reviewer</span></button>
+          <button type="button" class="demo-chip" data-user="admin" data-pass="Admin@12345"><b>管理员</b><span>admin</span></button>
+        </div>
+        <p class="demo-note">当前系统没有接入真实警务数据；案件、证据和审计均写入本机 SQLite，仅用于演示。</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="app-view" class="app-view" hidden>
+    <header class="app-header">
+      <div class="app-brand">
+        <img src="/assets/police-badge-learning.png" alt="警徽">
+        <div>
+          <h1>警务遥感</h1>
+          <p>生态警务线索处置平台</p>
+        </div>
+      </div>
+      <div class="app-header-right">
+        <nav class="app-nav" aria-label="主导航">
+          <a href="/">遥感地图</a>
+          <a href="/aircase">空中办案</a>
+          <a href="/operations">多场景研判</a>
+          <a class="active" href="/workspace" aria-current="page">案件办理</a>
+        </nav>
+        <button id="imagery-btn" class="btn btn-ghost" type="button" title="查看研究区最新 Sentinel-2 影像">
+          新影像 <span id="imagery-badge" class="count-badge" hidden>0</span>
+        </button>
+        <span id="user-chip" class="user-chip">--</span>
+        <button id="logout-btn" class="btn btn-ghost" type="button">退出</button>
+        <a class="btn btn-ghost" href="/__gate/logout" data-gate-exit style="display:none" title="退出演示访问口令">退出访问</a>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <aside class="case-sidebar">
+        <div class="side-head">
+          <div><p class="eyebrow">CASE QUEUE</p><h2>案件队列</h2></div>
+          <button id="new-case-btn" class="btn btn-primary btn-sm" type="button">+ 建案</button>
+        </div>
+        <div id="case-stats" class="case-stats"></div>
+        <div class="side-tools">
+          <input id="case-search" type="search" placeholder="搜索案件号、线索名…" aria-label="搜索案件">
+          <select id="case-filter" aria-label="按状态筛选">
+            <option value="">全部状态</option>
+            <option>待派单</option>
+            <option>核查中</option>
+            <option>待复核</option>
+            <option>已复核</option>
+            <option>已归档</option>
+          </select>
+        </div>
+        <div id="case-list" class="case-list"><p class="empty">加载中…</p></div>
+        <div class="quadrant-wrap">
+          <div class="quadrant-head"><span>双分数四象限</span><em>优先级 × 当前危险</em></div>
+          <div id="quadrant-chart" class="quadrant-chart"></div>
+          <p class="quadrant-note">横轴为历史核查优先级，纵轴为当前危险指数；虚线 70/60。两轴都不是灾害概率。</p>
+        </div>
+      </aside>
+
+      <main id="case-main" class="case-main">
+        <div id="case-empty" class="empty-state">
+          <img src="/assets/police-badge-learning.png" alt="">
+          <h2>从左侧选择一个案件</h2>
+          <p>或者点击“建案”，用真实高发点/风险格网生成一条可核查的线索。</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="modal-backdrop" class="modal-backdrop" hidden></div>
+  <section id="case-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-title" hidden>
+    <header class="modal-head">
+      <div><p class="eyebrow">NEW CASE</p><h2 id="case-modal-title">从真实线索建案</h2></div>
+      <button id="case-modal-close" class="icon-btn" type="button" aria-label="关闭">×</button>
+    </header>
+    <form id="case-form" class="modal-body">
+      <div class="form-grid">
+        <label>线索来源
+          <select id="case-source-type">
+            <option value="hotspot">历史高发点（31 处，AHP 排序）</option>
+            <option value="grid">当前危险格网（180 格）</option>
+            <option value="imagery">新影像到访（Sentinel-2，需人工判读）</option>
+          </select>
+        </label>
+        <label>线索
+          <select id="case-source-id" required></select>
+        </label>
+      </div>
+      <label>案件标题<input id="case-title" type="text" maxlength="120" placeholder="留空则自动生成"></label>
+      <label>案情摘要<textarea id="case-summary" rows="3" maxlength="2000" placeholder="说明发现方式、核查重点和注意事项"></textarea></label>
+      <div class="form-grid">
+        <label id="assignee-wrap">承办人<select id="case-assignee"><option value="">暂不指派</option></select></label>
+        <label>办理期限<input id="case-due" type="date"></label>
+      </div>
+      <div id="source-preview" class="source-preview">选择线索后显示真实分数与因子。</div>
+      <p class="form-note">建案只读取服务端 `hotspots.geojson` / `risk_grid.geojson` 的分数，前端不能改分。建案不会自动派警，仍需人工确认。</p>
+      <p id="case-form-error" class="form-error" role="alert"></p>
+      <div class="modal-actions">
+        <button type="button" id="case-cancel" class="btn btn-ghost">取消</button>
+        <button type="submit" class="btn btn-primary">生成案件</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="imagery-modal" class="modal imagery-modal" role="dialog" aria-modal="true" aria-labelledby="imagery-title" hidden>
+    <header class="modal-head">
+      <div><p class="eyebrow">SENTINEL-2 WATCH</p><h2 id="imagery-title">研究区新影像到访</h2></div>
+      <button id="imagery-close" class="icon-btn" type="button" aria-label="关闭">×</button>
+    </header>
+    <div class="modal-body">
+      <div class="imagery-toolbar">
+        <button id="imagery-refresh" class="btn btn-primary btn-sm" type="button">检查最新 Sentinel-2</button>
+        <span id="imagery-meta">尚未检查</span>
+      </div>
+      <div id="imagery-status" class="imagery-status">登录后可检查研究区最新影像。</div>
+      <div id="imagery-list" class="imagery-list"></div>
+      <p id="imagery-disclaimer" class="form-note">
+        这里只报告“有新卫星影像到访”，不表示影像里一定存在异常，也不是火情/灾情预警。是否形成线索，必须由民警打开影像、对照历史底图并现场核查。
+      </p>
+    </div>
+  </section>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/static/workspace.js?v=20261110p5"></script>
+  <script src="/static/gate-exit.js?v=20261111gate1"></script>
+</body>
+</html>
