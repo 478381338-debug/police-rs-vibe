@@ -1,0 +1,17 @@
+{
+  "name": "青山卫士 · 现场核查",
+  "short_name": "青山核查",
+  "description": "生态警务现场核查移动端：到场签到、GPS、拍照取证、离线暂存。",
+  "lang": "zh-CN",
+  "start_url": "/m",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#071018",
+  "theme_color": "#071018",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    { "src": "/static/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

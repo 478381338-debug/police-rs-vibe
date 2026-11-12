@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>青山卫士 · 现场核查</title>
+<meta name="theme-color" content="#071018">
+<meta name="description" content="生态警务现场核查移动端：到场签到、GPS、拍照取证、离线暂存。">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="青山核查">
+<link rel="manifest" href="/mobile.webmanifest">
+<link rel="icon" href="/static/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/static/icon-192.png">
+<link rel="stylesheet" href="/static/mobile.css">
+</head>
+<body>
+<header class="m-header">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">青</span>
+    <div class="brand-text">
+      <b>青山卫士</b>
+      <small>现场核查 · 移动端</small>
+    </div>
+  </div>
+  <div class="header-tools">
+    <button id="refresh-btn" class="icon-btn" type="button" title="刷新案件信息" aria-label="刷新案件信息">↻</button>
+    <span id="net-pill" class="net-pill" title="网络状态"><i></i><span id="net-text">在线</span></span>
+  </div>
+</header>
+
+<main class="m-main">
+  <section id="gate" class="card gate">
+    <div class="gate-icon" aria-hidden="true">⌁</div>
+    <h1>输入到场码</h1>
+    <p class="muted">由指挥中心在案件工作台生成。到场码 24 小时后自动失效，可随时作废。</p>
+    <form id="token-form" autocomplete="off">
+      <label for="token-input">到场码</label>
+      <input id="token-input" name="token" type="text" inputmode="text" autocapitalize="off"
+             autocorrect="off" spellcheck="false" placeholder="ARR-…" required>
+      <button class="btn btn-primary" type="submit">进入现场核查</button>
+    </form>
+    <p id="gate-error" class="error" role="alert"></p>
+    <p class="fine">到场码只证明持码者到达，不证明身份。现场仍须出示证件、核对人员。</p>
+  </section>
+
+  <section id="case-view" hidden>
+    <div class="case-head card">
+      <div class="case-top">
+        <span id="case-status" class="chip">—</span>
+        <span id="case-no" class="mono muted">—</span>
+      </div>
+      <h1 id="case-title">—</h1>
+      <div class="case-sub">
+        <span id="case-due">—</span>
+        <span id="case-hazard" hidden></span>
+      </div>
+      <div class="metrics">
+        <div><small>历史核查优先级</small><b id="m-priority">—</b></div>
+        <div><small>当前危险指数</small><b id="m-danger">—</b></div>
+        <div><small>距案件点</small><b id="m-distance">—</b></div>
+      </div>
+      <p id="case-summary" class="case-summary"></p>
+      <div id="case-advice" class="advice" hidden></div>
+      <div class="case-meta">
+        <div><span>案件坐标</span><b id="case-coords" class="mono">—</b></div>
+        <div><span>最近警务点</span><b id="case-police">—</b></div>
+        <div><span>联系人</span><b id="case-contact">—</b></div>
+      </div>
+      <button id="copy-coords" class="btn btn-ghost btn-sm" type="button">复制坐标</button>
+    </div>
+
+    <section class="card">
+      <div class="section-title"><h2>现场示意</h2><span class="muted">不按比例</span></div>
+      <canvas id="sketch" width="640" height="220" aria-label="案件点与当前位置示意"></canvas>
+      <p class="fine">示意图仅用于确认方向与相对位置，不作为测量依据；正式距离以车行到达圈和现场 GPS 为准。</p>
+    </section>
+
+    <section class="card">
+      <div class="section-title"><h2>核查任务</h2><span id="task-count" class="muted">—</span></div>
+      <div id="task-list" class="task-list"></div>
+      <label for="task-select" class="stack-label">本次签到关联任务
+        <select id="task-select"><option value="">不关联任务</option></select>
+      </label>
+    </section>
+
+    <section class="card">
+      <div class="section-title"><h2>到场签到</h2><span class="muted">必填姓名</span></div>
+      <p id="checkin-locked" class="notice" hidden></p>
+      <form id="checkin-form">
+        <label for="actor-name" class="stack-label">核查人姓名
+          <input id="actor-name" name="actor_name" type="text" maxlength="40" placeholder="请输入真实姓名" required>
+        </label>
+
+        <div class="gps-row">
+          <button id="gps-btn" class="btn btn-ghost" type="button">获取 GPS</button>
+          <button id="gps-clear" class="btn btn-ghost btn-sm" type="button">清除</button>
+        </div>
+        <p id="gps-status" class="gps-status">尚未定位。室内或林区可能失败，可手动填写经纬度。</p>
+        <details class="manual">
+          <summary>无法定位？手动输入经纬度</summary>
+          <div class="two">
+            <label>经度<input id="manual-lon" type="number" step="0.000001" min="-180" max="180" placeholder="117.520686"></label>
+            <label>纬度<input id="manual-lat" type="number" step="0.000001" min="-90" max="90" placeholder="36.652277"></label>
+          </div>
+        </details>
+
+        <label for="checkin-note" class="stack-label">现场情况
+          <textarea id="checkin-note" rows="3" maxlength="1000" placeholder="例如：发现疑似盗采痕迹，面积约 0.3 公顷，现场无人员"></textarea>
+        </label>
+
+        <label for="photo-input" class="stack-label">现场照片/视频
+          <input id="photo-input" type="file" accept="image/*,video/*" capture="environment" multiple>
+        </label>
+        <p class="fine">照片保留原始字节，不做压缩；单文件不超过 50MB。客户端 SHA-256 仅作预览，服务端会重新计算。</p>
+        <div id="photo-list" class="photo-list"></div>
+        <p id="photo-total" class="fine"></p>
+
+        <button id="checkin-btn" class="btn btn-primary btn-block" type="submit">签到并保存证据</button>
+        <p id="checkin-hint" class="fine">有网络时直接上传；无网络时先保存在本机，联网后同步。</p>
+      </form>
+    </section>
+
+    <section id="after-checkin" class="card" hidden>
+      <div class="section-title"><h2>已签到</h2><span id="last-checkin" class="mono muted">—</span></div>
+      <p class="fine">如现场还需补充照片，可直接追加，不必重复签到。</p>
+      <input id="more-photo" type="file" accept="image/*,video/*" capture="environment" multiple>
+      <button id="more-btn" class="btn btn-ghost btn-block" type="button">追加证据</button>
+    </section>
+
+    <section class="card queue-card">
+      <div class="section-title">
+        <h2>离线队列</h2>
+        <span id="queue-count" class="chip">0</span>
+      </div>
+      <p class="fine">队列保存在本机浏览器。请勿清理站点数据；上传成功后自动移除。</p>
+      <div class="queue-actions">
+        <button id="sync-btn" class="btn btn-primary btn-sm" type="button">立即同步</button>
+        <button id="clear-queue" class="btn btn-ghost btn-sm" type="button">清空</button>
+      </div>
+      <div id="queue-list" class="queue-list"></div>
+    </section>
+
+    <p class="disclaimer">本页只用于现场签到与证据采集，不能修改案件评分、不能复核或归档。所有上传均记录操作人、时间与 SHA-256。</p>
+  </section>
+</main>
+
+<footer class="m-footer">
+  <span>青山卫士 · 生态警务线索处置平台</span>
+  <span class="mono">v2.0</span>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="/static/mobile.js" defer></script>
+</body>
+</html>
