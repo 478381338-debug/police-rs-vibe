@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>空中办案 · 天枢</title>
+  <link rel="stylesheet" href="/static/aircase.css?v=20261113m">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <div>
+        <b>天枢 · 空中办案</b>
+        <small>AIRCASE / 卫星初筛 → 无人机精查</small>
+      </div>
+    </div>
+    <div class="top-status" aria-label="链路状态">
+      <span class="status-pill ok"><i></i>边缘 AI 在线</span>
+      <span class="status-pill info"><i></i>NTN 热备</span>
+    </div>
+    <nav class="top-nav" aria-label="站点导航">
+      <a href="/">遥感地图</a>
+      <a href="/workspace">案件工作台</a>
+      <a href="/operations">多场景研判</a>
+      <a href="/__gate/logout" data-gate-exit style="display:none" title="退出演示访问口令">退出访问</a>
+    </nav>
+    <div class="top-meta">
+      <a id="sixg-open" class="mini-btn" href="/sixg" title="打开完整 6G 推演大屏">6G 链路 <i>↗</i></a>
+      <span class="live-dot"></span>LIVE DEMO<span id="clock">--:--:--</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel left">
+      <div class="panel-head">
+        <div><span class="eyebrow">MISSION</span><h2>任务控制</h2></div>
+        <span class="tag">DEMO</span>
+      </div>
+
+      <section class="block">
+        <div class="block-head"><h3>候选图斑</h3><span id="patch-count">--</span></div>
+        <div id="patch-list" class="patch-list"><div class="empty">正在加载 AOI…</div></div>
+      </section>
+
+      <section class="block">
+        <div class="block-head"><h3>任务参数</h3><span>UAV / 120 m</span></div>
+        <div class="field">
+          <span>作业模式</span>
+          <div class="seg" id="mode-seg">
+            <button data-mode="precise" class="on">精查</button>
+            <button data-mode="scene">方位图</button>
+          </div>
+        </div>
+        <div class="range-field">
+          <label>相对航高 <b id="height-val">120 m</b></label>
+          <input id="height" type="range" min="60" max="200" step="10" value="120">
+        </div>
+        <div class="field"><span>航线</span><b id="route-hint">正射往复 · 80 m 间距</b></div>
+        <button id="run-btn" class="primary">开始精查 <span>→</span></button>
+        <p class="fine">同机位复拍 · 变化检测 · 面积量算 · 测量意见</p>
+      </section>
+
+      <section class="block grow">
+        <div class="block-head"><h3>演示架次</h3><span>LOCAL</span></div>
+        <div id="recent-list" class="recent-list"><div class="empty">暂无任务</div></div>
+      </section>
+      <div class="left-foot">① 选图斑 · ② 定航高 · ③ 开始精查<br>结果自动生成测量意见与证据包</div>
+    </aside>
+
+    <section class="center">
+      <div class="stage panel">
+        <div class="stage-top">
+          <div class="stage-title">
+            <span class="eyebrow">LIVE TWIN / AIRCASE</span>
+            <h2 id="stage-title">大青山南麓矿区</h2>
+            <span id="stage-sub">等待任务 · 选择图斑后开始精查</span>
+          </div>
+          <div class="stage-right">
+            <div class="view-tabs" id="view-tabs">
+              <button data-view="3d" class="on">三维态势</button>
+              <button data-view="compare">同机位对比</button>
+              <button data-view="map">现场方位图</button>
+            </div>
+            <div class="stage-stats">
+              <div class="stat am"><small>变化面积</small><b><span id="kpi-area">--</span><em>ha</em></b></div>
+              <div class="stat gr"><small>置信度</small><b id="kpi-conf">--</b></div>
+              <div class="stat"><small>GSD</small><b><span id="kpi-gsd">--</span><em>m</em></b></div>
+              <div class="stat"><small>同机位偏差</small><b><span id="kpi-pose">--</span><em>m</em></b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-body">
+          <div id="scene-wrap" class="scene-wrap">
+            <canvas id="scene"></canvas>
+            <div class="stage-scan"></div>
+            <div class="hud tl">AOI <b id="hud-aoi">109.075–109.125°E</b><span class="bar"></span></div>
+            <div class="hud tr">TASK <b id="hud-task">STANDBY</b><br><span id="hud-mode">同机位精查</span></div>
+            <div class="hud bl">ALT <b id="hud-alt">120 m</b> · GIMBAL <b>-90°</b></div>
+            <div class="hud br">SIM <b>6G / EDGE</b><br><span id="hud-link">链路待命</span></div>
+            <div class="cam-btns" id="cam-btns">
+              <button data-cam="orbit" class="on" title="环绕视角">ORB</button>
+              <button data-cam="follow" title="跟随无人机">FLW</button>
+              <button data-cam="top" title="俯视视角">TOP</button>
+              <button data-cam="scene" title="低角度">SCN</button>
+            </div>
+            <div id="scene-fallback" class="fallback hidden">
+              <div><b>当前浏览器未启用 WebGL</b><br>三维态势不可用，可继续使用同机位对比与现场方位图。<br>接口与测量意见不受影响。</div>
+            </div>
+          </div>
+
+          <div id="compare-wrap" class="compare-wrap hidden">
+            <div class="compare-box" id="compare-box">
+              <img id="compare-before" alt="基线影像">
+              <img id="compare-after" class="after-img" alt="复拍影像">
+              <img id="diff-layer" class="diff-layer" alt="变化检测叠加">
+              <div class="divider" id="compare-divider"></div>
+              <span class="tag-l" id="tag-before-date">基线 · 2023-10-08</span>
+              <span class="tag-r" id="tag-after-date">复拍 · 模拟时相</span>
+              <div id="compare-empty" class="compare-empty">开始精查后显示同机位影像</div>
+            </div>
+            <div class="compare-controls">
+              <input id="compare-range" type="range" min="0" max="100" value="50">
+              <label><input id="diff-toggle" type="checkbox"> 变化叠加</label>
+            </div>
+          </div>
+
+          <div id="map-wrap" class="map-wrap hidden">
+            <div id="map-empty" class="map-placeholder">执行精查后生成《现场方位图》<br><span>含指北针、比例尺、图斑范围与坐标</span></div>
+            <div id="map-scroll" class="map-scroll hidden"><img id="map-img" alt="现场方位图"></div>
+            <div id="map-table" class="map-table"><div class="empty">执行精查后显示图斑量算表</div></div>
+            <div class="map-meta"><span id="map-caption">演示制图 · 非测绘成果</span><a id="map-link" href="#" target="_blank" rel="noopener">打开原图 ↗</a></div>
+          </div>
+        </div>
+
+        <div class="stage-foot">
+          <div class="timeline" id="timeline">
+            <div class="step" data-step="0"><i></i><span>卫星初筛</span></div>
+            <div class="step" data-step="1"><i></i><span>任务规划</span></div>
+            <div class="step" data-step="2"><i></i><span>同机位复拍</span></div>
+            <div class="step" data-step="3"><i></i><span>变化检测</span></div>
+            <div class="step" data-step="4"><i></i><span>测量意见</span></div>
+            <div class="step" data-step="5"><i></i><span>证据存证</span></div>
+          </div>
+          <div class="stage-phase" id="stage-phase">待命</div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel right">
+      <div class="panel-head">
+        <div><span class="eyebrow">FINDINGS</span><h2>办案结论</h2></div>
+        <span class="tag am" id="measure-tag">待生成</span>
+      </div>
+
+      <section class="block conclusion">
+        <div class="measure-hero"><b id="m-area">--</b><span>公顷</span><small id="m-conf">置信度 --</small></div>
+        <p id="m-conclusion" class="m-conclusion">选择图斑并开始精查，生成《变化测量意见》。</p>
+        <div class="measure-grid">
+          <div class="mg"><small>变化类型</small><b id="m-class">--</b></div>
+          <div class="mg"><small>亮度变化</small><b id="m-dl">--</b></div>
+          <div class="mg"><small>植被指数</small><b id="m-de">--</b></div>
+          <div class="mg"><small>变化占比</small><b id="m-ratio">--</b></div>
+        </div>
+        <div class="doc-actions">
+          <a id="dl-md" class="ghost disabled">Markdown</a>
+          <a id="dl-html" class="ghost disabled">HTML</a>
+          <a id="dl-map" class="ghost disabled">方位图</a>
+        </div>
+        <div class="conclusion-source">Sentinel-2 L2A · 2023-10-08　/　模拟复拍 · 2025-09-27　/　GSD <b id="src-gsd">4.04</b> m</div>
+      </section>
+      <section class="block evidence-block">
+        <div class="block-head"><h3>证据包</h3><span class="ev-meta"><span id="chain-state">未签名</span><span id="evidence-count">--</span></span></div>
+        <div id="chain" class="chain"></div>
+        <div id="evidence-list" class="evidence-list"><div class="empty">尚未生成</div></div>
+        <button id="verify-btn" class="ghost wide" disabled>校验哈希与签名</button>
+        <div id="verify-result" class="verify-result"></div>
+      </section>
+
+      <section class="block">
+        <div class="block-head"><h3>法条参考</h3><span class="tag">DRAFT</span></div>
+        <div id="legal-list" class="legal-list"><div class="empty">生成意见后检索知识库</div></div>
+      </section>
+
+
+
+      <div class="hidden" aria-hidden="true"><span id="param-state"></span><span id="p-route"></span><span id="p-wp"></span><span id="p-dist"></span><span id="p-time"></span><span id="p-alt"></span><span id="p-note"></span></div>
+    </aside>
+  </main>
+
+  <footer class="statusbar">
+    <span>天枢 · 空中办案 <b>DEMO</b></span>
+    <span id="status-left">AOI 109.075–109.125°E / 41.950–41.969°N</span>
+    <span class="right">演示件 · 模拟口径 · 非鉴定结论</span>
+    <span id="status-task">NO TASK</span>
+  </footer>
+</div>
+<div id="log" class="hidden" aria-hidden="true"></div>
+<span id="log-state" class="hidden"></span>
+<div id="toast" class="toast"></div>
+
+<div id="sixg-modal" class="modal" hidden>
+  <div class="modal-mask" data-sixg-close></div>
+  <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="sixg-title">
+    <header class="modal-head">
+      <div>
+        <span class="eyebrow">6G × AIR CASE</span>
+        <h2 id="sixg-title">空天地一体 · 演示链路</h2>
+      </div>
+      <button class="modal-close" type="button" data-sixg-close aria-label="关闭">×</button>
+    </header>
+    <div class="sixg-grid">
+      <div class="sixg-col">
+        <div class="block-head"><h3>推演场景</h3><span>SIMULATED</span></div>
+        <div id="sixg-scenarios" class="sixg-scenarios"></div>
+        <div id="sixg-network" class="sixg-kpis"><div class="empty">推演后显示 6G 网络指标</div></div>
+        <button id="sixg-refresh" class="ghost wide" type="button">重新推演</button>
+        <p class="fine">6G 指标为演示推演值，不来自现网。</p>
+      </div>
+      <div class="sixg-col">
+        <div id="sixg-lead" class="sixg-lead"><div class="empty">点击“重新推演”生成一条演示线索</div></div>
+        <div class="sixg-flow">空天地感知 <i>→</i> 6G 传输 <i>→</i> 边缘 AI <i>→</i> 案件闭环</div>
+        <button id="sixg-convert" class="primary" type="button" disabled>一键转正式线索 <span>→</span></button>
+        <a id="sixg-workspace" class="sixg-link" hidden>打开案件工作台 →</a>
+        <a class="sixg-link sixg-full" href="/sixg" target="_blank" rel="noopener">打开完整推演大屏 ↗</a>
+        <div id="sixg-result" class="sixg-result"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="/vendor/three.min.js"></script>
+<script src="/static/aircase-3d.js?v=20261113m"></script>
+<script src="/static/aircase.js?v=20261113m"></script>
+<script src="/static/sixg-panel.js?v=20261113m"></script>
+</body>
+</html>

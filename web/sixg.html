@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>天枢 · 6G 空天地一体公共安全智能体</title>
+  <link rel="icon" type="image/png" href="/assets/police-badge-160.png">
+  <link rel="stylesheet" href="/static/sixg.css?v=20261112d">
+</head>
+<body>
+  <div class="ts-bg" aria-hidden="true"></div>
+
+  <header class="ts-header">
+    <div class="ts-brand">
+      <div class="ts-logo">6G</div>
+      <div>
+        <h1>天枢 <span>TIANSHU</span></h1>
+        <p>6G 空天地一体公共安全智能体</p>
+      </div>
+    </div>
+    <div class="ts-status">
+      <span class="pill sim">数字孪生 · 仿真</span>
+      <span class="pill ok"><i></i>边缘 AI 在线</span>
+      <span class="pill info"><i></i>NTN 热备</span>
+    </div>
+    <nav class="ts-nav" aria-label="站点导航">
+      <a href="/aircase">空中办案</a>
+      <a href="/aircase?panel=sixg">线索转办</a>
+      <a href="/">遥感地图</a>
+      <a href="/workspace">案件工作台</a>
+      <a href="/operations">多场景研判</a>
+      <a href="/__gate/logout" data-gate-exit style="display:none" title="退出演示访问口令">退出访问</a>
+    </nav>
+  </header>
+
+  <main class="ts-main">
+    <div class="ts-rail left">
+      <section class="ts-panel scenario-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">SCENARIO</p><h2>推演场景<button class="info-badge" type="button" data-info-title="推演场景" data-info="四种场景代表不同的 6G 网络处境：常态巡检走 eMBB 大带宽；卫星切换走 URLLC 低时延；切片拥塞主动降级；基站中断由低轨 NTN 接管。切换场景会同时重算网络 KPI、回传瓦片数和 AI 线索。所有指标为数字孪生仿真，不是现网实测。" aria-label="推演场景说明">?</button></h2></div>
+          <span class="panel-tag">4 种</span>
+        </div>
+        <div class="scenario-grid" id="scenario-grid"></div>
+        <p class="panel-desc" id="scenario-desc">正在加载场景…</p>
+        <div class="run-row">
+          <button id="run-demo" class="ts-btn primary" type="button">启动全链路推演</button>
+          <button id="open-sandbox" class="ts-btn ghost" type="button" title="调整基站退服时刻、切片配额与无人机复核">沙盒参数</button>
+        </div>
+        <p class="sim-note">6G 指标为数字孪生仿真，用于演示空天地一体保障流程，不代表真实网络实测。</p>
+      </section>
+
+      <section class="ts-panel net-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">NETWORK TWIN</p><h2>6G 网络孪生<button class="info-badge" type="button" data-info-title="6G 网络孪生" data-info="这里展示端到端时延、下行带宽、抖动、链路可用率、地面网在线率与切片配额。时延按业务流经基站、边缘节点、指挥中心的链路估算；切片配额表示 eMBB / URLLC / mMTC 在当前场景下的资源占比。它解释的是 AI 为什么能或不能按时拿到影像，不代表运营商现网 SLA。" aria-label="6G 网络孪生说明">?</button></h2></div>
+          <span id="net-state" class="panel-tag">--</span>
+        </div>
+        <div class="kpi-grid" id="net-kpis"></div>
+        <div id="net-chart" class="net-chart" role="img" aria-label="6G 时延与下行带宽曲线"></div>
+        <div class="slice-block">
+          <div class="slice-head"><span>切片配额</span><em>eMBB / URLLC / mMTC</em></div>
+          <div id="slice-bars" class="slice-bars"></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="ts-panel topo-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">AIR-GROUND INTEGRATION</p><h2>空天地拓扑<button class="info-badge" type="button" data-info-title="空天地拓扑" data-info="蓝球上的弧线是业务流：卫星—基站—边缘 AI—指挥中心。绿色为在用链路，黄色为热备，红色为中断。地面 6G 中断时，业务在约 10 秒内切到低轨 NTN，边缘节点继续用本地基线影像推理；指挥中心通过 URLLC 保底接收线索。" aria-label="空天地拓扑说明">?</button></h2></div>
+          <span class="panel-tag live">NTN 热备</span>
+        </div>
+        <div class="topo-stage">
+          <div id="globe-viz" aria-label="6G 空天地一体全球态势：卫星、地面站、边缘节点与指挥中心"></div>
+          <div class="t3-callouts" aria-hidden="true">
+            <span class="t3-callout c-sat" data-key="satellite"><i></i>NTN 低轨卫星</span>
+            <span class="t3-callout c-bs" data-key="base_station"><i></i>地面 6G</span>
+            <span class="t3-callout c-edge" data-key="edge"><i></i>边缘 AI</span>
+            <span class="t3-callout c-cmd" data-key="command"><i></i>指挥中心</span>
+          </div>
+          <div class="t3-hud">
+            <span class="t3-live"></span>
+            <b id="t3-mode">地面 6G 主链路</b>
+            <em id="t3-flow">业务流向：影像 → 6G 基站 → 边缘 AI</em>
+          </div>
+          <p class="t3-value">断网不断业务 · 边缘 300ms 出线索 · 指挥 URLLC 保底</p>
+          <svg id="topology" viewBox="0 0 320 170" role="img" aria-label="卫星、基站、边缘节点、无人机与指挥中心拓扑" hidden>
+          <defs>
+            <linearGradient id="linkGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#38e1ff" stop-opacity=".25"/>
+              <stop offset="100%" stop-color="#38e1ff" stop-opacity=".9"/>
+            </linearGradient>
+          </defs>
+          <path id="link-sat" class="topo-link" d="M160 44 L160 76"/>
+          <path id="link-bs" class="topo-link" d="M64 120 L146 96"/>
+          <path id="link-uav" class="topo-link" d="M242 122 L174 98"/>
+          <path id="link-command" class="topo-link" d="M174 88 L276 44"/>
+
+          <g id="node-sat" class="topo-node">
+            <circle cx="160" cy="26" r="17"/>
+            <text x="160" y="30" text-anchor="middle" class="node-icon">NTN</text>
+            <text x="160" y="8" text-anchor="middle" class="node-label">低轨卫星</text>
+          </g>
+          <g id="node-bs" class="topo-node">
+            <rect x="40" y="122" width="30" height="24" rx="5"/>
+            <text x="55" y="138" text-anchor="middle" class="node-icon">BS</text>
+            <text x="55" y="160" text-anchor="middle" class="node-label">地面 6G</text>
+          </g>
+          <g id="node-edge" class="topo-node">
+            <circle cx="160" cy="92" r="15"/>
+            <text x="160" y="96" text-anchor="middle" class="node-icon">AI</text>
+            <text x="160" y="118" text-anchor="middle" class="node-label">边缘节点</text>
+          </g>
+          <g id="node-uav" class="topo-node">
+            <rect x="232" y="118" width="30" height="18" rx="9"/>
+            <text x="247" y="131" text-anchor="middle" class="node-icon">UAV</text>
+            <text x="247" y="151" text-anchor="middle" class="node-label">无人机</text>
+          </g>
+          <g id="node-command" class="topo-node">
+            <rect x="272" y="24" width="34" height="24" rx="5"/>
+            <text x="289" y="40" text-anchor="middle" class="node-icon">CMD</text>
+            <text x="289" y="60" text-anchor="middle" class="node-label">指挥中心</text>
+          </g>
+        </svg>
+        </div>
+        <p class="topo-note" id="topo-note">主链路：地面 6G；备份：低轨卫星 NTN。</p>
+      </section>
+
+    <div class="ts-dock">
+      <section class="ts-panel vision-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">EDGE VISION</p><h2>双时相变化检测<button class="info-badge" type="button" data-info-title="双时相变化检测" data-info="同一区域 2023-10-08 与 2025-09-27 两期 Sentinel-2 影像，先做亮度归一化，再用纹理、高通、色彩与 ExG 四类特征融合打分，阈值 0.595 提取新增扰动。系统只把高变化瓦片回传给边缘 AI；弱网下会少传瓦片并标记未覆盖区域。结果需人工复核，不作为执法结论。" aria-label="双时相变化检测说明">?</button></h2></div>
+          <div class="vision-tools" id="vision-tools">
+            <button class="chip active" data-view="overlay" type="button">AI 图斑</button>
+            <button class="chip" data-view="heatmap" type="button">变化热力</button>
+            <button class="chip" data-view="raw" type="button">纯影像</button>
+          </div>
+        </div>
+        <div class="plan-bar" aria-label="6G×AI 协同编排">
+          <span><i>网络切片</i><b id="plan-slice">eMBB</b></span>
+          <span><i>回传瓦片</i><b id="plan-tiles">4/4</b></span>
+          <span><i>端到端</i><b id="plan-latency">--ms</b></span>
+          <span><i>有效线索</i><b id="plan-lead">--条</b></span>
+        </div>
+        <div class="ai-line" aria-label="AI 工作形态与回传方式">
+          <span class="ai-chip" id="ai-mode">AI 形态 --</span>
+          <span class="ai-sub" id="ai-verified">复核 --</span>
+          <span class="ai-sub" id="semantic-note">语义包 --</span>
+          <span class="ai-sub" id="plan-saved">节省 --</span>
+        </div>
+        <p class="orch-note" id="plan-note">6G 网络状态将决定 AI 回传哪些瓦片；弱网优先保证线索时效。</p>
+        <div class="compare" id="compare">
+          <img id="img-before" class="cmp-img" src="/api/sixg/asset/before.png" alt="2023 年 10 月影像">
+          <img id="img-after" class="cmp-img after" src="/api/sixg/asset/after.png" alt="2025 年 9 月影像">
+          <img id="img-overlay" class="cmp-img overlay" src="" alt="AI 图斑叠加" hidden>
+          <div class="divider" id="cmp-divider"></div>
+          <span class="cmp-label left">2023-10-08</span>
+          <span class="cmp-label right">2025-09-27</span>
+          <input id="cmp-range" type="range" min="0" max="100" value="52" aria-label="拖动对比前后影像">
+        </div>
+        <div class="vision-metrics" id="vision-metrics"></div>
+        <p class="vision-note" id="vision-note">候选图斑由多特征融合模型提取，按像元估算面积，需人工复核。</p>
+      </section>
+
+      <section class="ts-panel patch-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">CANDIDATES</p><h2>AI 候选图斑<button class="info-badge" type="button" data-info-title="AI 候选图斑" data-info="每个图斑包含置信度、估算面积、中心经纬度、变化类型与命中依据。置信度是规则融合分，不是概率；面积按像元换算；高置信图斑优先进入核查线索。被抑制的候选多为季节光照、云影或物候变化，补充影像后仍可能复活。" aria-label="AI 候选图斑说明">?</button></h2></div>
+          <span id="patch-count" class="panel-tag">--</span>
+        </div>
+        <div id="patch-list" class="patch-list"><p class="empty">加载中…</p></div>
+      </section>
+    </div>
+
+    <div class="ts-rail right">
+      <section class="ts-panel timeline-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">ORCHESTRATION</p><h2>全链路时间线<button class="info-badge" type="button" data-info-title="全链路时间线" data-info="从 T+0 建立网络切片开始，依次记录影像回传、网络感知编排、边缘推理、线索生成、法条匹配和报告出具。时间戳是演示推演的相对时刻，用来解释每一步的等待来自网络、传输还是计算，不是真实办案时限。" aria-label="全链路时间线说明">?</button></h2></div>
+          <span id="timeline-scenario" class="panel-tag">--</span>
+        </div>
+        <ol id="timeline" class="timeline"><li class="empty">等待推演…</li></ol>
+      </section>
+
+      <section class="ts-panel case-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">CASE DRAFT</p><h2>核查线索<button class="info-badge" type="button" data-info-title="核查线索" data-info="系统把最高置信图斑整理成待核查线索：案件编号、灾种、位置、面积、置信度、证据影像和可能适用的法条。线索只进入演示草稿，不写入生产案件库；法条为辅助匹配，最终定性由办案人员结合现场核查决定。" aria-label="核查线索说明">?</button></h2></div>
+          <span id="case-status" class="panel-tag">--</span>
+        </div>
+        <div id="case-box" class="case-box"><p class="empty">等待推演…</p></div>
+        <div class="compare-badge" id="compare-badge" title="传统巡检与 6G×AI 编排的演示对照">对比 --</div>
+        <div class="case-actions">
+          <button id="download-report" class="ts-btn primary" type="button" disabled>下载报告</button>
+          <button id="view-report" class="ts-btn ghost" type="button" disabled>查看报告</button>
+        </div>
+        <p class="disclaimer">演示线索不写入生产案件库；6G 指标为仿真值，影像为 Sentinel-2 真实数据。</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="loading" class="loading" hidden>
+    <div class="spinner" aria-hidden="true"></div>
+    <p>数字孪生推演中…</p>
+  </div>
+
+
+  <div id="sandbox-modal" class="modal" hidden>
+    <div class="modal-card sandbox-card" role="dialog" aria-modal="true" aria-labelledby="sandbox-title">
+      <div class="modal-head">
+        <h2 id="sandbox-title">沙盒参数</h2>
+        <button id="close-sandbox" class="icon-btn" type="button" aria-label="关闭">×</button>
+      </div>
+      <div class="sandbox-body">
+        <label class="sb-field">
+          <span>基站退服时刻 <b id="sb-outage-val">T+10s</b></span>
+          <input id="sb-outage" type="range" min="5" max="30" step="5" value="10">
+          <em>仅对“基站中断”场景生效；越早退服，NTN 接管与补传窗口越长。</em>
+        </label>
+        <label class="sb-field">
+          <span>切片配额 <b id="sb-quota-val">100%</b></span>
+          <input id="sb-quota" type="range" min="40" max="100" step="10" value="100">
+          <em>压缩可用下行带宽；配额越低，回传与端到端时延越高。</em>
+        </label>
+        <label class="sb-toggle">
+          <input id="sb-uav" type="checkbox" checked>
+          <span>无人机复核</span>
+          <em>断网时允许无人机补传 1 个缺口瓦片；关闭则缺口等待下一轨。</em>
+        </label>
+        <p class="sb-note">参数只重算演示网络与 AI 编排，不写入生产案件库。</p>
+        <div class="modal-actions">
+          <button id="apply-sandbox" class="ts-btn primary" type="button">应用并重算</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="report-modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="report-title">
+      <div class="modal-head">
+        <h2 id="report-title">核查报告（演示）</h2>
+        <button id="close-report" class="icon-btn" type="button" aria-label="关闭">×</button>
+      </div>
+      <pre id="report-text" class="report-text"></pre>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="/vendor/echarts.min.js"></script>
+  <script src="/vendor/globe.gl.min.js"></script>
+  <script src="/static/gate-exit.js?v=20261111gate1"></script>
+  <script src="/static/sixg-3d.js?v=20261112a"></script>
+  <script src="/static/sixg.js?v=20261112e"></script>
+</body>
+</html>

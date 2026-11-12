@@ -1,0 +1,31 @@
+{
+  "before": {
+    "id": "S2B_MSIL2A_20231008T033629_R061_T49TCG_20241028T042126",
+    "datetime": "2023-10-08",
+    "cloud": 0.65,
+    "tile": "T49TCG",
+    "source": "Sentinel-2 L2A rendered preview"
+  },
+  "after": {
+    "id": "S2B_MSIL2A_20250927T033539_R061_T49TCG_20250927T072544",
+    "datetime": "2025-09-27",
+    "cloud": 3.5,
+    "tile": "T49TCG",
+    "source": "Sentinel-2 L2A rendered preview"
+  },
+  "crop": {
+    "pixels": [
+      0,
+      200,
+      1024,
+      712
+    ],
+    "bbox": [
+      108.5688,
+      41.7459,
+      109.9199,
+      42.2504
+    ],
+    "note": "从全幅 preview 裁切，未做几何校正"
+  }
+}
