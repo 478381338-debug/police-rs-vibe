@@ -1,0 +1,116 @@
+:root{
+  --teal:#0f766e;--teal2:#14b8a6;--ink:#1e293b;--muted:#64748b;
+  --line:#dbe4ea;--bg:#eef3f6;--card:#ffffff;--warn:#b45309
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.5 "Microsoft YaHei","PingFang SC",system-ui,sans-serif;overflow:hidden}
+button,a{font:inherit}
+.zq-topbar{height:64px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 18px;position:relative;z-index:20;box-shadow:0 1px 6px rgba(15,23,42,.06)}
+.zq-brand{display:flex;align-items:center;gap:12px}
+.zq-brand img{width:38px;height:38px}
+.zq-brand h1{margin:0;font-size:18px;letter-spacing:.5px;color:#0f3b3a}
+.zq-brand h1 small{font-size:13px;color:var(--teal);font-weight:600}
+.zq-brand p{margin:2px 0 0;color:var(--muted);font-size:11px}
+.zq-top-actions{display:flex;align-items:center;gap:8px}
+.zq-chip{background:#ecfdf5;color:#0f766e;border:1px solid #99f6e4;border-radius:999px;padding:4px 9px;font-size:11px;white-space:nowrap}
+.zq-clock{font:12px ui-monospace,Consolas,monospace;color:#475569;margin:0 4px}
+.zq-back{color:#0f766e;text-decoration:none;border:1px solid #99f6e4;background:#f0fdfa;border-radius:7px;padding:6px 10px;font-size:12px}
+.zq-back:hover{background:#ccfbf1}
+.zq-layout{display:grid;grid-template-columns:300px minmax(480px,1fr) 300px;height:calc(100vh - 64px)}
+.zq-left,.zq-right{overflow:auto;padding:12px;background:#f7fafc}
+.zq-left{border-right:1px solid var(--line)}
+.zq-right{border-left:1px solid var(--line)}
+.zq-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 12px;margin-bottom:11px;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+.zq-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+.zq-card-head h2{margin:0;font-size:13px;color:#0f3b3a}
+.zq-card-head span{font-size:9px;letter-spacing:.8px;color:#94a3b8;font-weight:700}
+.zq-kpis{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.zq-kpis div{background:#f0fdfa;border:1px solid #ccfbf1;border-radius:8px;padding:8px}
+.zq-kpis b{display:block;font-size:19px;color:#0f766e;line-height:1.15}
+.zq-kpis span{font-size:10px;color:#64748b}
+.zq-note{font-size:10.5px;color:#64748b;line-height:1.55;margin:9px 0 0}
+.zq-levels{display:grid;gap:5px}
+.zq-level{display:flex;align-items:center;gap:7px;font-size:11px}
+.zq-level i{width:9px;height:9px;border-radius:2px;flex:0 0 auto}
+.zq-level b{margin-left:auto;font-variant-numeric:tabular-nums;color:#334155}
+.zq-scale{display:flex;align-items:center;gap:5px;margin-top:8px;font-size:9px;color:#94a3b8}
+.zq-scale i{flex:1;height:5px;border-radius:3px;background:linear-gradient(90deg,#74b9ff,#f2c94c,#f08c00,#e03131)}
+.zq-list{max-height:235px;overflow:auto}
+.zq-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px dashed #e2e8f0;cursor:pointer}
+.zq-row:last-child{border-bottom:0}
+.zq-row:hover{background:#f8fafc}
+.zq-rank{width:19px;height:19px;border-radius:5px;background:#e2e8f0;color:#475569;font:10px/19px ui-monospace,monospace;text-align:center;flex:0 0 auto}
+.zq-row b{font-size:12px;color:#0f3b3a}
+.zq-row small{display:block;color:#94a3b8;font-size:9.5px}
+.zq-row em{margin-left:auto;font-style:normal;font-weight:700;color:#b45309;font-size:12px}
+.zq-empty{color:#94a3b8;font-size:11px;margin:4px 0}
+.zq-layers{display:grid;gap:6px}
+.zq-layers label{display:flex;align-items:center;gap:7px;font-size:11.5px;color:#334155;cursor:pointer}
+.zq-layers input{accent-color:var(--teal)}
+.zq-attribution{font-size:9px;color:#94a3b8;line-height:1.5;margin:9px 0 0}
+.zq-weather{display:grid;gap:6px}
+.zq-wx{display:flex;align-items:center;gap:7px;font-size:11px;padding:5px 0;border-bottom:1px dashed #e2e8f0}
+.zq-wx:last-child{border-bottom:0}
+.zq-wx b{color:#0f766e;width:28px}
+.zq-wx span{color:#64748b;font-size:10px}
+.zq-wx em{margin-left:auto;font-style:normal;color:#0f3b3a}
+.zq-map-wrap{position:relative;min-width:0;background:#dbeafe;overflow:hidden}
+#zq-map,#zq3d,#zq3d-map{position:absolute;inset:0}
+#zq-map{background:#dbeafe;z-index:0}
+#zq3d{z-index:20;background:#07131f}
+#zq3d.hidden{display:none}
+#zq3d-map{width:100%;height:100%}
+.zq3d-error{position:absolute;z-index:31;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;border:1px solid #fecaca;color:#b91c1c;padding:12px 16px;border-radius:8px;max-width:80%}
+.zq3d-error.hidden{display:none}
+.zq-mode{position:absolute;z-index:30;left:14px;top:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:3px;display:flex;gap:3px;box-shadow:0 2px 8px rgba(15,23,42,.16)}
+.zq-mode button{border:0;background:transparent;color:#475569;border-radius:6px;padding:6px 11px;cursor:pointer;font-size:11px}
+.zq-mode button.active{background:var(--teal);color:#fff;font-weight:700}
+.zq-map-actions{position:absolute;z-index:30;left:14px;top:56px;display:flex;gap:6px}
+.zq-map-actions button{border:1px solid var(--line);background:#fff;color:#0f766e;border-radius:6px;padding:5px 9px;font-size:10.5px;cursor:pointer;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.zq-legend{position:absolute;z-index:30;right:14px;bottom:17px;background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:8px;padding:8px 10px;display:flex;flex-wrap:wrap;gap:5px 9px;max-width:280px;box-shadow:0 2px 8px rgba(15,23,42,.14);font-size:10px;color:#475569}
+.zq-legend b{width:100%;color:#0f3b3a;font-size:10px}
+.zq-legend span{display:flex;align-items:center;gap:4px}
+.zq-legend i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.zq-map-hint{position:absolute;z-index:30;left:14px;bottom:17px;background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:6px;padding:4px 7px;font-size:9px;color:#64748b}
+.zq-detail h3{margin:0 0 4px;font-size:14px;color:#0f3b3a}
+.zq-detail .zq-sub{font-size:10px;color:#94a3b8;margin-bottom:9px}
+.zq-detail .zq-big{font-size:29px;font-weight:800;color:#b45309;line-height:1}
+.zq-detail .zq-big small{font-size:10px;color:#94a3b8;font-weight:400;margin-left:3px}
+.zq-rows{display:grid;gap:4px;margin-top:9px;font-size:10.5px}
+.zq-rows div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed #e2e8f0;padding:4px 0}
+.zq-rows b{font-weight:500;color:#64748b}
+.zq-rows span{color:#334155;text-align:right}
+.zq-source{display:grid;gap:6px}
+.zq-source div{display:grid;gap:2px;padding-bottom:6px;border-bottom:1px dashed #e2e8f0}
+.zq-source b{font-size:10.5px;color:#0f766e}
+.zq-source span{font-size:10px;color:#64748b;line-height:1.5}
+.zq-warning{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:7px;padding:7px 8px;font-size:9.5px;line-height:1.55;margin:9px 0 0}
+.zq-lulc{width:100%;border-radius:7px;border:1px solid var(--line);display:block}
+.leaflet-container{font-family:inherit}
+.zq-popup b{color:#0f766e}
+@media(max-width:1200px){.zq-layout{grid-template-columns:270px 1fr}.zq-right{display:none}}
+@media(max-width:800px){.zq-topbar{height:auto;padding:9px 12px;gap:8px;flex-wrap:wrap}.zq-brand p{display:none}.zq-layout{display:block;height:calc(100vh - 58px)}.zq-left{position:absolute;z-index:15;left:0;top:58px;width:260px;max-height:calc(100vh - 58px);background:rgba(247,250,252,.96);border-right:1px solid var(--line)}.zq-map-wrap{height:100%}.zq-right{display:none}}
+
+/* 主站内嵌模式：隐藏章丘自己的顶栏，避免出现两层导航 */
+html.zq-embed .zq-topbar{display:none!important}
+html.zq-embed .zq-layout{height:100vh!important}
+html.zq-embed body{background:#f4f7f9}
+
+/* 山东警察学院（明水校区）公开点位标记 */
+.zq-college-marker{background:none!important;border:0!important}
+.zq-college-pin{
+  display:flex;align-items:center;gap:7px;height:38px;padding:4px 10px 4px 5px;
+  background:#0b3d45;border:1.5px solid #f5b301;border-radius:19px;
+  box-shadow:0 4px 14px rgba(11,61,69,.35);color:#fff;white-space:nowrap;
+  font-family:"Microsoft YaHei",sans-serif;
+}
+.zq-college-badge{
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  background:#f5b301;color:#0b3d45;font-weight:800;font-size:15px;flex:0 0 auto;
+}
+.zq-college-name{display:flex;flex-direction:column;line-height:1.1;font-size:12px;font-weight:700;letter-spacing:.2px}
+.zq-college-name small{font-size:9px;font-weight:500;color:#a7f3d0;margin-top:2px;letter-spacing:.5px}
+.zq-college-3d{cursor:pointer;pointer-events:auto;z-index:20}
+.zq-college-3d .zq-college-pin{transform:translateY(-8px)}
+.zq-popup-note{display:block;margin-top:5px;color:#64748b;font-size:10px;line-height:1.45}

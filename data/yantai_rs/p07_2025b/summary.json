@@ -1,0 +1,26 @@
+{
+  "region": "烟台莱州—招远矿山集中区试点",
+  "bbox_wgs84": [
+    120.185,
+    37.125,
+    120.245,
+    37.175
+  ],
+  "dates": {
+    "now": "2026-11-11",
+    "base": "S2B_MSIL2A_20251121T024919_R132_T51STB_20251121T044654"
+  },
+  "items": {
+    "now": "S2C_MSIL2A_20261111T024931_R132_T51STB_20261111T055708",
+    "base": "S2B_MSIL2A_20251121T024919_R132_T51STB_20251121T044654"
+  },
+  "resolution_m": 10,
+  "algorithm": "BSI/NDVI 双时相变化 + SCL 云/水掩膜；dBSI>0.12 且 dNDVI<0.0",
+  "valid_pixels": 305748,
+  "anomaly_pixels": 0,
+  "anomaly_area_ha": 0.0,
+  "patch_count": 0,
+  "patches": [],
+  "disclaimer": "仅为公开卫星影像的疑似地表扰动筛查，不能据此认定违法采矿；需人工复核和现场核查。",
+  "elapsed_s": 153.8
+}

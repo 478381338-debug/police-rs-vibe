@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>警务遥感 · 章丘专区</title>
+  <link rel="icon" href="/assets/police-badge-learning.png">
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/vendor/maplibre/maplibre-gl.css">
+  <link rel="stylesheet" href="/static/zhangqiu.css?v=20261107zq5">
+</head>
+<body>
+  <script>if (new URLSearchParams(location.search).get('embed') === '1') document.documentElement.classList.add('zq-embed');</script>
+  <header class="zq-topbar">
+    <div class="zq-brand">
+      <img src="/assets/police-badge-learning.png" alt="公安徽章">
+      <div>
+        <h1>警务遥感 <small>· 章丘专区</small></h1>
+        <p>济南市章丘区 · 公开自然与人文数据 · 风险筛查遥感地图</p>
+      </div>
+    </div>
+    <div class="zq-top-actions">
+      <span class="zq-chip">真实边界 370114</span>
+      <span class="zq-chip">公开数据</span>
+      <span class="zq-clock" id="zq-clock">--:--:--</span>
+      <a class="zq-back" href="/">返回全景</a>
+    </div>
+  </header>
+
+  <main class="zq-layout">
+    <aside class="zq-left">
+      <section class="zq-card">
+        <div class="zq-card-head"><h2>章丘态势</h2><span>PUBLIC DATA</span></div>
+        <div class="zq-kpis">
+          <div><b id="zq-cells">--</b><span>风险格网</span></div>
+          <div><b id="zq-pop">--</b><span>人口暴露</span></div>
+          <div><b id="zq-high">--</b><span>较高关注</span></div>
+          <div><b id="zq-max">--</b><span>最高指数</span></div>
+        </div>
+        <p class="zq-note">自然致灾因子 × 人口暴露 × 警务/道路可达性；这是公开数据筛查，不是警情或官方预警。</p>
+      </section>
+
+      <section class="zq-card">
+        <div class="zq-card-head"><h2>关注等级</h2><span>SCREENING</span></div>
+        <div class="zq-levels" id="zq-levels"></div>
+        <div class="zq-scale"><span>低</span><i></i><span>高</span></div>
+      </section>
+
+      <section class="zq-card zq-topcard">
+        <div class="zq-card-head"><h2>重点巡查格网</h2><span>TOP 10</span></div>
+        <div class="zq-list" id="zq-top-list"><p class="zq-empty">读取中…</p></div>
+      </section>
+
+      <section class="zq-card">
+        <div class="zq-card-head"><h2>图层</h2><span>LAYERS</span></div>
+        <div class="zq-layers">
+          <label><input type="checkbox" data-layer="risk" checked> 巡查关注格网</label>
+          <label><input type="checkbox" data-layer="police" checked> 公安设施（OSM）</label>
+          <label><input type="checkbox" data-layer="facility" checked> 医疗/学校/消防</label>
+          <label><input type="checkbox" data-layer="roads" checked> 道路</label>
+          <label><input type="checkbox" data-layer="water" checked> 水系</label>
+          <label><input type="checkbox" data-layer="buildings"> 建筑样点</label>
+        </div>
+        <p class="zq-attribution">底图 © OpenStreetMap · OpenTopoMap（CC-BY-SA）<br>设施/道路 ODbL · 人口 WorldPop CC BY 4.0</p>
+      </section>
+
+      <section class="zq-card">
+        <div class="zq-card-head"><h2>实时气象</h2><span>OPEN-METEO</span></div>
+        <div class="zq-weather" id="zq-weather"><p class="zq-empty">读取中…</p></div>
+      </section>
+    </aside>
+
+    <section class="zq-map-wrap">
+      <div id="zq-map"></div>
+      <div id="zq3d" class="zq3d hidden"><div id="zq3d-map"></div><div id="zq3d-error" class="zq3d-error hidden"></div></div>
+      <div class="zq-mode">
+        <button data-mode="2d" class="active">2D 地图</button>
+        <button data-mode="3d">3D 地形</button>
+      </div>
+      <div class="zq-map-actions">
+        <button id="zq-fit">章丘全域</button>
+        <button id="zq-fit-top">最高关注</button>
+      </div>
+      <div class="zq-legend">
+        <b>巡查关注指数</b>
+        <span><i style="background:#e03131"></i>高 ≥70</span>
+        <span><i style="background:#f08c00"></i>较高 55–70</span>
+        <span><i style="background:#f2c94c"></i>中 40–55</span>
+        <span><i style="background:#74b9ff"></i>低 &lt;40</span>
+      </div>
+      <div class="zq-map-hint" id="zq-map-hint">点击格网查看因子；3D 使用 MapLibre 地形</div>
+    </section>
+
+    <aside class="zq-right">
+      <section class="zq-card">
+        <div class="zq-card-head"><h2>格网详情</h2><span>SELECT A CELL</span></div>
+        <div id="zq-detail" class="zq-detail"><p class="zq-empty">点击地图上的风险格网，查看自然与人文因子。</p></div>
+      </section>
+      <section class="zq-card">
+        <div class="zq-card-head"><h2>数据与边界</h2><span>SOURCES</span></div>
+        <div class="zq-source">
+          <div><b>行政边界</b><span>DataV 济南市 370114 章丘区；461 个边界点</span></div>
+          <div><b>自然</b><span>DEM 地形、坡度、河流水系、2023 土地覆盖</span></div>
+          <div><b>人文</b><span>OSM 公安/医疗/学校/消防/政府/站点、道路、建筑</span></div>
+          <div><b>人口</b><span>WorldPop 2020 1km 栅格，边界裁切后约 <b id="zq-pop-src">126 万</b> 人</span></div>
+          <div><b>气象</b><span>Open-Meteo 14 天预报，5 个采样点</span></div>
+        </div>
+        <p class="zq-warning">本页使用真实公开数据和真实行政边界；没有章丘本地警情/警力数据，不把模型分数当作案件或灾害事实。内部数据只能在授权内网部署。</p>
+      </section>
+      <section class="zq-card">
+        <div class="zq-card-head"><h2>土地覆盖</h2><span>IO LULC 2023</span></div>
+        <img class="zq-lulc" id="zq-lulc" src="/assets/zq_lulc_crop.jpg" alt="章丘土地覆盖预览">
+        <p class="zq-note">IO LULC 50S-2023 tile 按章丘边界裁剪的视觉预览；原瓦片分辨率较低，仅作背景信息，不参与格网评分。</p>
+      </section>
+    </aside>
+  </main>
+
+  <script src="/vendor/leaflet/leaflet.js"></script>
+  <script src="/vendor/maplibre/maplibre-gl.js"></script>
+  <script src="/static/zhangqiu.js?v=20261107zq4"></script>
+</body>
+</html>

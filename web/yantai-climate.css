@@ -1,0 +1,179 @@
+/* 气候增强 overlay：在 yantai-assessment.css 的 ywa-* 基础上补充。 */
+.ywc-aoi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.ywc-aoi {
+  border: 1px solid #e4e7ec;
+  border-radius: 7px;
+  padding: 10px 12px;
+  background: #fcfcfd;
+}
+.ywc-aoi-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  justify-content: space-between;
+}
+.ywc-aoi-head b { font-size: 13px; }
+.ywc-aoi-meta { color: #667085; font-size: 11px; margin: 2px 0 7px; }
+.ywc-type {
+  border: 1px solid #b2ddff;
+  background: #eff8ff;
+  color: #175cd3;
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.ywc-kv {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 6px;
+  font-size: 11px;
+  padding: 2px 0;
+}
+.ywc-kv span { color: #667085; }
+.ywc-kv b { font-weight: 600; color: #344054; }
+.ywc-models { margin-top: 7px; padding-top: 6px; border-top: 1px dashed #e4e7ec; }
+.ywc-model-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  padding: 2px 0;
+  flex-wrap: wrap;
+}
+.ywc-model-name { font-weight: 700; text-transform: uppercase; width: 34px; }
+.ywc-pill {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0 6px;
+  font-size: 10px;
+  line-height: 17px;
+  white-space: nowrap;
+}
+.ywc-pill.ok { background: #ecfdf3; color: #027a48; border-color: #abefc6; }
+.ywc-pill.off { background: #f2f4f7; color: #475467; border-color: #d0d5dd; }
+.ywc-muted { color: #667085; font-weight: 400; font-size: 11px; }
+
+.ywc-weather-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.ywc-weather { border: 1px solid #e4e7ec; border-radius: 7px; overflow: hidden; }
+.ywc-weather-head {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 7px 9px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e4e7ec;
+  font-size: 12px;
+}
+.ywc-table { min-width: 420px; }
+.ywc-table th, .ywc-table td { padding: 4px 6px; font-size: 10.5px; }
+
+.ywc-types { min-width: 980px; }
+.ywc-types td { vertical-align: top; white-space: normal; line-height: 1.55; }
+.ywc-wrap { min-width: 180px; }
+.ywc-chip {
+  display: inline-block;
+  margin: 1px 3px 1px 0;
+  border-radius: 4px;
+  padding: 0 5px;
+  background: #eef4ff;
+  color: #3538cd;
+  font-size: 10px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+.ywc-chip.warn { background: #fffaeb; color: #b54708; }
+
+.ywc-filters { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 8px; }
+.ywc-filters button {
+  border: 1px solid #d0d5dd;
+  background: #fff;
+  color: #475467;
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.ywc-filters button.active { background: #157f74; border-color: #157f74; color: #fff; }
+
+.ywc-split {
+  display: grid;
+  grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+  gap: 10px;
+  min-height: 540px;
+}
+.ywc-map {
+  height: 540px;
+  border: 1px solid #e4e7ec;
+  border-radius: 7px;
+  background: #eef2f5;
+}
+.ywc-list {
+  height: 540px;
+  overflow: auto;
+  border: 1px solid #e4e7ec;
+  border-radius: 7px;
+  padding: 6px;
+  background: #fcfcfd;
+}
+.ywc-empty { color: #667085; font-size: 12px; padding: 16px; }
+.ywc-item {
+  border: 1px solid #eaecf0;
+  border-radius: 6px;
+  padding: 7px 9px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  background: #fff;
+}
+.ywc-item:hover { border-color: #b2ddff; }
+.ywc-item.selected { border-color: #157f74; box-shadow: 0 0 0 2px #157f7422; }
+.ywc-item-head { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ywc-rank { font-weight: 800; color: #101828; font-size: 12px; }
+.ywc-aoi-tag { font-size: 11px; color: #475467; }
+.ywc-item-main { margin-top: 3px; font-size: 11px; color: #344054; }
+.ywc-item-sub { margin-top: 2px; font-size: 10.5px; color: #667085; }
+.ywc-item-score { margin-top: 2px; font-size: 11px; color: #475467; }
+.ywc-chips { margin-top: 3px; }
+.ywc-reason {
+  margin-top: 7px;
+  padding-top: 6px;
+  border-top: 1px dashed #e4e7ec;
+}
+.ywc-reason-title { font-size: 11px; font-weight: 700; color: #344054; margin-bottom: 3px; }
+.ywc-reason-row {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 6px;
+  font-size: 10.5px;
+  padding: 2px 0;
+  color: #475467;
+}
+.ywc-reason-row span { color: #667085; }
+.ywc-reason-row b { font-weight: 500; color: #344054; }
+.ywc-legend { display: flex; gap: 10px; flex-wrap: wrap; font-size: 11px; color: #475467; margin-top: 6px; }
+.ywc-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 4px;
+  vertical-align: -1px;
+}
+
+@media (max-width: 900px) {
+  .ywc-aoi-grid, .ywc-weather-grid { grid-template-columns: 1fr; }
+  .ywc-split { grid-template-columns: 1fr; }
+  .ywc-map { height: 320px; }
+  .ywc-list { height: 420px; }
+}

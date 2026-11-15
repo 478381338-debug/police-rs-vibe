@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>烟台预警 · 遥感研判工作区</title>
+<link rel="icon" type="image/png" href="/assets/police-badge-160.png">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/static/yantai-workspace.css?v=20261116Z3">
+<link rel="stylesheet" href="/static/yantai-assessment.css?v=20261115f">
+<link rel="stylesheet" href="/static/yantai-climate.css?v=20261116c1">
+<link rel="stylesheet" href="/static/boot.css?v=20261116boot1">
+</head>
+<body>
+<div id="boot-screen" role="status" aria-label="正在进入烟台预警">
+  <div class="boot-stage">
+    <span class="boot-orbit" aria-hidden="true"></span>
+    <img class="boot-badge" src="/assets/police-badge-learning.png" alt="中国人民警察警徽">
+  </div>
+</div>
+<header class="yw-header">
+  <div class="yw-brand">
+    <span class="yw-mark"><img src="/assets/police-badge-learning.png" alt="中国人民警察警徽"></span>
+    <div>
+      <h1>烟台预警</h1>
+      <p>非法采矿与河道采砂 · 遥感监测试点</p>
+    </div>
+  </div>
+  <div class="yw-status" id="yw-status">
+    <span class="yw-chip">试点 / 资料待核</span>
+    <span class="yw-chip">观测 <b id="yw-latest">—</b></span>
+    <span class="yw-chip">覆盖 <b id="yw-covered">—</b></span>
+    <span class="yw-chip muted">F1 阶段 · 不是分数</span>
+    <span class="yw-chip muted">非实时卫星推送</span>
+  </div>
+  <nav class="yw-nav">
+    <a href="/">遥感地图</a>
+    <a href="/workspace">案件工作台</a>
+    <button type="button" id="yw-plan-open" class="yw-btn small">建设方案</button>
+    <button type="button" id="yw-2025-open" class="yw-btn small">2025 全年分析</button>
+    <button type="button" id="yw-climate-open" class="yw-btn small">气候增强</button>
+    <button type="button" id="yw-assessment-open" class="yw-btn small">2025 修订评估</button>
+    <button type="button" id="yw-check" class="yw-btn small">检查本地数据</button>
+    <a href="/__gate/logout" class="yw-nav-exit">退出访问</a>
+  </nav>
+</header>
+
+<div class="yw-mobile-tabs" role="tablist">
+  <button type="button" data-view="queue" class="active">队列</button>
+  <button type="button" data-view="map">地图</button>
+  <button type="button" data-view="detail">研判</button>
+</div>
+
+<main class="yw-shell" id="yw-shell">
+  <aside class="yw-queue active" data-view="queue">
+    <div class="yw-panel-head">
+      <div>
+        <h2>事件队列</h2>
+        <p id="yw-queue-sub">按业务优先级排序</p>
+      </div>
+      <span class="yw-count" id="yw-event-count">0</span>
+    </div>
+    <div class="yw-filters">
+      <select id="yw-filter-domain" aria-label="领域">
+        <option value="">全部领域</option>
+        <option value="mining">露天采矿</option>
+        <option value="river">河道采砂</option>
+      </select>
+      <select id="yw-filter-priority" aria-label="优先级">
+        <option value="">全部优先级</option>
+        <option value="P1">P1</option>
+        <option value="P2">P2</option>
+        <option value="P3">P3</option>
+        <option value="Q">Q</option>
+      </select>
+    </div>
+    <div class="yw-event-list" id="yw-event-list" aria-live="polite"></div>
+    <section class="yw-coverage" aria-label="覆盖与缺口">
+      <h3>观测覆盖</h3>
+      <div id="yw-coverage"></div>
+    </section>
+  </aside>
+
+  <section class="yw-main" data-view="map">
+    <div class="yw-panel-head map-head">
+      <div>
+        <h2>烟台试点地图</h2>
+        <p id="yw-map-sub">5 个已分析地点 · 虚线框为样区范围（青=影像对，紫=2025 全年时序）· OSM 背景 · 非正式矿权边界</p>
+      </div>
+      <div class="yw-map-actions">
+        <label><input type="checkbox" id="yw-layer-events" checked> 事件</label>
+        <label><input type="checkbox" id="yw-layer-resources" checked> 矿区</label>
+        <label><input type="checkbox" id="yw-layer-rivers" checked> 河段</label>
+        <label><input type="checkbox" id="yw-layer-sites" checked> 样区</label>
+        <label class="disabled" title="正式采矿权/采砂许可台账未取得"><input type="checkbox" disabled> 许可（未取得）</label>
+        <button type="button" class="yw-btn small" id="yw-fit">定位全部</button>
+      </div>
+    </div>
+    <div id="yw-map" class="yw-map"></div>
+
+    <section class="yw-observations" aria-label="观测时间轴">
+      <div class="yw-section-head">
+        <h3>对象观测时间轴</h3>
+        <span class="yw-note">无有效观测处显示缺测，不填 0 或跨期连线</span>
+      </div>
+      <div class="yw-obs-track" id="yw-obs-track"></div>
+      <div class="yw-obs-span" id="yw-obs-span"></div>
+    </section>
+
+    <section class="yw-matrix" id="yw-matrix" aria-label="河段时间观测矩阵" hidden>
+      <div class="yw-section-head">
+        <h3>河段时间—观测矩阵</h3>
+        <span class="yw-note">未接入逐景观测的格子写“缺测”，不填 0</span>
+      </div>
+      <div id="yw-matrix-body"></div>
+    </section>
+
+    <section class="yw-evidence" aria-label="同步影像与证据">
+      <div class="yw-section-head">
+        <h3>同步影像精查</h3>
+        <div class="yw-compare-modes">
+          <button type="button" data-cmode="swipe" class="active">卷帘</button>
+          <button type="button" data-cmode="blink">闪烁</button>
+        </div>
+        <span class="yw-note" id="yw-img-note">同范围、同倍率 · 角标为影像日期</span>
+      </div>
+      <div class="yw-compare-toolbar">
+        <label class="yw-region-pick" for="yw-region">地区
+          <select id="yw-region" aria-label="选择影像样区"></select>
+        </label>
+        <span class="yw-patch-summary" id="yw-patch-summary"></span>
+        <label class="yw-layer-toggle"><input type="checkbox" id="yw-show-patches" checked> 图斑</label>
+        <button type="button" class="yw-btn small" id="yw-toggle-list" aria-expanded="false" aria-controls="yw-patch-panel">图斑清单</button>
+      </div>
+      <div class="yw-sites" id="yw-sites" role="group" aria-label="已分析地点"></div>
+      <div class="yw-compare" id="yw-compare">
+        <div class="yw-compare-stage" id="yw-compare-stage">
+          <img id="yw-img-after" alt="当前期影像" draggable="false">
+          <div class="yw-before-wrap" id="yw-before-wrap">
+            <img id="yw-img-before" alt="基线期影像" draggable="false">
+          </div>
+          <svg class="yw-patch-svg" id="yw-patch-svg" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+            <g id="yw-patch-shapes"></g>
+            <g id="yw-patch-leaders"></g>
+          </svg>
+          <div class="yw-patch-labels" id="yw-patch-labels"></div>
+          <span class="yw-img-tag left" id="yw-tag-before">基线</span>
+          <span class="yw-img-tag right" id="yw-tag-after">当前</span>
+          <div class="yw-split-handle" id="yw-split-handle"></div>
+          <input type="range" id="yw-split" min="0" max="100" value="50" aria-label="影像卷帘位置">
+        </div>
+        <div class="yw-patch-banner" id="yw-patch-empty" hidden role="status"></div>
+        <div class="yw-patch-pop" id="yw-patch-pop" hidden></div>
+        <aside class="yw-patch-panel" id="yw-patch-panel" hidden aria-label="图斑清单">
+          <div class="yw-patch-panel-head">
+            <b id="yw-patch-panel-title">图斑清单</b>
+            <label class="yw-show-all"><input type="checkbox" id="yw-show-all"> 全部编号</label>
+            <button type="button" class="yw-patch-close" id="yw-patch-close" aria-label="关闭图斑清单">×</button>
+          </div>
+          <div class="yw-patch-legend" id="yw-patch-legend"></div>
+          <div class="yw-patch-rows" id="yw-patch-rows"></div>
+        </aside>
+      </div>
+      <div class="yw-img-meta" id="yw-img-meta"></div>
+    </section>
+  </section>
+
+  <aside class="yw-detail" data-view="detail" id="yw-detail">
+    <div class="yw-empty" id="yw-detail-empty">
+      <h2>选择一条事件</h2>
+      <p>查看事实、疑点、缺失依据和下一步动作。</p>
+    </div>
+  </aside>
+</main>
+
+<div class="yw-toast" id="yw-toast" role="status"></div>
+
+<div class="ywa-overlay" id="ywc-overlay" hidden>
+  <div class="ywa-panel" role="dialog" aria-modal="true" aria-labelledby="ywc-title">
+    <header class="ywa-head">
+      <div>
+        <h2 id="ywc-title">气候增强分析 · 云 / 雨 / 雪</h2>
+        <p id="ywc-sub">读取气候增强结果…</p>
+      </div>
+      <button type="button" class="ywa-close" id="ywc-close">关闭</button>
+    </header>
+    <div class="ywa-body" id="ywc-body">
+      <p class="ywa-error">正在读取 /api/yantai/climate…</p>
+    </div>
+  </div>
+</div>
+
+<div class="ywa-overlay" id="ywa-overlay" hidden>
+  <div class="ywa-panel" role="dialog" aria-modal="true" aria-labelledby="ywa-title">
+    <header class="ywa-head">
+      <div>
+        <h2 id="ywa-title">2025 采矿活动遥感评估 · v2 全年</h2>
+        <p>两个试点样区 · 45 景目标 · 2025-01-01 至 2025-12-31 · F1 阶段（不是 F1 分数）· 不是非法认定</p>
+      </div>
+      <button type="button" class="ywa-close" id="ywa-close">关闭</button>
+    </header>
+    <div class="ywa-body">
+      <div id="ywa-summary"></div>
+      <section class="ywa-section">
+        <h3>三次运行分开看</h3>
+        <div id="ywa-runs"></div>
+      </section>
+      <section class="ywa-section">
+        <h3>试点与观测</h3>
+        <div id="ywa-aois"></div>
+        <p class="ywa-note">q≥0.8 为对象级逐日期有效比例；h 敏感性只表示不同阈值下的像元数，不是误报率。样区以编号和经纬度范围表述。</p>
+      </section>
+      <section class="ywa-section">
+        <h3>评价口径</h3>
+        <div id="ywa-metrics"></div>
+      </section>
+      <div class="ywa-grid" style="margin-top:12px">
+        <section>
+          <h3>候选图斑（v2）</h3>
+          <div id="ywa-map" class="ywa-map"></div>
+          <div class="ywa-legend">
+            <span><i style="background:#f79009"></i>高优先级（ΔBSI≥0.10）</span>
+            <span><i style="background:#2e90fa"></i>一般候选</span>
+            <span><i style="background:#157f74"></i>试点范围</span>
+          </div>
+        </section>
+        <aside class="ywa-side">
+          <h3>评估指出的 10 项修订</h3>
+          <div class="ywa-fixes" id="ywa-fixes"></div>
+        </aside>
+      </div>
+      <section class="ywa-section">
+        <h3>E0 两期差分对照（非严格同季）</h3>
+        <div id="ywa-e0"></div>
+        <p class="ywa-note">E0 用 2024-11-01 与 2025-02-24 两期差分，只用于说明“两期差分”与“季节基线+CUSUM”的差异，不是精度验证，也不是严格同季对照。</p>
+      </section>
+      <section class="ywa-section">
+        <h3>候选清单</h3>
+        <div id="ywa-table"></div>
+        <p class="ywa-note">高优先级只表示 ΔBSI≥0.10；距已知采石点距离仅作上下文，不参与优先级。候选不能当 TP，负对照候选不能当 FP。</p>
+      </section>
+      <section class="ywa-section">
+        <h3>不能从这组结果推出的结论</h3>
+        <div id="ywa-boundaries"></div>
+      </section>
+      <div class="ywa-foot" id="ywa-foot"></div>
+    </div>
+  </div>
+</div>
+
+<div class="ywp-overlay" id="ywp-overlay" hidden>
+  <div class="ywp-panel" role="dialog" aria-modal="true" aria-labelledby="ywp-title">
+    <header class="ywp-head">
+      <div>
+        <h2 id="ywp-title">建设方案与能力边界</h2>
+        <p>依据《烟台市遥感预警系统现状与建设需求报告》（核对日期 2026-11-15）· 本页是摘要，不改变现有数据结论</p>
+      </div>
+      <button type="button" class="ywa-close" id="ywp-close">关闭</button>
+    </header>
+    <div class="ywp-body">
+
+      <section class="ywp-section">
+        <h3>总体判断</h3>
+        <div class="ywp-judge">
+          <div class="plus"><span>已经具备</span><b>小范围历史遥感分析 + 有结果的算法原型 + 可展示和记录研判的业务平台</b></div>
+          <div class="minus"><span>尚未达到</span><b>烟台全市持续运行、准确性经独立验证、自动产生并闭环处置新增预警</b></div>
+          <div class="lack"><span>最缺的不是新模型</span><b>可靠时序数据处理、带日期的独立参考样本、正式许可边界、持续获取数据、核查反馈机制</b></div>
+        </div>
+      </section>
+
+      <section class="ywp-section">
+        <h3>现有结果（分开陈述，不相加）</h3>
+        <div class="ywp-table-wrap"><table class="ywp-table">
+          <thead><tr><th>产物</th><th>范围 / 时段</th><th>结果</th><th>能说明 / 不能说明</th></tr></thead>
+          <tbody>
+            <tr><td>原版 2025 全年（已归档，仅对照）</td><td>mining_belt + A_control · 各 45 景（共用同一组目标影像）· 2025-01-05—12-28</td><td>68 个候选 / 75.56 ha；6 个高优先级 / 6.32 ha</td><td>方法能出结果；10 项方法缺陷未修正。68 不是采矿事件数，6 不是已核实案件数</td></tr>
+            <tr><td>v2 修订版小试</td><td>A_control · 8 景 · 2025-01-05—02-24</td><td>3 个候选 / 3.80 ha；1 个高优先级 / 1.28 ha</td><td>修订后代码可运行；探索性，不是全年，不能证明精度更高</td></tr>
+            <tr><td>v2.1 全年（现行）</td><td>两个样区 · 45 景目标（共用）· 2025-01-01—12-31</td><td>68 个候选 / 363.28 ha；矿区候选 11 个 / 110.32 ha；可派单 0</td><td>候选按地类分层、证据分级；363.28 ha 是候选面积不是违法面积；派单需台账/高分/现场证据。68 不是事件数</td></tr>
+            <tr><td>P07 双时相</td><td>2023-11-02 与 2026-11-11</td><td>43 个图斑 / 约 24.0 ha</td><td>跨三年累积变化；不能定位为近期新增，也不能与 68 相加</td></tr>
+            <tr><td>SAR / InSAR</td><td>两组 12 天间隔实验</td><td>4899 个有效像元；平均相干性 0.9448 / 0.9333</td><td>实验产物；未形成长期形变监测，不作告警依据</td></tr>
+          </tbody></table></div>
+        <p class="ywp-note">样区：mining_belt [120.15, 37.08, 120.36, 37.21]；A_control [120.06, 37.40, 120.13, 37.47]。P07 分析窗口 120.185–120.245°E / 37.125–37.175°N。</p>
+      </section>
+
+      <section class="ywp-section">
+        <h3>两条独立发现通道</h3>
+        <div class="ywp-two">
+          <div><b>通道 A · 全域低成本持续发现</b><p>Sentinel-2 / Landsat / HLS / Sentinel-1，固定周期广覆盖筛查，先解决“有没有新变化”。</p></div>
+          <div><b>通道 B · 重点区域高分辨率直接巡查</b><p>GF-2 / GF-7 等 0.8 m 级影像，对重点区和通道 A 线索定向复核，解决“是什么、规模多大”。</p></div>
+        </div>
+        <p class="ywp-note">两通道互补，不能互相替代；高分采购合同应约定最小采购面积、实际覆盖、云与薄云标准、侧视角、定位精度、失败补拍、原始多光谱交付、分析授权和交付时限。</p>
+      </section>
+
+      <section class="ywp-section">
+        <h3>分类型计算方式：六类行为分开建模</h3>
+        <p class="ywp-note">不同非法采矿行为的观测对象、主指标、最小可识别尺度都不同，不能把 BSI+CUSUM 这一套阈值直接套到全部类别。当前只有 BC1 有可运行方法。</p>
+        <div class="ywp-table-wrap"><table class="ywp-table ywp-classes">
+          <thead><tr><th>类别</th><th>观测对象 / 主指标</th><th>方法 / 最小目标</th><th>主要混淆</th><th>状态</th></tr></thead>
+          <tbody>
+            <tr><td><b>BC1</b> 露天采石 / 取土<br><span class="ywp-sub">坡面新增裸化</span></td>
+              <td>坡面、台阶、坑缘裸化斑块；BSI↑ + NDVI↓ + NBR↓，坡向坡度约束</td>
+              <td>季节谐波残差 + CUSUM 连续 ≥2 期；≥13 px @20 m ≈0.52 ha，高分可到 0.02 ha 量级</td>
+              <td>火灾、滑坡、施工清表、农田翻耕</td>
+              <td class="ok">可运行<br><span class="ywp-sub">仅此类</span></td></tr>
+            <tr><td><b>BC2</b> 堆场 / 尾矿 / 弃渣<br><span class="ywp-sub">堆体扩张</span></td>
+              <td>平坦堆体边界、料堆增高；面积增长率 + 边缘外扩 + 亮度纹理</td>
+              <td>对象级轮廓扩张追踪，不用全区像元阈值；小堆场需 0.8 m 高分</td>
+              <td>合法排土场、物料周转、建筑渣土</td>
+              <td class="warn">未单独建模<br><span class="ywp-sub">仅在抽样中见到</span></td></tr>
+            <tr><td><b>BC3</b> 地下开采硐口 / 井口<br><span class="ywp-sub">点状 + 线性扰动</span></td>
+              <td>硐口、井口平台、运输便道；0.8 m 高分目视 + 平台/便道新增</td>
+              <td>高分复查为主，InSAR 形变仅作线索；20 m 明确漏检</td>
+              <td>其他地下工程、边坡失稳</td>
+              <td class="warn">未建模<br><span class="ywp-sub">报告列为缺口</span></td></tr>
+            <tr><td><b>BC4</b> 河道采砂 / 疏浚<br><span class="ywp-sub">水体 + 砂堆</span></td>
+              <td>河床挖深、砂堆、便道、浊度；水体边界 + NDWI/NDTI</td>
+              <td>先按水位/流量归一化再比；需 10 m 多光谱 + 高分，当前河段有效覆盖 0 km²</td>
+              <td>自然冲淤、汛期、合法清淤</td>
+              <td class="bad">无有效数据<br><span class="ywp-sub">三条河均无</span></td></tr>
+            <tr><td><b>BC5</b> 洗选 / 加工厂区<br><span class="ywp-sub">硬化与构筑物</span></td>
+              <td>厂区硬化、料棚、沉淀池；NDBI 不透水面 + 裸地指数组合</td>
+              <td>对象级扩张 + 不透水面变化，单靠 BSI 会误判；小构筑物需高分</td>
+              <td>其他工业用地、仓储物流</td>
+              <td class="warn">未建模</td></tr>
+            <tr><td><b>BC6</b> 运输便道 / 线性扰动<br><span class="ywp-sub">线性裸化</span></td>
+              <td>新增或加宽便道；沿线 NDVI 下降 + 宽度与长度</td>
+              <td>线性对象追踪，不做面状聚类；窄便道需高分</td>
+              <td>防火道、施工便道、农田道路</td>
+              <td class="warn">未建模<br><span class="ywp-sub">仅作旁证</span></td></tr>
+          </tbody></table></div>
+        <p class="ywp-note">共同边界：六类都不认定违法；面积是变化像元聚类面积，不是测绘面积；缺测与“未建模”都不能写成“无异常”。分类建模属于 G2（识别有效）前置工作。</p>
+      </section>
+
+      <section class="ywp-section">
+        <h3>八层筛选：每层都要能回答“排除了什么”</h3>
+        <ul class="ywp-layers">
+          <li><b>0 数据准入</b>：SCL/云掩膜、反射率偏移、跨期配准；不合格的像元先标未知。</li>
+          <li><b>1 广覆盖变化</b>：BSI / NDVI / NBR 时序变化，先找出所有可疑裸化。</li>
+          <li><b>2 季节与自然背景</b>：稳健季节谐波 + CUSUM（BFAST Monitor 对照），剔除物候与水文节律。</li>
+          <li><b>3 对象类型</b>：逻辑回归基线 → RF / GBDT，区分裸地、堆场、建筑、农田与采掘。</li>
+          <li><b>4 时序持续性</b>：要求持续超阈，不把单景噪声当事件。</li>
+          <li><b>5 跨源与高分核查</b>：Sentinel-1 辅助 + GF-2 / GF-7 目视与对象边界。</li>
+          <li><b>6 时空许可核验</b>：矿权、河道管理范围、禁采期；没有图层就写“待核”。</li>
+          <li><b>7 人工与现场闭环</b>：核查队列、现场反馈、漏报抽查。</li>
+        </ul>
+        <p class="ywp-note">每层分别记录“保留 / 分流 / 排除 / 未知”及原因码。若每层各保留 95% 真目标，连续 5 层只剩约 77.4%——必须直接评价完整链条的召回率，不能假设层间独立。</p>
+        <div class="ywp-formula"><code>x(t)=a+b·t+Σ[c_k·sin(2πkt)+d_k·cos(2πkt)]+ε(t)</code><code>z(t)=[x(t)−x̂(t)−median(ε_base)] / max(1.4826·MAD(ε_base), s_min)</code><code>G(t)=max(0, G(t−1)+z_direction(t)−k)</code></div>
+        <p class="ywp-note">四类异常必须分开：观测伪异常、真实但非目标变化、真实目标异常、未知与缺测。不建议用统一三倍标准差、箱线图或 Isolation Forest 硬删离群。</p>
+      </section>
+
+      <section class="ywp-section">
+        <h3>评价口径</h3>
+        <ul class="ywp-list">
+          <li>事件级 Precision / Recall / F1；未知与缺测不计入 TN，TP/FP/FN 必须相对明确类别与时段。</li>
+          <li>空间块或矿点留出、未来时段测试；历史回放只用当时可得数据；对照试验保留简单双时相基线。</li>
+          <li>样本量示例：Precision≈0.80、95% 区间半宽≈0.05 约需 246 个已判明预测正事件（规划量级）。</li>
+          <li>当前没有 2025 独立高分参考，F2 未达成，不计算 precision/recall；“level:F1”是项目阶段层级，不是 F1 分数。</li>
+        </ul>
+      </section>
+
+      <section class="ywp-section">
+        <h3>数据优先级</h3>
+        <div class="ywp-priority">
+          <div class="p0"><b>P0 · 可信分析的基础</b><span>正式监测边界与基础地理；许可与管理约束；同期独立参考资料；可持续多源影像。</span></div>
+          <div class="p1"><b>P1 · 提升识别与复核</b><span>高分历史与新增影像；气象、水文、潮汐；DEM；本地标注与现场闭环库。</span></div>
+          <div class="p2"><b>P2 · 重点区补充</b><span>重点区地面观测。</span></div>
+        </div>
+        <p class="ywp-note">P0 不是“以后再补”的附属项，而是可信分析与业务判断的前提。</p>
+      </section>
+
+      <section class="ywp-section">
+        <h3>建设门槛 G1—G4</h3>
+        <div class="ywp-gates">
+          <div><b>G1 结果可信</b><span>v2 端到端修订 + 全年重跑 + 时空范围核对 + 质量复核 + 隔离旧结果</span></div>
+          <div><b>G2 识别有效</b><span>独立标签 + 难负例 + 空间/时间留出 + 分层评价 + 确定主模型</span></div>
+          <div><b>G3 持续可用</b><span>新影像 + 增量处理 + 事件去重 + 质量告警 + 核查队列 + 影子运行</span></div>
+          <div><b>G4 业务闭环</b><span>历史许可与约束边界 + 人工现场反馈 + 服务时限 + 持续抽查漏报</span></div>
+        </div>
+        <p class="ywp-note">顺序：先修正并验证现有分析 → 再补独立真值与正式许可 → 同时建设持续数据入口。</p>
+      </section>
+
+      <section class="ywp-section">
+        <h3>时延与资源量级</h3>
+        <ul class="ywp-list">
+          <li>总时延 = 等待有效观测 + 数据交付 + 自动处理 + 人工复核/派发；Sentinel-2 重访 5 天，HLS 约 2—3 天 / 30 m。</li>
+          <li>建设目标（不是当前能力）：数据到达后 2 小时内完成筛查，高优先级线索 24 小时内完成初核。</li>
+          <li>复核人时 = 日候选数 × 单对象平均初核分钟 / 60 + 复杂复核协调；每天 100 个候选、每个 8 分钟，仅初核约 13.3 人时。</li>
+          <li>试点起点：16—32 核 / 64—128 GB 内存 / NVMe；训练分割模型再评估 16—24 GB 显存。</li>
+          <li>10 m 网格、10 个 Float32 波段、100 时相，每平方公里原始数组约 40 MB（量级示例，不含 SAR SLC、高分与附加存储）。</li>
+        </ul>
+        <p class="ywp-note">不能把减少人工的压力转化为静默删除低分线索；低分线索应分流而不是消失。</p>
+      </section>
+
+      <div class="ywp-foot">
+        <span>报告核对日期：2026-11-15</span>
+        <span>本页只做方案摘要；候选不是非法认定，缺测不等于无异常。</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ywa25-overlay" id="ywa25-overlay" hidden>
+  <div class="ywa25-panel" role="dialog" aria-modal="true" aria-labelledby="ywa25-title">
+    <header class="ywa25-head">
+      <div class="ywa25-head-text">
+        <h2 id="ywa25-title">2025 全年采矿活动遥感分析 · v2.1（现行方法）</h2>
+        <p id="ywa25-sub">两个 20 m 样区 · 45 景目标 · 2025-01-01 至 2025-12-31 · 按地类分层与证据分级 · 候选不是非法认定</p>
+      </div>
+      <button type="button" id="ywa25-close" class="yw-btn small">关闭</button>
+    </header>
+
+    <div class="ywa25-stats" id="ywa25-stats"></div>
+    <p class="ywa25-hp-note" id="ywa25-hp-note" hidden></p>
+
+    <div class="ywa25-body">
+      <aside class="ywa25-side">
+        <div class="ywa25-side-head">
+          <strong>候选与计算原因</strong>
+          <span class="ywa25-side-hint">按地类分层→面积排序；证据等级表示完备度，不是概率</span>
+          <div class="ywa25-filters">
+            <button type="button" data-f="all" class="active">全部</button>
+            <button type="button" data-f="mine">矿区候选</button>
+            <button type="button" data-f="farmland">农田管理</button>
+            <button type="button" data-f="other">其他/不确定</button>
+            <button type="button" data-f="mining_belt">mining_belt</button>
+            <button type="button" data-f="A_control">A_control</button>
+          </div>
+        </div>
+        <div class="ywa25-list" id="ywa25-list"></div>
+      </aside>
+
+      <div class="ywa25-map-wrap">
+        <div id="ywa25-map"></div>
+        <div class="ywa25-legend">
+          <span><i class="lg-mine"></i>矿区候选（红边橙填充）</span>
+          <span><i class="lg-farm"></i>农田管理（耕地夏季返绿）</span>
+          <span><i class="lg-other"></i>其他裸地</span>
+          <span><i class="lg-uncertain"></i>不确定</span>
+          <span><i class="lg-aoi"></i>样区范围（虚线，非行政边界）</span>
+        </div>
+        <div class="ywa25-map-note">在地图上点击多边形，左侧对应候选会展开计算原因；反之点击左侧条目会定位到图斑。</div>
+      </div>
+    </div>
+
+    <footer class="ywa25-foot" id="ywa25-foot"></footer>
+  </div>
+</div>
+
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/vendor/three.min.js?v=20261116H"></script>
+<script src="/vendor/OrbitControls.js?v=20261116Z"></script>
+<script src="/static/yantai-geo3d.js?v=20261116Z5"></script>
+<script src="/static/yantai-workspace.js?v=20261116tile3"></script>
+<script src="/static/yantai-assessment.js?v=20261116tile3"></script>
+<script src="/static/yantai-2025.js?v=20261116tile3"></script>
+<script src="/static/yantai-climate.js?v=20261116tile3"></script>
+</body>
+</html>

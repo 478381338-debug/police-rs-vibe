@@ -1,0 +1,21 @@
+{
+  "collection": "io-lulc-annual-v02",
+  "id": "50S-2023",
+  "bbox": [
+    113.68045058053237,
+    31.964594535227064,
+    120.31954941946765,
+    40.03865908929467
+  ],
+  "datetime": null,
+  "license": "CC-BY-4.0",
+  "preview": "/assets/zq_lulc.jpg",
+  "crop_bounds": [
+    117.182713,
+    36.433932,
+    117.747312,
+    37.076258
+  ],
+  "crop": "/assets/zq_lulc_crop.jpg",
+  "crop_note": "IO LULC 50S-2023 tile cropped to Zhangqiu bbox; low-resolution visual only"
+}
