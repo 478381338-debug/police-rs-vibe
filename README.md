@@ -37,7 +37,7 @@
 ### 2.2 启动
 
 ```bash
-git clone https://github.com/<your-account>/police-remote-sensing.git
+git clone https://github.com/478381338-debug/police-rs-vibe.git
 cd police-remote-sensing
 python -m venv .venv
 .venv\Scripts\activate
