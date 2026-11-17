@@ -129,32 +129,47 @@ curl http://127.0.0.1:8080/api/health
 ### 4.1 边界
 
 - **选题、业务判断、验收标准由作者提出**：要解决什么警务断点、哪些页面必须存在、什么算“能用”，不是 AI 替作者想出来的。
-- **AI 负责“改程序”**：定位代码、给出修改、跑验证、修回归。本文档与 `docs/ai-iterations/` 只收录这类链路，**不收录用 AI 想思路的对话**。
+- **AI 负责“改程序”**：定位代码、给出修改、跑验证、修回归。本文档、`docs/ai-collaboration/` 与 `docs/ai-iterations/` 只收录这类链路，**不收录用 AI 想思路的对话**。
 - 使用的工具：**ZCode（Agentic IDE，底层模型 deepseek-v4.1-flash）**；会话记录来自 ZCode 本地 SQLite（`message` / `part` 表），按真实时间线导出，未手工编造。
 
-### 4.2 三条核心迭代（本次提交重点）
+### 4.2 三条主链（本次提交重点）
 
-| # | 用户 Prompt（原文） | AI 做了什么 | 可核对的验证 |
+| # | 用户 Prompt（原文，节选） | AI 做了什么 | 可核对的验证 |
 |---|---|---|---|
-| 01 | “时间长度对比要用真实数据，上面那个黑色的是啥，同时把每个分析的地点都加入这个变化图” | 在 `app/yantai_api.py` 增加 `_days_between` / `_span` / `_analysis_sites`；在 `web/yantai-workspace.js` 增加 `daysBetween` / `spanText`；把写死文案改成按观测日期计算，缺日期返回 `None`，并把所有样区加入变化图 | `python -m py_compile`；Playwright 打开 `/yantai` 检查 750 天 / 2.05 年、355 天 / 0.97 年与三个样区 |
-| 02 | （实现阶段）按给定的 Three.js 规范重写 3D 地质面板：DEM 512×512、垂向放大 1.8、卫星正射顶面、5 层 `ExtrudeGeometry`、噪声不整合面、`OrbitControls`、HTML 叠层 UI | 新建 `web/yantai-geo3d.js`，新增 `scripts/bake_basemap.py`，改 `scripts/bake_terrain.py`；地区切换时按 key 重建地形与地质体 | Playwright 切换 P07/P01、缩放/旋转、检查控制台无报错；3D 面板不再停留在“正在拼接真实影像” |
-| 03 | “检查一下背景底图，不要出现加载不了的情况” | 在 `app/main.py` 增加 `TILE_SOURCES` / `TILE_CHAINS` 与 `/api/tile/{style}/{z}/{x}/{y}` 同源代理：按上游分键缓存、全失败回退本地占位瓦片；前端各页 `tileLayer` 改同源地址并设 `errorTileUrl` | 正常网络、错误上游、完全断网三种场景页面都不白屏；检查代理缓存命中 |
+| 01 | “我输入关键字不出具体的法条这个问题解决一下，要求根据关键字推出对应主要法条” | 定位三处根因：前端只有按钮触发、后端整串精确匹配、`case_checklist` 把刑法 338 排在 343 前；在 `app/legal.py` 增加 `_norm` / `_bigrams` / 同义词 / 10 条语义规则 / 字段权重 / `_FUZZY_MIN=0.34`，在 `web/workspace.js` 增加 Enter + 350ms 防抖 + 序号丢弃过期响应 | “占用农田地”→刑法 342（score 103，仅 1 条）；非法采矿/盗采砂石→343；倾倒危险废物→338；砍树→345；电鱼→340；非法狩猎→341；1366×768 无横向滚动、控制台 0 错误 |
+| 02 | “我要参加这个创新产品制作的比赛……先给多个方案让我选择” → “不要改我已经做好的，再我做好的基础上往上加” → “把这个天枢放到右上角……从 github 上找开源项目……threejs” → “科技风强……给我几个最好的让我选择” → “把这个变成实用的东西” | 复用约 85% 现有能力，新增 `app/sixg_api.py`、`web/sixg.*`、`data/sixg_demo/`；`app/main.py` 只做 3 处追加；Three.js r128 五节点四链路 + SVG 降级；四套样板选 globe.gl 2.46.2；网络感知编排按 eMBB/URLLC/NTN 切换 | `/sixg` 四场景返回不同 plan：常态 4/4 瓦片 0% 节省 2 线索；卫星切换 3/4 25%；切片拥塞 2/4 50%；基站中断 1/4 75% 1 线索；远程 `<demo-host>:8080/sixg` 验证 |
+| 03 | “读取烟台非法采矿与河道采砂真实预警实施方案……在中国地区右边再开一个窗口” → “并没有在旁边做烟台地区的专项分析啊” → “刷新没用” → “读取烟台预警-现状核对与可视化分析增强方案-20261115，所有内容完全按照方案一步步执行” | 首版右侧浮窗；用户指出未生效后定位旧 8080 进程未加载 `/api/yantai`；第二版升级为独立三栏 `/yantai`，修 EPSG:32651 米制坐标当经纬度、面积重算、置信度改为“规则评分（未校准）”、观测/活动/合规/处置分开、研判写接口加角色校验 | P07 0.54ha/54 像元；全窗口 43 候选/24.0ha；`/api/yantai/workspace|catalog|observations|permits|coverage` 远程验证；阻塞项（许可/河道范围/水位/现场材料/30–90 天基线/影子运行/第三方精度）如实标注 |
+
+### 4.3 补充迭代（原始导出）
+
+| # | 用户 Prompt（原文） | AI 做了什么 | 验证 |
+|---|---|---|---|
+| 01 | “时间长度对比要用真实数据，上面那个黑色的是啥，同时把每个分析的地点都加入这个变化图” | 在 `app/yantai_api.py` 增加 `_days_between` / `_span` / `_analysis_sites`，在 `web/yantai-workspace.js` 增加 `daysBetween` / `spanText`；把写死文案改成按观测日期计算，并把所有样区加入变化图 | `python -m py_compile`；Playwright 打开 `/yantai` 检查图表与文案 |
+| 02 | （实现阶段）按给定的 Three.js 规范重写 3D 地质面板：DEM 512×512、垂向放大 1.8、卫星正射顶面、5 层 `ExtrudeGeometry`、噪声不整合面、`OrbitControls`、HTML 叠层 UI | 新建 `web/yantai-geo3d.js`，新增 `scripts/bake_basemap.py`，改 `scripts/bake_terrain.py`；地区切换时重建地形与地质体 | Playwright 切换 p07/p01、缩放/旋转、检查控制台无报错 |
+| 03 | “检查一下背景底图，不要出现加载不了的情况” | 在 `app/main.py` 增加 `TILE_SOURCES` / `TILE_CHAINS` 与 `/api/tile/{style}/{z}/{x}/{y}` 同源代理：按上游分键缓存、全失败回退本地占位瓦片；前端各页 `tileLayer` 改同源地址并设 `errorTileUrl` | 断网/改错上游域名，页面仍能出图；检查代理缓存命中 |
 
 补充案例：左侧区域滚动修复（`web/yantai-workspace.css` 的 flex 高度链 + 内层滚动），见 `docs/ai-iterations/04_补充_左侧区域滚动修复.md`。
 
-### 4.3 完整 Prompt 链
+### 4.4 完整 Prompt 链
+
+主链（本次提交重点）：
+
+- [01 法条检索：从“点按钮无结果”到“关键词→主法条”](docs/ai-collaboration/01-legal-search.md)
+- [02 6G 天枢：从方案选择到可演示](docs/ai-collaboration/02-sixg-tianshu.md)
+- [03 烟台预警：从右侧浮窗到独立三栏](docs/ai-collaboration/03-yantai-warning.md)
+
+补充链（原始导出）：
 
 - [01 烟台时长对比与地点变化图](docs/ai-iterations/01_烟台时长对比与地点变化图.md)
 - [02 3D 地质面板地区切换](docs/ai-iterations/02_3D地质面板地区切换.md)
 - [03 底图加载失败与同源代理](docs/ai-iterations/03_底图加载失败与同源代理.md)
 - [04 补充：左侧区域滚动修复](docs/ai-iterations/04_补充_左侧区域滚动修复.md)
 
-每份文档包含 Prompt 原文、Edit/Write 前后对照、关键验证命令与 AI 最终说明；已清洗本机路径与个人信息。
+完整工具流水与原始会话导出：`docs/ai-collaboration/raw/`（chain1 / chain2 / chain3，按 `session_id` + `sequence` 可回到 ZCode 本地库核对）。
 
-### 4.4 仓库历史说明
+### 4.5 仓库历史说明
 
-项目最初在 ZCode 中迭代，未从一开始启用 Git；仓库历史按功能模块与真实开发顺序重建，不是伪造的“每日提交”。三个核心迭代的原始会话与代码改动见 `docs/ai-iterations/`；最终 `main` 是经过冒烟与回归验证的可运行状态。
-
+项目最初在 ZCode 中迭代，未从一开始启用 Git；因此本仓库的提交历史是**按真实开发时间线与功能归属重建**的，不是伪造的“每日提交”。每个提交对应一个功能模块或一次真实 AI 协作会话，提交信息中标注 `session_id` / `sequence`；最终 `main` 是经过冒烟与回归验证的可运行状态。原始对话、工具调用与代码改动可在 `docs/ai-collaboration/raw/` 中逐条核对。
 
 ---
 
