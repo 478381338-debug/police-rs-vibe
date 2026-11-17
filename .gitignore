@@ -36,7 +36,9 @@ data/insar/
 学习图片.jpg
 附件*.pdf
 ppt/
-docs/video/
+docs/video/audio/
+docs/video/segments/
+docs/video/_frames/
 docs/report/
 docs/style-lab/
 

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='%233fe3ff'/%3E%3C/svg%3E">
+<title>AI 协同回放 · 三条真实改码链路</title>
+<style>
+  :root{
+    --bg:#05090f;
+    --panel:#0a1420;
+    --panel2:#0c1927;
+    --line:rgba(63,227,255,.16);
+    --line2:rgba(63,227,255,.34);
+    --cyan:#3fe3ff;
+    --green:#4fe6a4;
+    --amber:#ffc46b;
+    --red:#ff7a8a;
+    --txt:#e9f4ff;
+    --muted:#93aec5;
+    --dim:#6d879c;
+    --mono:"Cascadia Mono",Consolas,"Courier New",monospace;
+    --sans:"Microsoft YaHei","微软雅黑","Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{background:var(--bg); scrollbar-width:none; -ms-overflow-style:none;}
+  html::-webkit-scrollbar{width:0; height:0;}
+  body{
+    margin:0;
+    min-width:0;
+    color:var(--txt);
+    font-family:var(--sans);
+    font-size:26px;
+    line-height:1.5;
+    background:
+      radial-gradient(1000px 560px at 88% -12%, rgba(63,227,255,.13), transparent 62%),
+      radial-gradient(760px 460px at 2% 24%, rgba(79,230,164,.07), transparent 62%),
+      var(--bg);
+  }
+  .grid{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(63,227,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(63,227,255,.045) 1px, transparent 1px);
+    background-size:52px 52px;
+    -webkit-mask-image:radial-gradient(1200px 900px at 50% 0%, #000 30%, transparent 88%);
+            mask-image:radial-gradient(1200px 900px at 50% 0%, #000 30%, transparent 88%);
+  }
+  .page{position:relative; z-index:1; max-width:1920px; margin:0 auto; padding:0 44px 46px;}
+
+  /* ---------- top ---------- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between; gap:32px;
+    padding:26px 0 18px; border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex; align-items:center; gap:16px; min-width:0;}
+  .pulse{
+    width:14px; height:14px; border-radius:50%; background:var(--cyan); flex:none;
+    box-shadow:0 0 0 6px rgba(63,227,255,.12),0 0 22px rgba(63,227,255,.9);
+  }
+  .brand-main{font-size:34px; font-weight:800; letter-spacing:.5px;}
+  .brand-sub{font-size:24px; color:var(--muted); padding-left:16px; border-left:1px solid rgba(147,174,197,.35);}
+  .badge{
+    flex:none; font-size:24px; font-weight:700; color:#c8f6ff;
+    padding:10px 20px; border:1px solid var(--line2); border-radius:999px;
+    background:linear-gradient(180deg,rgba(63,227,255,.12),rgba(63,227,255,.04));
+    box-shadow:0 0 26px rgba(63,227,255,.12) inset,0 0 18px rgba(63,227,255,.08);
+  }
+  .session-strip{
+    display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+    padding:14px 0 18px; border-bottom:1px solid var(--line);
+    font-size:24px; color:var(--muted);
+  }
+  .ss-item b{color:#dcf6ff; font-weight:600;}
+  .ss-item .mono{font-family:var(--mono); font-size:24px; color:#9feaff;}
+  .ss-sep{width:1px; height:20px; background:rgba(147,174,197,.35);}
+
+  /* ---------- layout ---------- */
+  .layout{display:flex; align-items:flex-start; gap:36px; padding-top:30px;}
+  .rail{
+    flex:0 0 330px; width:330px; position:sticky; top:26px;
+    padding:22px 22px 24px; border:1px solid var(--line); border-radius:16px;
+    background:linear-gradient(180deg,rgba(12,25,39,.92),rgba(7,16,26,.9));
+  }
+  .rail-kicker{font-size:24px; letter-spacing:2px; color:var(--cyan); font-family:var(--mono);}
+  .rail-title{font-size:40px; line-height:1.2; font-weight:800; margin:10px 0 22px;}
+  .rail-line{position:relative; padding-left:24px;}
+  .rail-line::before{
+    content:""; position:absolute; left:7px; top:8px; bottom:8px; width:2px;
+    background:linear-gradient(180deg,var(--cyan),var(--green) 52%,var(--amber));
+    opacity:.55;
+  }
+  .rail-item{position:relative; display:flex; gap:14px; padding:0 0 24px;}
+  .rail-item:last-child{padding-bottom:0;}
+  .rail-item::before{
+    content:""; position:absolute; left:-24px; top:9px; width:16px; height:16px;
+    border-radius:50%; background:var(--bg); border:3px solid var(--accent,var(--cyan));
+    box-shadow:0 0 12px var(--accent,var(--cyan));
+  }
+  .ri-num{font-family:var(--mono); font-size:28px; font-weight:700; color:var(--accent,var(--cyan)); line-height:1.2;}
+  .ri-body b{display:block; font-size:28px; line-height:1.25;}
+  .ri-body em{display:block; font-style:normal; font-size:24px; color:var(--muted); margin-top:3px;}
+  .rail-note{
+    margin-top:24px; padding-top:18px; border-top:1px dashed rgba(147,174,197,.28);
+    font-size:24px; line-height:1.5; color:var(--dim);
+  }
+
+  .chains{flex:1; min-width:0; display:flex; flex-direction:column; gap:38px;}
+  .chain{
+    --accent:var(--cyan); --accent-rgb:63,227,255;
+    position:relative; padding:30px 32px 32px; border-radius:18px;
+    border:1px solid rgba(var(--accent-rgb),.24);
+    background:
+      linear-gradient(180deg,rgba(var(--accent-rgb),.055),transparent 180px),
+      linear-gradient(180deg,rgba(12,25,39,.94),rgba(7,15,24,.96));
+    box-shadow:0 20px 60px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.02) inset;
+    scroll-margin-top:24px;
+  }
+  .chain::before{
+    content:""; position:absolute; left:0; right:0; top:0; height:3px;
+    background:linear-gradient(90deg,var(--accent),transparent 72%);
+    border-radius:18px 18px 0 0;
+  }
+  #c2{--accent:var(--green); --accent-rgb:79,230,164;}
+  #c3{--accent:var(--amber); --accent-rgb:255,196,107;}
+
+  .chain-head{display:flex; align-items:flex-start; gap:20px;}
+  .chain-no{
+    flex:none; font-family:var(--mono); font-size:72px; line-height:1; font-weight:800;
+    color:transparent; -webkit-text-stroke:2px var(--accent); opacity:.9;
+    margin-top:2px;
+  }
+  .chain-title{min-width:0;}
+  .chain-title h2{
+    margin:0; font-size:46px; line-height:1.18; font-weight:800; letter-spacing:.2px;
+  }
+  .h2-sub{display:block; margin-top:5px; font-size:28px; line-height:1.35; color:var(--muted); font-weight:400;}
+  .meta{
+    margin-top:9px; font-family:var(--mono); font-size:24px; line-height:1.45; color:var(--dim);
+    word-break:break-all;
+  }
+  .meta .seq{color:var(--accent);}
+
+  .prompt{
+    display:flex; align-items:flex-start; gap:18px; margin-top:22px;
+    padding:17px 20px; border-radius:10px;
+    border-left:4px solid var(--accent);
+    background:rgba(var(--accent-rgb),.075);
+  }
+  .prompt-label{
+    flex:none; font-size:24px; font-weight:700; color:var(--accent);
+    padding:2px 10px; border:1px solid rgba(var(--accent-rgb),.38); border-radius:6px;
+    background:rgba(var(--accent-rgb),.08); white-space:nowrap;
+  }
+  .prompt q{font-size:28px; line-height:1.5; color:#f2faff; quotes:"“" "”";}
+  .prompt q::before,.prompt q::after{color:var(--accent);}
+
+  .actions{margin-top:22px;}
+  .sec-title{font-size:28px; font-weight:700; color:#dff3ff; margin:0 0 12px; letter-spacing:.5px;}
+  .actions-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 26px;}
+  #c3 .act:last-child{grid-column:1 / -1;}
+  .act{display:flex; align-items:flex-start; gap:12px;}
+  .act .n{
+    flex:none; font-family:var(--mono); font-size:24px; font-weight:700; line-height:1.45;
+    color:var(--accent); opacity:.95;
+  }
+  .act p{margin:0; font-size:26px; line-height:1.45; color:#dcecf9;}
+
+  .bottom{display:grid; grid-template-columns:1.5fr 1fr; gap:24px; margin-top:22px;}
+  .code{
+    border:1px solid rgba(var(--accent-rgb),.2); border-radius:12px; overflow:hidden;
+    background:#060f19;
+  }
+  .code-head{
+    display:flex; align-items:center; gap:14px; padding:10px 16px;
+    border-bottom:1px solid rgba(var(--accent-rgb),.15);
+    background:rgba(var(--accent-rgb),.05);
+    font-size:24px; color:var(--muted);
+  }
+  .dots{display:flex; gap:6px;}
+  .dots i{width:10px; height:10px; border-radius:50%; background:#2b4257; display:block;}
+  .dots i:nth-child(1){background:#ff6b6b;}
+  .dots i:nth-child(2){background:#ffc46b;}
+  .dots i:nth-child(3){background:#4fe6a4;}
+  .code-tag{margin-left:auto; font-family:var(--mono); font-size:24px; color:var(--accent);}
+  .code-body{padding:12px 18px 16px;}
+  .ln{display:flex; flex-wrap:wrap; align-items:baseline; gap:0 14px; padding:2px 0; font-family:var(--mono); font-size:24px; line-height:1.45;}
+  .ln .p{flex:0 0 auto; color:#6fe7ff; white-space:nowrap;}
+  .ln .c{flex:1 1 300px; min-width:0; color:#d8eaf9; word-break:break-word;}
+  .ln .c b{color:var(--amber); font-weight:600;}
+  .ln .c i{color:var(--green); font-style:normal;}
+
+  .verify{
+    border:1px solid rgba(var(--accent-rgb),.2); border-radius:12px;
+    background:linear-gradient(180deg,rgba(var(--accent-rgb),.06),rgba(7,15,24,.6));
+    padding:14px 20px 12px;
+  }
+  .verify .sec-title{margin-bottom:6px;}
+  .stat{display:flex; align-items:baseline; gap:16px; padding:9px 0; border-bottom:1px dashed rgba(147,174,197,.22);}
+  .stat:last-child{border-bottom:0; padding-bottom:4px;}
+  .stat b{
+    flex:none; min-width:96px; font-family:var(--mono); font-size:40px; line-height:1.1;
+    color:var(--accent); font-weight:800; letter-spacing:-.5px;
+  }
+  .stat span{font-size:24px; line-height:1.4; color:#c6dcee;}
+
+  .footer{
+    padding:30px 34px 26px; border-top:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(63,227,255,.045),transparent);
+  }
+  .foot-main{font-size:44px; font-weight:800; letter-spacing:.5px; color:#f2fbff;}
+  .foot-main .accent{color:var(--cyan);}
+  .foot-sub{margin-top:12px; font-size:24px; line-height:1.55; color:var(--muted);}
+  .foot-sub b{color:#cfefff; font-weight:600;}
+  .foot-bound{
+    margin-top:16px; padding-top:14px; border-top:1px dashed rgba(147,174,197,.28);
+    font-size:24px; line-height:1.55; color:#b9c9d8;
+  }
+  .foot-bound em{font-style:normal; color:var(--amber);}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="page">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="pulse"></span>
+      <span class="brand-main">AI 协同回放</span>
+      <span class="brand-sub">三条真实改码链路 · 6:30 演示片素材</span>
+    </div>
+    <div class="badge">真实 ZCode 会话导出 · session_id + sequence 可核对</div>
+  </header>
+
+  <div class="session-strip">
+    <span class="ss-item">SESSION <b class="mono">session_c7acdf13bcc033a4b1895a63813d3821</b></span>
+    <span class="ss-sep"></span>
+    <span class="ss-item">MODEL <b>new-provider/deepseek-v4.1-flash</b> · variant max</span>
+  </div>
+
+  <div class="layout">
+
+    <aside class="rail">
+      <div class="rail-kicker">SESSION TIMELINE</div>
+      <div class="rail-title">三条链路<br>一条会话</div>
+      <div class="rail-line">
+        <div class="rail-item" style="--accent:#3fe3ff">
+          <span class="ri-num">01</span>
+          <span class="ri-body"><b>法条检索</b><em>seq 141–201</em><em>11-11 17:30</em></span>
+        </div>
+        <div class="rail-item" style="--accent:#4fe6a4">
+          <span class="ri-num">02</span>
+          <span class="ri-body"><b>天枢 6G</b><em>seq 252–881</em><em>11-11 18:14 起</em></span>
+        </div>
+        <div class="rail-item" style="--accent:#ffc46b">
+          <span class="ri-num">03</span>
+          <span class="ri-body"><b>烟台专项</b><em>seq 1611–1858</em><em>11-15 13:50–16:06</em></span>
+        </div>
+      </div>
+      <div class="rail-note">
+        seq 是会话内序号，不是行号；每条都能回到原始导出逐句核对。页面数字取自运行中的 8091 服务与实测记录。
+      </div>
+    </aside>
+
+    <main class="chains">
+
+      <!-- ================= CHAIN 1 ================= -->
+      <section class="chain" id="c1">
+        <div class="chain-head">
+          <div class="chain-no">01</div>
+          <div class="chain-title">
+            <h2>法条检索
+              <span class="h2-sub">从“输入没反应”到“关键字推出主要法条”</span>
+            </h2>
+            <div class="meta">session_c7acdf13bcc033a4b1895a63813d3821 · <span class="seq">seq 141–201</span> · 2026-11-11 17:30</div>
+          </div>
+        </div>
+
+        <div class="prompt">
+          <span class="prompt-label">用户 Prompt 原文</span>
+          <q>我输入关键字不出具体的法条这个问题解决一下，要求根据关键字推出对应主要法条</q>
+        </div>
+
+        <div class="actions">
+          <h3 class="sec-title">AI 诊断 / 动作</h3>
+          <div class="actions-grid">
+            <div class="act"><span class="n">1</span><p>先并行读 app/legal.py、legal_api.py、workspace.js 和法条库，确认前端、后端、清单三段各自断掉。</p></div>
+            <div class="act"><span class="n">2</span><p>根因：前端只认按钮；后端对整串精确匹配；case_checklist 又把刑法 338 排在 343 前。</p></div>
+            <div class="act"><span class="n">3</span><p>加归一化、二元组相似度、同义词、10 条语义规则和字段权重；阈值 _FUZZY_MIN = 0.34。</p></div>
+            <div class="act"><span class="n">4</span><p>前端补 Enter、350 ms 防抖和请求序号，过期响应直接丢弃，慢请求不会覆盖新结果。</p></div>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span>关键文件 · 行号</span><span class="code-tag">grep 实测</span></div>
+            <div class="code-body">
+              <div class="ln"><span class="p">app/legal.py:168</span><span class="c">SYNONYMS</span></div>
+              <div class="ln"><span class="p">app/legal.py:196</span><span class="c">_FUZZY_MIN = <b>0.34</b></span></div>
+              <div class="ln"><span class="p">app/legal.py:236</span><span class="c">def _norm(text) -&gt; str</span></div>
+              <div class="ln"><span class="p">app/legal.py:240</span><span class="c">def _bigrams(text) -&gt; set</span></div>
+              <div class="ln"><span class="p">app/legal.py:247</span><span class="c">def _similarity(a, b) -&gt; float</span></div>
+              <div class="ln"><span class="p">app/legal.py:345</span><span class="c">def search(query, hazard, limit)</span></div>
+              <div class="ln"><span class="p">app/legal.py:457</span><span class="c">def case_checklist(case)</span></div>
+              <div class="ln"><span class="p">web/workspace.js:919-923</span><span class="c">setTimeout(searchLegal, <b>350</b>)</span></div>
+              <div class="ln"><span class="p">web/workspace.js:1248</span><span class="c"><i>const seq = ++legalSeq</i></span></div>
+            </div>
+          </div>
+
+          <div class="verify">
+            <h3 class="sec-title">运行验证</h3>
+            <div class="stat"><b>342</b><span>占用农田地 → 刑法第三百四十二条<br>score 103 · 仅返回 1 条</span></div>
+            <div class="stat"><b>6/6</b><span>342 / 343 / 338 / 345 / 340 / 341<br>六组关键词全部命中预期法条</span></div>
+            <div class="stat"><b>0</b><span>1366×768 无横向滚动<br>控制台 0 报错</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CHAIN 2 ================= -->
+      <section class="chain" id="c2">
+        <div class="chain-head">
+          <div class="chain-no">02</div>
+          <div class="chain-title">
+            <h2>天枢 6G
+              <span class="h2-sub">在既有系统上只加一层，把网络状态接进 AI 取数</span>
+            </h2>
+            <div class="meta">session_c7acdf13bcc033a4b1895a63813d3821 · <span class="seq">seq 252–881</span> · 2026-11-11 18:14 起</div>
+          </div>
+        </div>
+
+        <div class="prompt">
+          <span class="prompt-label">用户 Prompt 原文</span>
+          <q>不要改我已经做好的，再我做好的基础上往上加</q>
+        </div>
+
+        <div class="actions">
+          <h3 class="sec-title">AI 诊断 / 动作</h3>
+          <div class="actions-grid">
+            <div class="act"><span class="n">1</span><p>先读 app/main.py 和现有页面，守住“不改已完成部分”；复用约 85% 结构，只做增量。</p></div>
+            <div class="act"><span class="n">2</span><p>新增 sixg_api.py、web/sixg.*、sixg-3d.js、data/sixg_demo/；主入口只加 import、路由、include_router。</p></div>
+            <div class="act"><span class="n">3</span><p>Three.js r128 搭 6 节点 4 链路；断网时基站转红、NTN 接管，SVG 兜底不白屏。</p></div>
+            <div class="act"><span class="n">4</span><p>网络状态接进 AI 取数：eMBB / URLLC / NTN 决定瓦片数与推理范围，后端按场景返回 plan。</p></div>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span>关键文件 · 行号</span><span class="code-tag">grep 实测</span></div>
+            <div class="code-body">
+              <div class="ln"><span class="p">app/sixg_api.py:72-75</span><span class="c">PROFILES = <b>4 / 3 / 2 / 1</b></span></div>
+              <div class="ln"><span class="p">app/sixg_api.py:615</span><span class="c">sent = ranked[:tiles]</span></div>
+              <div class="ln"><span class="p">app/sixg_api.py:823</span><span class="c">uplink_saved_pct</span></div>
+              <div class="ln"><span class="p">app/sixg_api.py:859</span><span class="c">saved_pct</span></div>
+              <div class="ln"><span class="p">app/main.py:41</span><span class="c">from app import sixg_api</span></div>
+              <div class="ln"><span class="p">app/main.py:484</span><span class="c">@app.get("/sixg")</span></div>
+              <div class="ln"><span class="p">app/main.py:558</span><span class="c">include_router(sixg_api.router)</span></div>
+              <div class="ln"><span class="p">web/sixg-3d.js:62-68</span><span class="c"><i>6 个节点</i></span></div>
+              <div class="ln"><span class="p">web/sixg-3d.js:70-75</span><span class="c"><i>4 条链路</i></span></div>
+            </div>
+          </div>
+
+          <div class="verify">
+            <h3 class="sec-title">运行验证</h3>
+            <div class="stat"><b>75%</b><span>基站中断：4 片瓦片只传 1 片<br>带宽节省 75%</span></div>
+            <div class="stat"><b>307 ms</b><span>断网场景端到端出线索<br>常态 329.7 ms</span></div>
+            <div class="stat"><b>2294.4 ha</b><span>P-01 885.4 ha / 0.85<br>P-02 1409.0 ha / 0.77</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CHAIN 3 ================= -->
+      <section class="chain" id="c3">
+        <div class="chain-head">
+          <div class="chain-no">03</div>
+          <div class="chain-title">
+            <h2>烟台专项
+              <span class="h2-sub">两次返工，把进程、坐标和面积口径拉回正轨</span>
+            </h2>
+            <div class="meta">session_c7acdf13bcc033a4b1895a63813d3821 · <span class="seq">seq 1611–1858</span> · 2026-11-15 13:50–16:06</div>
+          </div>
+        </div>
+
+        <div class="prompt">
+          <span class="prompt-label">用户 Prompt 原文</span>
+          <q>并没有在旁边做烟台地区的专项分析啊</q>
+          <q>刷新没用</q>
+        </div>
+
+        <div class="actions">
+          <h3 class="sec-title">AI 诊断 / 动作</h3>
+          <div class="actions-grid">
+            <div class="act"><span class="n">1</span><p>第一次判断偏了：先怀疑浏览器缓存；用户回“刷新没用”，才改查进程与端口。</p></div>
+            <div class="act"><span class="n">2</span><p>定位 8080 仍是旧后端，没加载 /api/yantai；本机与公网 47.95.141.225:8080 同步重启。</p></div>
+            <div class="act"><span class="n">3</span><p>第二版按方案重做三栏；显式做 UTM 51N（EPSG:32651）→ WGS84，修掉米制坐标当经纬度。</p></div>
+            <div class="act"><span class="n">4</span><p>P07 按像元重算：54 px × 10 m × 10 m = 0.54 ha；全窗口 43 个候选、24.0 ha。</p></div>
+            <div class="act"><span class="n">5</span><p>“置信度”改名“规则评分（未校准）”；研判写接口只留管理员 / 指挥员 / 审核员。</p></div>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span>关键文件 · 行号</span><span class="code-tag">grep 实测</span></div>
+            <div class="code-body">
+              <div class="ln"><span class="p">app/yantai_api.py:250-252</span><span class="c">transform 4326 → <b>32651</b></span></div>
+              <div class="ln"><span class="p">app/yantai_api.py:342</span><span class="c">patch_area</span></div>
+              <div class="ln"><span class="p">app/yantai_api.py:484</span><span class="c">cluster_area</span></div>
+              <div class="ln"><span class="p">app/yantai_api.py:703-705</span><span class="c">rule_candidates = <b>43</b> / <b>24.0</b></span></div>
+              <div class="ln"><span class="p">scripts/yantai_2025_activity.py:612</span><span class="c">area_ha = npix * RES * RES / 10000.0</span></div>
+              <div class="ln"><span class="p">web/yantai.html:58</span><span class="c">事件队列 / 三栏工作区</span></div>
+              <div class="ln"><span class="p">app/yantai_api.py:131 / 1641</span><span class="c">_REVIEW_ROLES = admin / commander / reviewer</span></div>
+            </div>
+          </div>
+
+          <div class="verify">
+            <h3 class="sec-title">运行验证</h3>
+            <div class="stat"><b>0.54 ha</b><span>P07 = 54 像元 × 10 m 影像<br>全窗口 43 候选 / 24.0 ha</span></div>
+            <div class="stat"><b>3 / 22 / 3</b><span>事件 / 资源点 / 河段<br>本机/公网 5 接口均 200</span></div>
+            <div class="stat"><b>2 次</b><span>从“缓存”误判到进程定位<br>坐标与面积口径重算</span></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="foot-main">AI 负责改程序；<span class="accent">选题/验收由作者定</span></div>
+        <div class="foot-sub">
+          核对方式：<b>session_id + sequence</b> 对照 <b>docs/ai-collaboration/raw/</b>，提交记录见 <b>git log</b>。AI 生成代码均经人工审阅与运行验证，不是“一键生成即交付”。
+        </div>
+        <div class="foot-bound">
+          <em>边界：</em>6G 指标为数字孪生仿真 · 变化检测为算法原型 · 法条库 17 条草稿待法制审核 · 烟台为单点、非实时、10 m 影像，不生成违法概率
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</div>
+</body>
+</html>
