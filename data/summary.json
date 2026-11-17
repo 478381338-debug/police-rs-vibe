@@ -1,0 +1,577 @@
+{
+  "updated_at": "2026-11-12T13:05:11.945487+00:00",
+  "aoi": {
+    "name": "大青山自然保护区",
+    "bbox": [
+      108.9,
+      39.95,
+      112.8,
+      41.58
+    ],
+    "center": [
+      111.05,
+      40.9
+    ]
+  },
+  "incidents": 53,
+  "hotspots": 31,
+  "danger_counts": {
+    "red": 5,
+    "orange": 2,
+    "yellow": 6,
+    "blue": 18
+  },
+  "top_hotspots": [
+    {
+      "id": "HS-026",
+      "name": "近杀虎口村盗采痕迹高发区",
+      "risk_score": 82.9,
+      "priority_score": 82.9,
+      "current_natural_risk": 64.0,
+      "current_natural_label": "当前危险较高",
+      "danger_level": "red",
+      "dominant_class": "盗采痕迹",
+      "incident_count": 3
+    },
+    {
+      "id": "HS-014",
+      "name": "大青山西段盗采痕迹高发区",
+      "risk_score": 81.6,
+      "priority_score": 81.6,
+      "current_natural_risk": 62.9,
+      "current_natural_label": "当前危险较高",
+      "danger_level": "red",
+      "dominant_class": "盗采痕迹",
+      "incident_count": 3
+    },
+    {
+      "id": "HS-025",
+      "name": "近东黄合少村盗采痕迹高发区",
+      "risk_score": 76.4,
+      "priority_score": 76.4,
+      "current_natural_risk": 63.1,
+      "current_natural_label": "当前危险较高",
+      "danger_level": "red",
+      "dominant_class": "盗采痕迹",
+      "incident_count": 3
+    },
+    {
+      "id": "HS-017",
+      "name": "近东官井村雪线变化高发区",
+      "risk_score": 75.5,
+      "priority_score": 75.5,
+      "current_natural_risk": 59.9,
+      "current_natural_label": "当前危险中等",
+      "danger_level": "red",
+      "dominant_class": "雪线变化",
+      "incident_count": 3
+    },
+    {
+      "id": "HS-008",
+      "name": "近大佘太镇 ᠶᠡᠬᠡ ᠰᠢᠭᠡᠲᠡᠢ火烧迹地高发区",
+      "risk_score": 71.8,
+      "priority_score": 71.8,
+      "current_natural_risk": 58.8,
+      "current_natural_label": "当前危险中等",
+      "danger_level": "red",
+      "dominant_class": "火烧迹地",
+      "incident_count": 2
+    },
+    {
+      "id": "HS-020",
+      "name": "近和林格尔县 ᠬᠣᠷᠢᠨᠭᠡᠷ泥石流高发区",
+      "risk_score": 67.0,
+      "priority_score": 67.0,
+      "current_natural_risk": 60.0,
+      "current_natural_label": "当前危险较高",
+      "danger_level": "orange",
+      "dominant_class": "泥石流",
+      "incident_count": 2
+    },
+    {
+      "id": "HS-009",
+      "name": "近昆都仑区 ᠬᠥᠨᠳᠡᠯᠡᠨ盗采痕迹高发区",
+      "risk_score": 61.0,
+      "priority_score": 61.0,
+      "current_natural_risk": 60.0,
+      "current_natural_label": "当前危险较高",
+      "danger_level": "orange",
+      "dominant_class": "盗采痕迹",
+      "incident_count": 3
+    },
+    {
+      "id": "HS-027",
+      "name": "近大庙村火烧迹地高发区",
+      "risk_score": 55.5,
+      "priority_score": 55.5,
+      "current_natural_risk": 60.1,
+      "current_natural_label": "当前危险较高",
+      "danger_level": "yellow",
+      "dominant_class": "火烧迹地",
+      "incident_count": 3
+    },
+    {
+      "id": "HS-015",
+      "name": "近坤兑火烧迹地高发区",
+      "risk_score": 55.3,
+      "priority_score": 55.3,
+      "current_natural_risk": 63.8,
+      "current_natural_label": "当前危险较高",
+      "danger_level": "yellow",
+      "dominant_class": "火烧迹地",
+      "incident_count": 3
+    },
+    {
+      "id": "HS-028",
+      "name": "近察哈尔右翼中旗 ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ盗采痕迹高发区",
+      "risk_score": 55.3,
+      "priority_score": 55.3,
+      "current_natural_risk": 63.4,
+      "current_natural_label": "当前危险较高",
+      "danger_level": "yellow",
+      "dominant_class": "盗采痕迹",
+      "incident_count": 2
+    }
+  ],
+  "hotspot_levels": {
+    "HS-026": "red",
+    "HS-014": "red",
+    "HS-025": "red",
+    "HS-017": "red",
+    "HS-008": "red",
+    "HS-020": "orange",
+    "HS-009": "orange",
+    "HS-027": "yellow",
+    "HS-015": "yellow",
+    "HS-028": "yellow",
+    "HS-018": "yellow",
+    "HS-002": "yellow",
+    "HS-001": "yellow",
+    "HS-029": "blue",
+    "HS-030": "blue",
+    "HS-007": "blue",
+    "HS-031": "blue",
+    "HS-003": "blue",
+    "HS-021": "blue",
+    "HS-006": "blue",
+    "HS-019": "blue",
+    "HS-012": "blue",
+    "HS-011": "blue",
+    "HS-024": "blue",
+    "HS-010": "blue",
+    "HS-016": "blue",
+    "HS-013": "blue",
+    "HS-023": "blue",
+    "HS-005": "blue",
+    "HS-022": "blue",
+    "HS-004": "blue"
+  },
+  "changes": [],
+  "model": {
+    "weights": {
+      "severity": 0.2653,
+      "count": 0.1535,
+      "area": 0.1535,
+      "recurrence": 0.1535,
+      "terrain": 0.0814,
+      "access": 0.0814,
+      "environment": 0.0814,
+      "confidence": 0.0301
+    },
+    "priority_weights": {
+      "severity": 0.2888,
+      "count": 0.1671,
+      "area": 0.1671,
+      "recurrence": 0.1671,
+      "terrain": 0.0886,
+      "access": 0.0886,
+      "confidence": 0.0328
+    },
+    "meta": {
+      "consistency_ratio": 0.0025665639267242373,
+      "lambda_max": 8.025331985956768,
+      "method": "AHP",
+      "engine": "MATLAB R2025b",
+      "generated_at": "2026-11-12T21:03:43"
+    },
+    "method": "AHP 核查优先级 + 独立自然风险规则",
+    "priority_note": "核查优先级只排序历史异常线索，不是灾害发生概率；当前自然风险另算。"
+  },
+  "mpc": {
+    "fetched_at": "2026-11-09T12:05:11.612394+00:00",
+    "s2_count": 8,
+    "landsat_count": 6,
+    "natural_ok": 8,
+    "latest_s2": "2026-11-08T03:29:39.024000+00:00",
+    "latest_s2_cloud": 0.00874,
+    "errors": []
+  },
+  "weather": {
+    "fetched_at": "2026-11-09T12:04:58.383175+00:00",
+    "points": [
+      {
+        "name": "西段",
+        "lon": 110.2,
+        "lat": 40.8,
+        "elevation": 1445.0,
+        "current": {
+          "time": "2026-11-09T20:00",
+          "interval": 900,
+          "temperature_2m": -2.5,
+          "relative_humidity_2m": 29,
+          "precipitation": 0.0,
+          "wind_speed_10m": 1.8,
+          "soil_moisture_0_to_10cm": 0.163
+        },
+        "daily": {
+          "time": [
+            "2026-11-09",
+            "2026-11-10",
+            "2026-11-11"
+          ],
+          "temperature_2m_max": [
+            2.3,
+            5.7,
+            8.2
+          ],
+          "temperature_2m_min": [
+            -7.8,
+            -4.8,
+            -2.4
+          ],
+          "precipitation_sum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wind_speed_10m_max": [
+            9.5,
+            13.5,
+            10.1
+          ]
+        }
+      },
+      {
+        "name": "中西段",
+        "lon": 110.8,
+        "lat": 40.9,
+        "elevation": 1729.0,
+        "current": {
+          "time": "2026-11-09T20:00",
+          "interval": 900,
+          "temperature_2m": -5.7,
+          "relative_humidity_2m": 31,
+          "precipitation": 0.0,
+          "wind_speed_10m": 5.5,
+          "soil_moisture_0_to_10cm": 0.17
+        },
+        "daily": {
+          "time": [
+            "2026-11-09",
+            "2026-11-10",
+            "2026-11-11"
+          ],
+          "temperature_2m_max": [
+            2.3,
+            6.5,
+            8.6
+          ],
+          "temperature_2m_min": [
+            -10.7,
+            -7.0,
+            -4.9
+          ],
+          "precipitation_sum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wind_speed_10m_max": [
+            18.9,
+            17.1,
+            13.6
+          ]
+        }
+      },
+      {
+        "name": "中段",
+        "lon": 111.2,
+        "lat": 40.9,
+        "elevation": 1987.0,
+        "current": {
+          "time": "2026-11-09T20:00",
+          "interval": 900,
+          "temperature_2m": -5.9,
+          "relative_humidity_2m": 29,
+          "precipitation": 0.0,
+          "wind_speed_10m": 6.7,
+          "soil_moisture_0_to_10cm": 0.163
+        },
+        "daily": {
+          "time": [
+            "2026-11-09",
+            "2026-11-10",
+            "2026-11-11"
+          ],
+          "temperature_2m_max": [
+            -0.2,
+            2.3,
+            5.1
+          ],
+          "temperature_2m_min": [
+            -12.1,
+            -7.8,
+            -5.1
+          ],
+          "precipitation_sum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wind_speed_10m_max": [
+            16.0,
+            13.0,
+            10.7
+          ]
+        }
+      },
+      {
+        "name": "中东段",
+        "lon": 111.8,
+        "lat": 41.0,
+        "elevation": 1685.0,
+        "current": {
+          "time": "2026-11-09T20:00",
+          "interval": 900,
+          "temperature_2m": -4.7,
+          "relative_humidity_2m": 35,
+          "precipitation": 0.0,
+          "wind_speed_10m": 0.2,
+          "soil_moisture_0_to_10cm": 0.183
+        },
+        "daily": {
+          "time": [
+            "2026-11-09",
+            "2026-11-10",
+            "2026-11-11"
+          ],
+          "temperature_2m_max": [
+            -2.0,
+            2.0,
+            4.6
+          ],
+          "temperature_2m_min": [
+            -9.8,
+            -8.0,
+            -4.6
+          ],
+          "precipitation_sum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wind_speed_10m_max": [
+            8.0,
+            8.1,
+            7.4
+          ]
+        }
+      },
+      {
+        "name": "东段",
+        "lon": 112.4,
+        "lat": 41.0,
+        "elevation": 1413.0,
+        "current": {
+          "time": "2026-11-09T20:00",
+          "interval": 900,
+          "temperature_2m": -5.1,
+          "relative_humidity_2m": 39,
+          "precipitation": 0.0,
+          "wind_speed_10m": 1.0,
+          "soil_moisture_0_to_10cm": 0.181
+        },
+        "daily": {
+          "time": [
+            "2026-11-09",
+            "2026-11-10",
+            "2026-11-11"
+          ],
+          "temperature_2m_max": [
+            -1.4,
+            3.3,
+            5.6
+          ],
+          "temperature_2m_min": [
+            -10.8,
+            -8.0,
+            -5.0
+          ],
+          "precipitation_sum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wind_speed_10m_max": [
+            12.4,
+            10.2,
+            10.1
+          ]
+        }
+      }
+    ]
+  },
+  "current_risk": {
+    "updated_at": "2026-11-12T13:05:11.941477+00:00",
+    "max_danger": 70.4,
+    "max_forecast_peak": 75.2,
+    "weather_points": 5,
+    "forecast_days": 14,
+    "ndvi": {
+      "source": "MODIS MCD43A4 061 · 500m 每日 NBAR NDVI（16 天滚动反演窗口）",
+      "provider": "Microsoft Planetary Computer / NASA MODIS",
+      "composite_dates": [
+        "2026-10-29T00:00:00Z"
+      ],
+      "observation_dates": [
+        "2026-10-29T00:00:00Z"
+      ],
+      "product_type": "daily_nbar",
+      "valid_count": 180,
+      "fallback_count": 0,
+      "fallback_ndvi": 0.2226,
+      "generated_at": "2026-11-09T12:05:15.394790+00:00",
+      "note": "每日 NBAR 产品，按日更新；反演使用 16 天滚动观测窗口，不是瞬时单日观测。无有效像元时用中位数回退并标记 quality。"
+    },
+    "warnings": {},
+    "method": "6 类自然致灾因子多灾种耦合（最高灾种 + 次高灾种 25%）× 人口暴露修正；GFS 31 成员集合给出情景分布",
+    "probability": {
+      "type": "gfs_ensemble_frequency",
+      "member_count": 31,
+      "note": "P10/P50/P90 与超阈值比例来自 Open-Meteo GFS 集合成员的场景分布；不是校准概率，也不是官方预警。集合不可用时退回参数扰动。"
+    },
+    "rainstorm_reference": {
+      "source": "中国气象局暴雨预警信号公开量级（12h/6h/3h 滚动雨量）",
+      "thresholds": {
+        "blue": "12 小时降雨量 ≥ 50 mm",
+        "yellow": "6 小时降雨量 ≥ 50 mm",
+        "orange": "3 小时降雨量 ≥ 50 mm",
+        "red": "3 小时降雨量 ≥ 100 mm"
+      },
+      "note": "仅作量级对照，不是气象部门发布的预警；正式预警以 12379 等官方渠道为准。"
+    },
+    "ensemble_sources": {
+      "西段": "Open-Meteo GFS ensemble（gfs_seamless）",
+      "中西段": "Open-Meteo GFS ensemble（gfs_seamless）",
+      "中段": "Open-Meteo GFS ensemble（gfs_seamless）",
+      "中东段": "Open-Meteo GFS ensemble（gfs_seamless）",
+      "东段": "Open-Meteo GFS ensemble（gfs_seamless）"
+    },
+    "disclaimer": "当前危险指数是基于 Open-Meteo 当前/预报气象、GFS 集合、MODIS NDVI、地形与人口暴露的筛查值/情景估计，不是确定性灾害预报，也不是已发布预警；暴雨等级仅为公开预警量级对照。"
+  },
+  "hazards": [
+    {
+      "id": "fire_scar",
+      "name": "火烧迹地",
+      "status": "validated",
+      "color": "#ff4d4f"
+    },
+    {
+      "id": "mining",
+      "name": "盗采痕迹",
+      "status": "validated",
+      "color": "#a50026"
+    },
+    {
+      "id": "landslide",
+      "name": "滑坡",
+      "status": "validated",
+      "color": "#f46d43"
+    },
+    {
+      "id": "debris_flow",
+      "name": "泥石流",
+      "status": "validated",
+      "color": "#e8a33d"
+    },
+    {
+      "id": "snowline",
+      "name": "雪线变化",
+      "status": "validated",
+      "color": "#74add1"
+    },
+    {
+      "id": "construction",
+      "name": "违规建设",
+      "status": "screening",
+      "color": "#c084fc"
+    },
+    {
+      "id": "dumping",
+      "name": "非法倾倒",
+      "status": "screening",
+      "color": "#fb7185"
+    },
+    {
+      "id": "water_anomaly",
+      "name": "水体异常",
+      "status": "screening",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "wetland",
+      "name": "湿地侵占",
+      "status": "screening",
+      "color": "#34d399"
+    },
+    {
+      "id": "veg_degradation",
+      "name": "植被退化",
+      "status": "screening",
+      "color": "#a3e635"
+    },
+    {
+      "id": "bare_soil",
+      "name": "裸土扩张",
+      "status": "screening",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "road_intrusion",
+      "name": "道路侵入",
+      "status": "screening",
+      "color": "#94a3b8"
+    },
+    {
+      "id": "mining_damage",
+      "name": "矿山生态破坏",
+      "status": "screening",
+      "color": "#f97316"
+    },
+    {
+      "id": "fire_risk",
+      "name": "火灾风险",
+      "status": "risk",
+      "color": "#ef4444"
+    },
+    {
+      "id": "flood_risk",
+      "name": "洪涝风险",
+      "status": "risk",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "drought_risk",
+      "name": "干旱风险",
+      "status": "risk",
+      "color": "#eab308"
+    },
+    {
+      "id": "geohazard_risk",
+      "name": "地质灾害隐患",
+      "status": "risk",
+      "color": "#8b5cf6"
+    }
+  ],
+  "disclaimer": "5 个 validated 类别来自青山卫士任务二实测检测；screening/risk 为扩展规则筛查/气象风险。一级/二级/三级核查只表示历史异常线索的处置先后，不是灾害发生概率，也不代表已发布预警；当前自然风险仅依据当前气象与地形，需人工复核。警务设施与道路来自 OpenStreetMap 公开数据（ODbL），不是内部警力部署。"
+}

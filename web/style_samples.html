@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>警务遥感 · 四套界面视觉样本</title>
+<style>
+  :root{--bg:#0b111a;--panel:#111c2b;--line:#243449;--text:#e8f1fb;--muted:#8ea3b8;--gold:#d8b45a}
+  *{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#08101b,#101b2b 55%,#08111c);color:var(--text);font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif}
+  .wrap{max-width:1320px;margin:0 auto;padding:34px 26px 60px}
+  header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:24px}
+  h1{font-size:24px;letter-spacing:2px;margin:0 0 7px}p.sub{margin:0;color:var(--muted);font-size:12px;line-height:1.7}
+  .note{font-size:11px;color:var(--muted);text-align:right;line-height:1.7}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.22)}
+  figure img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#06101b}
+  figcaption{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 16px}
+  figcaption b{display:block;font-size:14px;letter-spacing:1px;margin-bottom:5px}
+  figcaption span{display:block;color:var(--muted);font-size:11px;line-height:1.6}
+  .open{flex:none;text-decoration:none;color:#08111c;background:var(--gold);font-size:11px;padding:8px 12px;border-radius:6px;font-weight:700}
+  .open:hover{filter:brightness(1.08)}
+  footer{color:var(--muted);font-size:11px;line-height:1.8;margin-top:24px;border-top:1px solid var(--line);padding-top:16px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}header{display:block}.note{text-align:left;margin-top:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div><h1>四套界面视觉样本</h1><p class="sub">同一套“警务遥感”数据与核查逻辑，四种完全不同的视觉语言。点“打开全屏样本”可看 1280×800 实际效果。</p></div>
+    <div class="note">样本数据：一级核查 4 · 当前危险 68.2 · 人口 766.6 万<br>地图底图：本地 GMT 中国地形 · 研究区为示意叠加</div>
+  </header>
+  <div class="grid">
+    <figure>
+      <img src="/assets/style_light.png" alt="浅色政务 GIS 工作台">
+      <figcaption><div><b>01 · 浅色政务 GIS 工作台</b><span>白底、深蓝文字、蓝色强调，像日常办公系统；适合汇报、打印、民警长时间使用。</span></div><a class="open" href="/static/style_preview.html?style=light" target="_blank">打开全屏样本</a></figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/style_glass.png" alt="深色玻璃指挥中心">
+      <figcaption><div><b>02 · 深色玻璃指挥中心</b><span>深蓝黑、玻璃卡、青蓝高光，悬浮数据条；适合大屏、演示、指挥中心。</span></div><a class="open" href="/static/style_preview.html?style=glass" target="_blank">打开全屏样本</a></figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/style_tactical.png" alt="战术测绘沙盘">
+      <figcaption><div><b>03 · 战术测绘沙盘</b><span>炭黑、等高线纹理、荧光橙、等宽字体；强调地形与态势，适合研判。</span></div><a class="open" href="/static/style_preview.html?style=tactical" target="_blank">打开全屏样本</a></figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/style_editorial.png" alt="编辑级极简">
+      <figcaption><div><b>04 · 编辑级极简</b><span>米白、黑色大字、细线分隔、单一警蓝强调；适合对外展示、领导汇报。</span></div><a class="open" href="/static/style_preview.html?style=editorial" target="_blank">打开全屏样本</a></figcaption>
+    </figure>
+  </div>
+  <footer>建议先看全屏样本，再选择一套作为正式界面。选定后我会把现有警务遥感页面整体换成该风格，同时完成逐格网 NDVI、本地核查样本和可交互 3D 地形。</footer>
+</div>
+</body>
+</html>

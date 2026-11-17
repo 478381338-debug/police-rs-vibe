@@ -1,0 +1,7471 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-07T00:31:50Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1671538451,
+  "lat": 40.8028495,
+  "lon": 111.7028799,
+  "tags": {
+    "amenity": "school",
+    "name": "秋实中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2805831024,
+  "lat": 40.8256267,
+  "lon": 111.6598370,
+  "tags": {
+    "amenity": "police",
+    "name": "呼和浩特铁路公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 5257011745,
+  "lat": 40.6568491,
+  "lon": 109.8931596,
+  "tags": {
+    "addr:city": "包头市",
+    "addr:housenumber": "26",
+    "addr:postcode": "014030",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "文化路",
+    "amenity": "school",
+    "education": "school",
+    "name": "一机一中",
+    "name:en": "Inner Mongolia No.1 Senior Middle School of No.1 Machinery Group",
+    "name:ja": "内モンゴル第一機械企業グループ第一高級中学校",
+    "name:zh": "内蒙古一机集团第一中学"
+  }
+},
+{
+  "type": "node",
+  "id": 5577608523,
+  "lat": 40.8167371,
+  "lon": 111.6861109,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name:en": "Inner Mongolia people’s hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 5808315394,
+  "lat": 40.6174757,
+  "lon": 109.8275624,
+  "tags": {
+    "amenity": "college",
+    "name": "文法学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5808315395,
+  "lat": 40.6175074,
+  "lon": 109.8284003,
+  "tags": {
+    "amenity": "college",
+    "name": "机械工程学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5808315396,
+  "lat": 40.6174448,
+  "lon": 109.8291953,
+  "tags": {
+    "amenity": "college",
+    "name": "矿业与煤炭学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5808315397,
+  "lat": 40.6174114,
+  "lon": 109.8298054,
+  "tags": {
+    "amenity": "college",
+    "name": "国际学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813788023,
+  "lat": 40.6189116,
+  "lon": 109.8227401,
+  "tags": {
+    "amenity": "college",
+    "name": "理学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813788024,
+  "lat": 40.6183106,
+  "lon": 109.8226234,
+  "tags": {
+    "amenity": "college",
+    "name": "信息工程学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813788025,
+  "lat": 40.6184532,
+  "lon": 109.8226894,
+  "tags": {
+    "amenity": "college",
+    "name": "能量与环境学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813788026,
+  "lat": 40.6191312,
+  "lon": 109.8284090,
+  "tags": {
+    "amenity": "college",
+    "name": "材料与冶金学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813788027,
+  "lat": 40.6187459,
+  "lon": 109.8284851,
+  "tags": {
+    "amenity": "college",
+    "name": "工业技术研究院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813788028,
+  "lat": 40.6184192,
+  "lon": 109.8284658,
+  "tags": {
+    "amenity": "college",
+    "name": "矿业研究院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813788030,
+  "lat": 40.6174445,
+  "lon": 109.8282783,
+  "tags": {
+    "amenity": "college",
+    "name": "马克思主义学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813788031,
+  "lat": 40.6174287,
+  "lon": 109.8290246,
+  "tags": {
+    "amenity": "college",
+    "name": "外国语学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813788032,
+  "lat": 40.6174097,
+  "lon": 109.8296369,
+  "tags": {
+    "amenity": "college",
+    "name": "经济与管理学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5813811238,
+  "lat": 40.6183632,
+  "lon": 109.8325076,
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古科技大学（东校区）-煤炭学院"
+  }
+},
+{
+  "type": "node",
+  "id": 5814145060,
+  "lat": 40.6175811,
+  "lon": 109.8268845,
+  "tags": {
+    "amenity": "college",
+    "name": "生命科学与技术学院"
+  }
+},
+{
+  "type": "node",
+  "id": 7358804549,
+  "lat": 40.8121527,
+  "lon": 111.7029351,
+  "tags": {
+    "amenity": "university",
+    "name": "主楼"
+  }
+},
+{
+  "type": "node",
+  "id": 7358804551,
+  "lat": 40.8106551,
+  "lon": 111.7053714,
+  "tags": {
+    "amenity": "university",
+    "name": "逸夫楼"
+  }
+},
+{
+  "type": "node",
+  "id": 7359289678,
+  "lat": 40.6668641,
+  "lon": 111.5329651,
+  "tags": {
+    "amenity": "school",
+    "name": "刘家营村小学"
+  }
+},
+{
+  "type": "node",
+  "id": 8500242380,
+  "lat": 40.7979205,
+  "lon": 111.6346082,
+  "tags": {
+    "addr:city": "呼和浩特市",
+    "addr:district": "回民区",
+    "addr:postcode": "010030",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "巴彦淖尔南路",
+    "amenity": "school",
+    "grades": "11-13",
+    "name": "呼和浩特市第七中学"
+  }
+},
+{
+  "type": "node",
+  "id": 8500349747,
+  "lat": 40.7906181,
+  "lon": 111.5474999,
+  "tags": {
+    "amenity": "university",
+    "name": "内蒙古工业大学金川校区北门"
+  }
+},
+{
+  "type": "node",
+  "id": 8500377863,
+  "lat": 40.7850656,
+  "lon": 111.5483243,
+  "tags": {
+    "amenity": "university",
+    "name": "内蒙古工业大学金川校区南门"
+  }
+},
+{
+  "type": "node",
+  "id": 9738904930,
+  "lat": 40.6919517,
+  "lon": 109.8385475,
+  "tags": {
+    "amenity": "police",
+    "name": "乌兰道派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 11752412479,
+  "lat": 40.7545513,
+  "lon": 111.6787454,
+  "tags": {
+    "amenity": "college",
+    "name": "交通学院"
+  }
+},
+{
+  "type": "node",
+  "id": 11752412480,
+  "lat": 40.7569463,
+  "lon": 111.6822899,
+  "tags": {
+    "amenity": "college",
+    "name": "生命科学学院"
+  }
+},
+{
+  "type": "node",
+  "id": 11756983863,
+  "lat": 40.7542453,
+  "lon": 111.6815714,
+  "tags": {
+    "amenity": "college",
+    "name": "化学化工学院"
+  }
+},
+{
+  "type": "node",
+  "id": 12629938812,
+  "lat": 40.7529937,
+  "lon": 111.6819876,
+  "tags": {
+    "amenity": "college",
+    "name": "生态与环境学院"
+  }
+},
+{
+  "type": "node",
+  "id": 12750047857,
+  "lat": 40.8254800,
+  "lon": 111.8624512,
+  "tags": {
+    "amenity": "school",
+    "name": "郜独利小学"
+  }
+},
+{
+  "type": "node",
+  "id": 12750047864,
+  "lat": 40.8126666,
+  "lon": 111.8949295,
+  "tags": {
+    "amenity": "school",
+    "name": "五路小学"
+  }
+},
+{
+  "type": "node",
+  "id": 13920265276,
+  "lat": 40.8373576,
+  "lon": 111.6667211,
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "Inner Mongolia University of Finance and Economics"
+  }
+},
+{
+  "type": "node",
+  "id": 14311553491,
+  "lat": 40.8133188,
+  "lon": 111.7024983,
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "东校区北门"
+  }
+},
+{
+  "type": "way",
+  "id": 154459189,
+  "center": {
+    "lat": 40.8044580,
+    "lon": 111.6972847
+  },
+  "tags": {
+    "addr:housename": "内蒙古农业大学西区",
+    "addr:housenumber": "306号",
+    "addr:postcode": "010018",
+    "addr:street": "内蒙古呼和浩特市赛罕区昭乌达路",
+    "amenity": "university",
+    "education": "university",
+    "int_name": "Inner Mongolia Agricultural University",
+    "name": "内蒙古农业大学",
+    "old_name": "内蒙古农牧学院"
+  }
+},
+{
+  "type": "way",
+  "id": 154462357,
+  "center": {
+    "lat": 40.8112006,
+    "lon": 111.7040518
+  },
+  "tags": {
+    "addr:city": "呼和浩特市",
+    "addr:district": "赛罕区",
+    "addr:postcode": "100010",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "大学东街",
+    "amenity": "university",
+    "education": "university",
+    "int_name": "Inner Mongolia Agricultural University",
+    "name": "内蒙古农业大学东区",
+    "old_name": "内蒙古林业学院",
+    "operator": "内蒙古自治区教育局",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "way",
+  "id": 173924002,
+  "center": {
+    "lat": 40.8021019,
+    "lon": 111.6877899
+  },
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古师范大学"
+  }
+},
+{
+  "type": "way",
+  "id": 201079291,
+  "center": {
+    "lat": 40.7473653,
+    "lon": 111.9651032
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "int_name": "Hexi Middle School",
+    "name": "内蒙航天学校中学部"
+  }
+},
+{
+  "type": "way",
+  "id": 351592819,
+  "center": {
+    "lat": 40.6266459,
+    "lon": 109.8295653
+  },
+  "tags": {
+    "alt_name": "包钢一中",
+    "amenity": "school",
+    "name": "包头市第95中学"
+  }
+},
+{
+  "type": "way",
+  "id": 366629552,
+  "center": {
+    "lat": 40.8458865,
+    "lon": 111.6783340
+  },
+  "tags": {
+    "amenity": "university",
+    "name": "内蒙古工业大学"
+  }
+},
+{
+  "type": "way",
+  "id": 404943954,
+  "center": {
+    "lat": 40.8241331,
+    "lon": 111.6523219
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "南马路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 404943955,
+  "center": {
+    "lat": 40.8240044,
+    "lon": 111.6539141
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特第五中学"
+  }
+},
+{
+  "type": "way",
+  "id": 475412115,
+  "center": {
+    "lat": 40.6542183,
+    "lon": 109.8801376
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "包头师范学院",
+    "name:en": "Baotou Teachers' College",
+    "name:zh": "包头师范学院"
+  }
+},
+{
+  "type": "way",
+  "id": 475627907,
+  "center": {
+    "lat": 40.8631766,
+    "lon": 111.7212629
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市实验中学北校区"
+  }
+},
+{
+  "type": "way",
+  "id": 479473473,
+  "center": {
+    "lat": 40.6038774,
+    "lon": 109.9530194
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市三十三中",
+    "name:en": "Baotou No.33 Middle School",
+    "name:zh": "包头市三十三中"
+  }
+},
+{
+  "type": "way",
+  "id": 500514707,
+  "center": {
+    "lat": 40.7228702,
+    "lon": 111.2951624
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 500514715,
+  "center": {
+    "lat": 40.7445553,
+    "lon": 111.4284428
+  },
+  "tags": {
+    "amenity": "university",
+    "name": "内蒙古医科大学(金山校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 510518529,
+  "center": {
+    "lat": 40.1796658,
+    "lon": 109.4708868
+  },
+  "tags": {
+    "amenity": "police",
+    "building": "yes",
+    "name": "公安派出所"
+  }
+},
+{
+  "type": "way",
+  "id": 515114873,
+  "center": {
+    "lat": 40.8545898,
+    "lon": 111.6235708
+  },
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古财经大学"
+  }
+},
+{
+  "type": "way",
+  "id": 531815846,
+  "center": {
+    "lat": 40.5568318,
+    "lon": 110.5041254
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 531826879,
+  "center": {
+    "lat": 40.5480440,
+    "lon": 110.5242446
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "复兴小学"
+  }
+},
+{
+  "type": "way",
+  "id": 532060819,
+  "center": {
+    "lat": 40.5916227,
+    "lon": 110.5724412
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古农业大学职业技术学院"
+  }
+},
+{
+  "type": "way",
+  "id": 533696305,
+  "center": {
+    "lat": 40.5997715,
+    "lon": 109.1978601
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 534185303,
+  "center": {
+    "lat": 40.5718337,
+    "lon": 110.3208460
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市第十一中学",
+    "name:en": "Baotou No. 11 Middle School",
+    "name:zh": "包头市第十一中学"
+  }
+},
+{
+  "type": "way",
+  "id": 536973674,
+  "center": {
+    "lat": 40.6345246,
+    "lon": 109.9434959
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "包头轻工职业技术学院",
+    "name:en": "Baotou Light Industry Vocational Technical College",
+    "name:zh": "包头轻工职业技术学院"
+  }
+},
+{
+  "type": "way",
+  "id": 538119030,
+  "center": {
+    "lat": 40.6534238,
+    "lon": 109.9427994
+  },
+  "tags": {
+    "alt_name": "二〇二中学",
+    "amenity": "school",
+    "name": "包头市第21中学"
+  }
+},
+{
+  "type": "way",
+  "id": 538507411,
+  "center": {
+    "lat": 40.7768645,
+    "lon": 111.7308219
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "北京四中呼和浩特分校"
+  }
+},
+{
+  "type": "way",
+  "id": 538507412,
+  "center": {
+    "lat": 40.7752337,
+    "lon": 111.7291975
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "呼和浩特市公安局赛罕区分局"
+  }
+},
+{
+  "type": "way",
+  "id": 538507413,
+  "center": {
+    "lat": 40.7752309,
+    "lon": 111.7308391
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "呼和浩特市赛罕区人民检察院"
+  }
+},
+{
+  "type": "way",
+  "id": 538655759,
+  "center": {
+    "lat": 40.5474468,
+    "lon": 109.9866224
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第三中学"
+  }
+},
+{
+  "type": "way",
+  "id": 538862522,
+  "center": {
+    "lat": 40.6068379,
+    "lon": 109.9766759
+  },
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "包头医学院",
+    "name:en": "Baotou Medical College",
+    "name:zh": "包头医学院"
+  }
+},
+{
+  "type": "way",
+  "id": 539065917,
+  "center": {
+    "lat": 40.4147234,
+    "lon": 110.0126253
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "达拉特旗第九中学",
+    "name:en": "Dalad Banner No.9 Middle School",
+    "name:zh": "达拉特旗第九中学"
+  }
+},
+{
+  "type": "way",
+  "id": 539135962,
+  "center": {
+    "lat": 41.5296636,
+    "lon": 111.6688539
+  },
+  "tags": {
+    "amenity": "school",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 539242874,
+  "center": {
+    "lat": 40.5751693,
+    "lon": 109.9187977
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头稀土高新区第三中学"
+  }
+},
+{
+  "type": "way",
+  "id": 539242875,
+  "center": {
+    "lat": 40.5729126,
+    "lon": 109.9187420
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "万水泉中心小学"
+  }
+},
+{
+  "type": "way",
+  "id": 539243196,
+  "center": {
+    "lat": 40.5856453,
+    "lon": 109.9053658
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "民馨路第一小学"
+  }
+},
+{
+  "type": "way",
+  "id": 539243720,
+  "center": {
+    "lat": 40.6358538,
+    "lon": 109.8108693
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包钢第二十六小学",
+    "short_name": "包钢二十六小"
+  }
+},
+{
+  "type": "way",
+  "id": 539243875,
+  "center": {
+    "lat": 40.6395599,
+    "lon": 109.8112298
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包钢第二十五小学",
+    "short_name": "包钢二十五小"
+  }
+},
+{
+  "type": "way",
+  "id": 539577978,
+  "center": {
+    "lat": 41.2834503,
+    "lon": 112.6107564
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 539578039,
+  "center": {
+    "lat": 41.2790370,
+    "lon": 112.6217173
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 539578047,
+  "center": {
+    "lat": 41.2849730,
+    "lon": 112.6247576
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "察右中旗第二中学",
+    "name:en": "Chahar Right Middle Banner No.2 Middle School",
+    "name:zh": "察右中旗第二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 539578065,
+  "center": {
+    "lat": 41.2726792,
+    "lon": 112.6322919
+  },
+  "tags": {
+    "amenity": "hospital",
+    "name": "察右中旗医院",
+    "name:en": "Chahar Right Middle Banner Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 539578075,
+  "center": {
+    "lat": 41.2673838,
+    "lon": 112.6295011
+  },
+  "tags": {
+    "amenity": "school",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 539578097,
+  "center": {
+    "lat": 41.2729927,
+    "lon": 112.6128640
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "察右中旗第一中学",
+    "name:en": "Chahar Right Middle Banner No.1 Middle School",
+    "name:zh": "察右中旗第一中学",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 539910524,
+  "center": {
+    "lat": 40.8963299,
+    "lon": 112.5665925
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "卓资中学",
+    "name:en": "Zhuozi Middle School",
+    "name:zh": "卓资中学"
+  }
+},
+{
+  "type": "way",
+  "id": 539943628,
+  "center": {
+    "lat": 40.8884480,
+    "lon": 112.5783982
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "卓资县职业中学",
+    "name:en": "Zhuozi County Vocational High School",
+    "name:zh": "卓资县职业中学"
+  }
+},
+{
+  "type": "way",
+  "id": 540062809,
+  "center": {
+    "lat": 40.9851747,
+    "lon": 112.1567228
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "旗下营中学",
+    "name:en": "Qixiaying Middle School",
+    "name:zh": "旗下营中学",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 540340433,
+  "center": {
+    "lat": 40.5699048,
+    "lon": 110.5258660
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "土右旗敕勒川小学",
+    "name:zh": "土右旗敕勒川小学"
+  }
+},
+{
+  "type": "way",
+  "id": 540525264,
+  "center": {
+    "lat": 40.5544647,
+    "lon": 110.5311499
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "萨拉齐第二中学",
+    "name:en": "Salaqi No.2 Middle School",
+    "name:zh": "萨拉齐第二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 540525265,
+  "center": {
+    "lat": 40.5508887,
+    "lon": 110.5095051
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "萨拉齐第一中学",
+    "name:en": "Salaqi No.1 Middle School",
+    "name:zh": "萨拉齐第一中学"
+  }
+},
+{
+  "type": "way",
+  "id": 540754376,
+  "center": {
+    "lat": 40.5614524,
+    "lon": 110.5313457
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "萨拉齐四中",
+    "name:en": "Salaqi No.4 Middle School",
+    "name:zh": "萨拉齐四中",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 540754380,
+  "center": {
+    "lat": 40.5756934,
+    "lon": 110.5344424
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土右旗民族第一中学",
+    "name:en": "Tumed Right Banner Ethnic No.1 Middle School",
+    "name:zh": "土右旗民族第一中学"
+  }
+},
+{
+  "type": "way",
+  "id": 541991796,
+  "center": {
+    "lat": 40.5532374,
+    "lon": 110.5189557
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "大东街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 541991806,
+  "center": {
+    "lat": 40.5542854,
+    "lon": 110.5150779
+  },
+  "tags": {
+    "amenity": "hospital",
+    "name": "土右旗医院",
+    "name:en": "Tumed Right Banner Hospital",
+    "name:zh": "土右旗医院",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 542335720,
+  "center": {
+    "lat": 40.5467704,
+    "lon": 110.4981394
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 544895198,
+  "center": {
+    "lat": 40.3799666,
+    "lon": 111.8287376
+  },
+  "tags": {
+    "amenity": "school",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 544895211,
+  "center": {
+    "lat": 40.3835140,
+    "lon": 111.8270834
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "和林格尔县第三中学",
+    "name:en": "Horinger No.3 Middle School",
+    "name:zh": "和林格尔县第三中学",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 544895367,
+  "center": {
+    "lat": 40.4017135,
+    "lon": 111.8163599
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 544895368,
+  "center": {
+    "lat": 40.3761216,
+    "lon": 111.8163585
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "和林格尔县第二小学"
+  }
+},
+{
+  "type": "way",
+  "id": 545117348,
+  "center": {
+    "lat": 40.3789659,
+    "lon": 111.7746891
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "和林格尔县民族中学",
+    "name:en": "Horinger Minzu Middle School",
+    "name:zh": "和林格尔县民族中学",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 545117420,
+  "center": {
+    "lat": 40.3766070,
+    "lon": 111.7963761
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "和林二中",
+    "name:en": "Horinger No.2 Middle School",
+    "name:zh": "和林二中",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 545117421,
+  "center": {
+    "lat": 40.3794614,
+    "lon": 111.7921369
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 545139525,
+  "center": {
+    "lat": 40.3961351,
+    "lon": 111.8233242
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 545139532,
+  "center": {
+    "lat": 40.3970779,
+    "lon": 111.8290964
+  },
+  "tags": {
+    "amenity": "hospital",
+    "name": "和林格尔县人民医院",
+    "name:en": "Horinger People's Hospital",
+    "name:zh": "和林格尔县人民医院"
+  }
+},
+{
+  "type": "way",
+  "id": 545139533,
+  "center": {
+    "lat": 40.3973934,
+    "lon": 111.8194203
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 545363289,
+  "center": {
+    "lat": 40.4895417,
+    "lon": 111.7799610
+  },
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古师范大学(盛乐校区)",
+    "name:en": "Inner Mongolia Normal University Shengle Campus",
+    "name:zh": "内蒙古师范大学盛乐校区",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 545405716,
+  "center": {
+    "lat": 40.4542561,
+    "lon": 111.7884327
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "和林格尔职业高级中学",
+    "name:en": "Horinger Vocational school",
+    "name:zh": "和林格尔职业高级中学",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 545743760,
+  "center": {
+    "lat": 40.6167683,
+    "lon": 111.8938797
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "公喇嘛小学",
+    "name:en": "Gonglama Elementary School",
+    "name:zh": "公喇嘛小学",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 545764396,
+  "center": {
+    "lat": 40.5623092,
+    "lon": 111.7282949
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "沙尔沁中学",
+    "name:en": "Sha'erqin Middle School",
+    "name:zh": "沙尔沁中学",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 546252561,
+  "center": {
+    "lat": 40.0853745,
+    "lon": 111.2753320
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "大路第一小学"
+  }
+},
+{
+  "type": "way",
+  "id": 546445648,
+  "center": {
+    "lat": 41.0287024,
+    "lon": 110.0521466
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "固阳县第一中学",
+    "name:en": "Guyang No.1 Middle School",
+    "name:zh": "固阳县第一中学",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 546467737,
+  "center": {
+    "lat": 41.0064311,
+    "lon": 110.0502929
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "固阳县第三中学",
+    "name:en": "Guyang No.3 Middle School",
+    "name:zh": "固阳县第三中学",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 546467786,
+  "center": {
+    "lat": 41.0346071,
+    "lon": 110.0533150
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "团结巷小学"
+  }
+},
+{
+  "type": "way",
+  "id": 546467879,
+  "center": {
+    "lat": 41.0241568,
+    "lon": 110.0741565
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 546468102,
+  "center": {
+    "lat": 41.0232082,
+    "lon": 110.0539635
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 554607725,
+  "center": {
+    "lat": 40.6753818,
+    "lon": 109.8687301
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "北方重工第一中学",
+    "name:en": "North Heavy Industry No.1 Middle School",
+    "name:zh": "北方重工第一中学"
+  }
+},
+{
+  "type": "way",
+  "id": 554607736,
+  "center": {
+    "lat": 40.6745643,
+    "lon": 109.8647108
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头第五中学",
+    "name:en": "Baotou No.5 Middle School",
+    "name:zh": "包头第五中学"
+  }
+},
+{
+  "type": "way",
+  "id": 554607740,
+  "center": {
+    "lat": 40.6685566,
+    "lon": 109.8768659
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "北重四中",
+    "name:en": "North Heavy Industry No.4 Middle School",
+    "name:zh": "北重四中"
+  }
+},
+{
+  "type": "way",
+  "id": 554607753,
+  "center": {
+    "lat": 40.6207810,
+    "lon": 109.9733992
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头四十六中",
+    "name:en": "Baotou No.46 Middle School",
+    "name:zh": "包头四十六中",
+    "source": "DigitalGlobe Premium Imagery"
+  }
+},
+{
+  "type": "way",
+  "id": 554706579,
+  "center": {
+    "lat": 40.6601167,
+    "lon": 109.8235952
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "17",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "乌兰道",
+    "amenity": "school",
+    "education": "school",
+    "grades": "9-12",
+    "name": "包头市第九中学",
+    "name:en": "Baotou No.9 Middle School",
+    "name:zh": "包头市第九中学"
+  }
+},
+{
+  "type": "way",
+  "id": 554706585,
+  "center": {
+    "lat": 40.6240782,
+    "lon": 109.8285693
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "包钢高级技术学校",
+    "name:en": "Baotou Steel Technical School",
+    "name:zh": "包钢高级技术学校"
+  }
+},
+{
+  "type": "way",
+  "id": 554706591,
+  "center": {
+    "lat": 40.6617288,
+    "lon": 109.8822859
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "北重二中",
+    "name:en": "North Heavy Industry No.2 Middle School",
+    "name:zh": "北重二中"
+  }
+},
+{
+  "type": "way",
+  "id": 554706592,
+  "center": {
+    "lat": 40.6644632,
+    "lon": 109.8773160
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头四中",
+    "name:en": "Baotou No.4 Middle School",
+    "name:zh": "包头四中"
+  }
+},
+{
+  "type": "way",
+  "id": 566228771,
+  "center": {
+    "lat": 40.7785576,
+    "lon": 111.7070154
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 566228931,
+  "center": {
+    "lat": 40.7157849,
+    "lon": 111.7948114
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 613969429,
+  "center": {
+    "lat": 40.6198390,
+    "lon": 109.8299904
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "综合门诊部"
+  }
+},
+{
+  "type": "way",
+  "id": 630778586,
+  "center": {
+    "lat": 40.7236112,
+    "lon": 111.1244908
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土默特左旗第二中学",
+    "name:en": "Tumed Left Banner No.2 Middle School",
+    "name:zh": "土默特左旗第二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 630778723,
+  "center": {
+    "lat": 40.7162876,
+    "lon": 111.1194071
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土默特左旗第一中学",
+    "name:en": "Tumed Left Banner No.1 Middle School",
+    "name:zh": "土默特左旗第一中学"
+  }
+},
+{
+  "type": "way",
+  "id": 630778741,
+  "center": {
+    "lat": 40.7246559,
+    "lon": 111.1007895
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土默特左旗民族中学",
+    "name:en": "Tumed Left Banner Minzu Middle School",
+    "name:zh": "土默特左旗民族中学"
+  }
+},
+{
+  "type": "way",
+  "id": 630797681,
+  "center": {
+    "lat": 40.7244362,
+    "lon": 111.1644984
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土默特左旗蒙古族学校",
+    "name:en": "Tumed Left Banner Mongolia School",
+    "name:zh": "土默特左旗蒙古族学校"
+  }
+},
+{
+  "type": "way",
+  "id": 630797772,
+  "center": {
+    "lat": 40.7221529,
+    "lon": 111.1430049
+  },
+  "tags": {
+    "amenity": "hospital",
+    "name": "土默特左旗人民医院",
+    "name:en": "Tumed Left Banner People's Hospital",
+    "name:zh": "土默特左旗人民医院"
+  }
+},
+{
+  "type": "way",
+  "id": 630797777,
+  "center": {
+    "lat": 40.7181844,
+    "lon": 111.1402019
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "察素齐镇第七小学"
+  }
+},
+{
+  "type": "way",
+  "id": 631391302,
+  "center": {
+    "lat": 40.7135921,
+    "lon": 111.1202530
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 663780582,
+  "center": {
+    "lat": 40.7863074,
+    "lon": 111.5442172
+  },
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古工业大学",
+    "name:de": "Technische Universität der Inneren Mongolei",
+    "name:en": "Inner Mongolia University of Technology",
+    "wikidata": "Q6035514",
+    "wikipedia": "zh:内蒙古工业大学"
+  }
+},
+{
+  "type": "way",
+  "id": 668855089,
+  "center": {
+    "lat": 40.8188767,
+    "lon": 111.6502201
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "内蒙古医科大学附属医院"
+  }
+},
+{
+  "type": "way",
+  "id": 691549860,
+  "center": {
+    "lat": 40.8179013,
+    "lon": 111.6706809
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 691550112,
+  "center": {
+    "lat": 40.8109245,
+    "lon": 111.6622882
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "gynaecology",
+    "name": "内蒙古自治区妇幼保健院"
+  }
+},
+{
+  "type": "way",
+  "id": 734035583,
+  "center": {
+    "lat": 40.5810326,
+    "lon": 109.8975644
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "稀土高新区第四中学"
+  }
+},
+{
+  "type": "way",
+  "id": 734121122,
+  "center": {
+    "lat": 40.5511239,
+    "lon": 109.9889390
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头第一实验小学南海分校"
+  }
+},
+{
+  "type": "way",
+  "id": 734129694,
+  "center": {
+    "lat": 40.5661620,
+    "lon": 110.0562107
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "同道小学"
+  }
+},
+{
+  "type": "way",
+  "id": 734129696,
+  "center": {
+    "lat": 40.5623514,
+    "lon": 110.0730682
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市东河区河东中学"
+  }
+},
+{
+  "type": "way",
+  "id": 734129698,
+  "center": {
+    "lat": 40.5451800,
+    "lon": 110.0870331
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "古城湾乡什大股小学"
+  }
+},
+{
+  "type": "way",
+  "id": 734129699,
+  "center": {
+    "lat": 40.5654674,
+    "lon": 110.1508630
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包铝中学"
+  }
+},
+{
+  "type": "way",
+  "id": 734129700,
+  "center": {
+    "lat": 40.5647651,
+    "lon": 110.1495813
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市东河区中西医结合医院"
+  }
+},
+{
+  "type": "way",
+  "id": 734129701,
+  "center": {
+    "lat": 40.5651630,
+    "lon": 110.1422606
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包铝小学"
+  }
+},
+{
+  "type": "way",
+  "id": 734133308,
+  "center": {
+    "lat": 40.6427803,
+    "lon": 109.9473639
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "包头职业技术学院"
+  }
+},
+{
+  "type": "way",
+  "id": 734133309,
+  "center": {
+    "lat": 40.6306879,
+    "lon": 109.9464613
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第九中学外国语学校"
+  }
+},
+{
+  "type": "way",
+  "id": 734133313,
+  "center": {
+    "lat": 40.6259354,
+    "lon": 109.9464563
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市委党校"
+  }
+},
+{
+  "type": "way",
+  "id": 759856089,
+  "center": {
+    "lat": 40.7963759,
+    "lon": 111.6111614
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 781868332,
+  "center": {
+    "lat": 40.8317912,
+    "lon": 111.7459226
+  },
+  "tags": {
+    "addr:city": "Hohhot",
+    "addr:postcode": "010010",
+    "addr:province": "Inner Mongolia",
+    "amenity": "school",
+    "name": "呼和浩特市第二中学如意校区",
+    "name:en": "Hohhot No.2 Middle School",
+    "website": "http://www.hs2z.org.cn/"
+  }
+},
+{
+  "type": "way",
+  "id": 791639251,
+  "center": {
+    "lat": 40.6560567,
+    "lon": 109.8924424
+  },
+  "tags": {
+    "alt_name": "内蒙古一机一中",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第81中学",
+    "old_name": "内蒙古一机一中"
+  }
+},
+{
+  "type": "way",
+  "id": 842222424,
+  "center": {
+    "lat": 40.7574616,
+    "lon": 111.7294725
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "呼和浩特十七中学"
+  }
+},
+{
+  "type": "way",
+  "id": 858531508,
+  "center": {
+    "lat": 40.8520995,
+    "lon": 111.7179108
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区苏虎街实验小学(科尔沁校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 915071370,
+  "center": {
+    "lat": 40.7979302,
+    "lon": 111.6346039
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第七中学",
+    "note": "学校"
+  }
+},
+{
+  "type": "way",
+  "id": 917480084,
+  "center": {
+    "lat": 40.1015472,
+    "lon": 111.2621449
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "准格尔旗职业高级中学"
+  }
+},
+{
+  "type": "way",
+  "id": 917480085,
+  "center": {
+    "lat": 40.0980877,
+    "lon": 111.2613069
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "准格尔旗实验学校"
+  }
+},
+{
+  "type": "way",
+  "id": 918347236,
+  "center": {
+    "lat": 40.7893625,
+    "lon": 111.7195967
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "呼和浩特市蒙中医院"
+  }
+},
+{
+  "type": "way",
+  "id": 930305807,
+  "center": {
+    "lat": 40.7893107,
+    "lon": 111.6580740
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第六中学"
+  }
+},
+{
+  "type": "way",
+  "id": 951428838,
+  "center": {
+    "lat": 40.1394054,
+    "lon": 110.2915963
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 951428839,
+  "center": {
+    "lat": 40.1391259,
+    "lon": 110.2890230
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 951429448,
+  "center": {
+    "lat": 40.0031606,
+    "lon": 110.0156476
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 981571707,
+  "center": {
+    "lat": 40.6496054,
+    "lon": 109.9859688
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头机械工业职业学校"
+  }
+},
+{
+  "type": "way",
+  "id": 981571708,
+  "center": {
+    "lat": 40.6462396,
+    "lon": 109.9888650
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头机电工业职业学校"
+  }
+},
+{
+  "type": "way",
+  "id": 981571709,
+  "center": {
+    "lat": 40.6449693,
+    "lon": 110.0037625
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "祥云路",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头艺术职业学校",
+    "religion": "none"
+  }
+},
+{
+  "type": "way",
+  "id": 981571710,
+  "center": {
+    "lat": 40.6480595,
+    "lon": 110.0045692
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头财经信息职业学校",
+    "phone": "+86 472 525 3501",
+    "phone:CN": "0472 5253501",
+    "religion": "none",
+    "website": "https://www.btcjxx.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 981571711,
+  "center": {
+    "lat": 40.6514923,
+    "lon": 110.0008349
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头服务管理职业学校"
+  }
+},
+{
+  "type": "way",
+  "id": 981571712,
+  "center": {
+    "lat": 40.6535540,
+    "lon": 109.9968048
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "包头铁道职业技术学院"
+  }
+},
+{
+  "type": "way",
+  "id": 997926643,
+  "center": {
+    "lat": 40.8044725,
+    "lon": 111.7019711
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "内蒙古农业大学附属中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1006110058,
+  "center": {
+    "lat": 40.6072135,
+    "lon": 109.8326273
+  },
+  "tags": {
+    "alt_name": "包铁五中",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第99中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1027471130,
+  "center": {
+    "lat": 40.5110565,
+    "lon": 112.4678157
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1027511313,
+  "center": {
+    "lat": 40.8472330,
+    "lon": 111.8673601
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "呼和浩特市森林消防大队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1029492399,
+  "center": {
+    "lat": 40.8896755,
+    "lon": 111.8478329
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第二十二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1029492400,
+  "center": {
+    "lat": 40.8947219,
+    "lon": 111.8313910
+  },
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "呼和浩特职业技术大学"
+  }
+},
+{
+  "type": "way",
+  "id": 1029492401,
+  "center": {
+    "lat": 40.9042709,
+    "lon": 111.8398535
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "内蒙古机电职业技术学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1029492402,
+  "center": {
+    "lat": 40.9058626,
+    "lon": 111.8453827
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "内蒙古化工职业学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1029492403,
+  "center": {
+    "lat": 40.8976730,
+    "lon": 111.8511588
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "内蒙古商贸职业学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1029492404,
+  "center": {
+    "lat": 40.8964252,
+    "lon": 111.8438741
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "内蒙古电子信息职业技术学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1029901308,
+  "center": {
+    "lat": 40.6428323,
+    "lon": 109.4853938
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "哈业胡同中心校"
+  }
+},
+{
+  "type": "way",
+  "id": 1029901330,
+  "center": {
+    "lat": 40.7301085,
+    "lon": 111.1628276
+  },
+  "tags": {
+    "amenity": "hospital",
+    "name": "土默特左旗中蒙医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1029901350,
+  "center": {
+    "lat": 40.7099532,
+    "lon": 111.1367076
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土默特左旗第四小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1030241311,
+  "center": {
+    "lat": 40.5912096,
+    "lon": 111.3832595
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "三两中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1030241312,
+  "center": {
+    "lat": 40.5545534,
+    "lon": 110.5378796
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "东胜街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1030241360,
+  "center": {
+    "lat": 40.7234098,
+    "lon": 111.1565968
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土默特左旗第一职业中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1030241363,
+  "center": {
+    "lat": 40.7241307,
+    "lon": 111.1205020
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土默特左旗第六小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1030241371,
+  "center": {
+    "lat": 40.7390406,
+    "lon": 111.4303874
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "土左旗金山学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1030241436,
+  "center": {
+    "lat": 40.3484636,
+    "lon": 110.9053919
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土默特右旗民族第二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1031045530,
+  "center": {
+    "lat": 40.8126889,
+    "lon": 111.6469478
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市回民中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1031046641,
+  "center": {
+    "lat": 40.8464006,
+    "lon": 111.6518601
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区成吉思汗街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1036195064,
+  "center": {
+    "lat": 40.3777211,
+    "lon": 111.8183796
+  },
+  "tags": {
+    "amenity": "hospital",
+    "name": "和林格尔县蒙医中医医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1056841712,
+  "center": {
+    "lat": 40.6064204,
+    "lon": 109.8417787
+  },
+  "tags": {
+    "amenity": "driving_school",
+    "education": "driving_school",
+    "name": "祥和驾校"
+  }
+},
+{
+  "type": "way",
+  "id": 1056843389,
+  "center": {
+    "lat": 40.6155206,
+    "lon": 109.8391485
+  },
+  "tags": {
+    "amenity": "driving_school",
+    "name": "银河驾校"
+  }
+},
+{
+  "type": "way",
+  "id": 1061940127,
+  "center": {
+    "lat": 40.6223074,
+    "lon": 109.9151514
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头体育学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1064543386,
+  "center": {
+    "lat": 40.6206619,
+    "lon": 109.9557231
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "九原区第一实验小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1084946952,
+  "center": {
+    "lat": 40.6599332,
+    "lon": 109.8412268
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "昆都仑区乌兰小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1084946957,
+  "center": {
+    "lat": 40.6585999,
+    "lon": 109.8378304
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "3",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "乌兰道",
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "包头市第二十九中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1085032550,
+  "center": {
+    "lat": 40.6309824,
+    "lon": 109.8119608
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "和平中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1085297980,
+  "center": {
+    "lat": 40.6398167,
+    "lon": 109.8321001
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "阿尔丁大街",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "orthopaedics",
+    "name": "包头云龙骨科医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1086322143,
+  "center": {
+    "lat": 40.6466583,
+    "lon": 109.8258836
+  },
+  "tags": {
+    "alt_name": "包钢三中",
+    "amenity": "school",
+    "education": "school",
+    "name": "昆区三中"
+  }
+},
+{
+  "type": "way",
+  "id": 1086322144,
+  "center": {
+    "lat": 40.6478111,
+    "lon": 109.8265143
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:province": "内蒙古自治区",
+    "alt_name": "包钢四中",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第96中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1086322183,
+  "center": {
+    "lat": 40.6487073,
+    "lon": 109.8306376
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "包钢实验一小(东校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1086322184,
+  "center": {
+    "lat": 40.6480152,
+    "lon": 109.8301383
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "内蒙古包钢医院中西医院区"
+  }
+},
+{
+  "type": "way",
+  "id": 1088376240,
+  "center": {
+    "lat": 40.6477187,
+    "lon": 109.8233237
+  },
+  "tags": {
+    "alt_name": "包钢实验一小;昆都仑区第一实验小学",
+    "amenity": "school",
+    "education": "school",
+    "name": "昆区实验一小",
+    "old_name": "包钢实验一小"
+  }
+},
+{
+  "type": "way",
+  "id": 1088376241,
+  "center": {
+    "lat": 40.6473192,
+    "lon": 109.8186522
+  },
+  "tags": {
+    "alt_name": "昆都仑区第五中学;包钢实验中学",
+    "amenity": "school",
+    "education": "school",
+    "name": "昆区五中",
+    "old_name": "包钢实验中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1088376243,
+  "center": {
+    "lat": 40.6422547,
+    "lon": 109.8175490
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包钢十八小"
+  }
+},
+{
+  "type": "way",
+  "id": 1088376245,
+  "center": {
+    "lat": 40.6402352,
+    "lon": 109.8220268
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包钢二十小"
+  }
+},
+{
+  "type": "way",
+  "id": 1090769143,
+  "center": {
+    "lat": 40.6241572,
+    "lon": 109.8808696
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "黄河大街",
+    "amenity": "driving_school",
+    "education": "driving_school"
+  }
+},
+{
+  "type": "way",
+  "id": 1126822842,
+  "center": {
+    "lat": 40.6493175,
+    "lon": 109.7968265
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "包钢第十二小学",
+    "short_name": "包钢十二小"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501200,
+  "center": {
+    "lat": 40.5810127,
+    "lon": 110.0210375
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "东河区",
+    "addr:housenumber": "37",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "环城路",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头铁路第二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501201,
+  "center": {
+    "lat": 40.5856333,
+    "lon": 110.0589851
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "东河区",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "康复路",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第二中学",
+    "short_name": "包头二中"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501202,
+  "center": {
+    "lat": 40.6019967,
+    "lon": 109.9919942
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "东河区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第一中学",
+    "short_name": "包头一中"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501203,
+  "center": {
+    "lat": 40.6712996,
+    "lon": 109.8009482
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市第二十五中学",
+    "short_name": "包头二十五中"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501204,
+  "center": {
+    "lat": 40.6705294,
+    "lon": 109.8028944
+  },
+  "tags": {
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "包头钢铁第二十四小学",
+    "short_name": "包钢二十四小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501205,
+  "center": {
+    "lat": 40.6723746,
+    "lon": 109.8156999
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "团结三小学",
+    "official_name": "团结大街第三小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501206,
+  "center": {
+    "lat": 40.6703029,
+    "lon": 109.8225762
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包钢二十二小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501207,
+  "center": {
+    "lat": 40.6707717,
+    "lon": 109.8413671
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "青松小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501208,
+  "center": {
+    "lat": 40.6721851,
+    "lon": 109.8417712
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第四十三中学",
+    "name:en": "Baotou No.43 Middle School",
+    "name:zh": "包头市第四十三中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501209,
+  "center": {
+    "lat": 40.6750248,
+    "lon": 109.8519043
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "新城中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501210,
+  "center": {
+    "lat": 40.6685822,
+    "lon": 109.7990922
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "团结大街第一小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501211,
+  "center": {
+    "lat": 40.6664911,
+    "lon": 109.8041328
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "团结大街第二小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501212,
+  "center": {
+    "lat": 40.6668314,
+    "lon": 109.8092987
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市第七中学",
+    "short_name": "包头七中"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501213,
+  "center": {
+    "lat": 40.6636626,
+    "lon": 109.8173848
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第三十五中学",
+    "short_name": "包头三十五中"
+  }
+},
+{
+  "type": "way",
+  "id": 1127501214,
+  "center": {
+    "lat": 40.6668918,
+    "lon": 109.8248087
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "团结大街第四小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1128220927,
+  "center": {
+    "lat": 40.6050278,
+    "lon": 109.8874975
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "稀土高新区消防大队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676532,
+  "center": {
+    "lat": 40.8006697,
+    "lon": 111.6520152
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市小召小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676538,
+  "center": {
+    "lat": 40.7959217,
+    "lon": 111.6531257
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "玉泉区巧尔齐召小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676539,
+  "center": {
+    "lat": 40.7966007,
+    "lon": 111.6522735
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第六中学初中部"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676542,
+  "center": {
+    "lat": 40.7974758,
+    "lon": 111.6615444
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "玉泉区五塔寺东街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676543,
+  "center": {
+    "lat": 40.7967568,
+    "lon": 111.6608677
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第二十六中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676544,
+  "center": {
+    "lat": 40.7959889,
+    "lon": 111.6675665
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "玉泉区石东小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676545,
+  "center": {
+    "lat": 40.7944781,
+    "lon": 111.6693032
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "玉泉区石东小学（南校区）"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676547,
+  "center": {
+    "lat": 40.7937553,
+    "lon": 111.6558371
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "玉泉区清泉街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676549,
+  "center": {
+    "lat": 40.7855924,
+    "lon": 111.6542424
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第三职业中等专业学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676551,
+  "center": {
+    "lat": 40.7988473,
+    "lon": 111.6441873
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市通顺街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130676554,
+  "center": {
+    "lat": 40.7942742,
+    "lon": 111.6447465
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "玉泉区民族实验小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130833345,
+  "center": {
+    "lat": 40.8060553,
+    "lon": 111.6517880
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "回民区中山西路回族小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130833350,
+  "center": {
+    "lat": 40.8155315,
+    "lon": 111.6592635
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "回民区贝尔路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130833351,
+  "center": {
+    "lat": 40.8051222,
+    "lon": 111.6446018
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市开来中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130833352,
+  "center": {
+    "lat": 40.8046399,
+    "lon": 111.6433078
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第二职业中等专业学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1130833354,
+  "center": {
+    "lat": 40.8132692,
+    "lon": 111.6495590
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "回民区通道街民族小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130833356,
+  "center": {
+    "lat": 40.8151577,
+    "lon": 111.6539585
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "回民区营坊道民族小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1130833359,
+  "center": {
+    "lat": 40.8261386,
+    "lon": 111.6672395
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区新华小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1131912424,
+  "center": {
+    "lat": 40.6510793,
+    "lon": 109.7908686
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包钢创新高级中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1131912426,
+  "center": {
+    "lat": 40.6495498,
+    "lon": 109.7938786
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包钢第八中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1131965924,
+  "center": {
+    "lat": 40.6539159,
+    "lon": 109.7969767
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "包钢第十七小学",
+    "short_name": "包钢十七小"
+  }
+},
+{
+  "type": "way",
+  "id": 1132673836,
+  "center": {
+    "lat": 40.6994737,
+    "lon": 109.8658710
+  },
+  "tags": {
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "三星小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1132711063,
+  "center": {
+    "lat": 40.6493196,
+    "lon": 109.8021512
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "包钢第五小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1132711068,
+  "center": {
+    "lat": 40.6523575,
+    "lon": 109.8002252
+  },
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683964,
+  "center": {
+    "lat": 40.8274179,
+    "lon": 111.6788591
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区苏虎街实验小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683965,
+  "center": {
+    "lat": 40.8277659,
+    "lon": 111.6698295
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区北垣小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683969,
+  "center": {
+    "lat": 40.8285178,
+    "lon": 111.6897953
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第十九中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683971,
+  "center": {
+    "lat": 40.8248309,
+    "lon": 111.6857505
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区落凤街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683979,
+  "center": {
+    "lat": 40.8196869,
+    "lon": 111.6901693
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "内蒙古第三医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683985,
+  "center": {
+    "lat": 40.8219399,
+    "lon": 111.6806722
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区满族小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683986,
+  "center": {
+    "lat": 40.8214252,
+    "lon": 111.6787388
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区关帝庙小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683988,
+  "center": {
+    "lat": 40.8198054,
+    "lon": 111.6821683
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市实验中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683990,
+  "center": {
+    "lat": 40.8184262,
+    "lon": 111.6801109
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市启秀中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683991,
+  "center": {
+    "lat": 40.8155156,
+    "lon": 111.6874051
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "内蒙古人民医院",
+    "name:en": "Inner Mongolia people’s hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683992,
+  "center": {
+    "lat": 40.8077099,
+    "lon": 111.6846933
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "内蒙古师范大学附属中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683993,
+  "center": {
+    "lat": 40.8174080,
+    "lon": 111.6914866
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第三十五中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683994,
+  "center": {
+    "lat": 40.8140211,
+    "lon": 111.6919164
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "内蒙古大学附属小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683995,
+  "center": {
+    "lat": 40.8117824,
+    "lon": 111.6984405
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市民族实验学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683996,
+  "center": {
+    "lat": 40.8292445,
+    "lon": 111.6933385
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古艺术学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683997,
+  "center": {
+    "lat": 40.8291875,
+    "lon": 111.6952994
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区东门外小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133683998,
+  "center": {
+    "lat": 40.8298974,
+    "lon": 111.6982028
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第十四中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133760351,
+  "center": {
+    "lat": 40.8457658,
+    "lon": 111.6957383
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第三十四中学东校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1133760352,
+  "center": {
+    "lat": 40.8441040,
+    "lon": 111.6873363
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古卫生职业技术学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1133760354,
+  "center": {
+    "lat": 40.8376908,
+    "lon": 111.6611772
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区海拉尔小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1133760360,
+  "center": {
+    "lat": 40.8392899,
+    "lon": 111.6482431
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "呼和浩特职业学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1133760361,
+  "center": {
+    "lat": 40.8373804,
+    "lon": 111.6514403
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "新城区北垣小学公主府校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1133760362,
+  "center": {
+    "lat": 40.8418822,
+    "lon": 111.6500589
+  },
+  "tags": {
+    "amenity": "university",
+    "name": "呼和浩特民族学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1133766717,
+  "center": {
+    "lat": 40.8688061,
+    "lon": 111.7332964
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "内蒙古妇幼保健院"
+  }
+},
+{
+  "type": "way",
+  "id": 1133766718,
+  "center": {
+    "lat": 40.8577631,
+    "lon": 111.7446924
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市实验中学东河校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1134514807,
+  "center": {
+    "lat": 40.6536795,
+    "lon": 109.7998863
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "name": "包钢第十二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1134514810,
+  "center": {
+    "lat": 40.6556415,
+    "lon": 109.8002249
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "包钢第二小学",
+    "religion": "none"
+  }
+},
+{
+  "type": "way",
+  "id": 1134514813,
+  "center": {
+    "lat": 40.6503153,
+    "lon": 109.8087727
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "包钢第十一小学",
+    "religion": "none"
+  }
+},
+{
+  "type": "way",
+  "id": 1134514817,
+  "center": {
+    "lat": 40.6537498,
+    "lon": 109.8069129
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第五十一中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1135014018,
+  "center": {
+    "lat": 40.6214857,
+    "lon": 109.8147297
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "内蒙古科技大学实验小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1135848502,
+  "center": {
+    "lat": 40.6167557,
+    "lon": 109.8057180
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "内蒙古中等职业技术学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1135848503,
+  "center": {
+    "lat": 40.6173127,
+    "lon": 109.8038775
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头宏昌学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1136386673,
+  "center": {
+    "lat": 40.6746742,
+    "lon": 109.8786262
+  },
+  "tags": {
+    "alt_name": "北重三中;北方重工第三中学",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第93中学",
+    "official_name": "包头市第93中学",
+    "religion": "none"
+  }
+},
+{
+  "type": "way",
+  "id": 1136386680,
+  "center": {
+    "lat": 40.6730453,
+    "lon": 109.8798605
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "北重一小",
+    "official_name": "北方重工第一小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1138555296,
+  "center": {
+    "lat": 40.5504932,
+    "lon": 109.8203802
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "奶业中心校"
+  }
+},
+{
+  "type": "way",
+  "id": 1144285005,
+  "center": {
+    "lat": 40.6116265,
+    "lon": 109.8449348
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "沼园路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1144285017,
+  "center": {
+    "lat": 40.6316442,
+    "lon": 109.8541134
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "稀土高新区第一中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1144285021,
+  "center": {
+    "lat": 40.6310103,
+    "lon": 109.8515431
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "稀土高新区第二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1144552234,
+  "center": {
+    "lat": 40.6436551,
+    "lon": 109.8136143
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包钢第十小学",
+    "short_name": "包钢十小"
+  }
+},
+{
+  "type": "way",
+  "id": 1144552236,
+  "center": {
+    "lat": 40.6445150,
+    "lon": 109.8091770
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "友谊大街第二小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1146545547,
+  "center": {
+    "lat": 40.6424089,
+    "lon": 109.8409885
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第六中学（南校区）"
+  }
+},
+{
+  "type": "way",
+  "id": 1146545549,
+  "center": {
+    "lat": 40.6346196,
+    "lon": 109.8408248
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "富林路小学",
+    "official_name": "稀土高新区富林路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1147365779,
+  "center": {
+    "lat": 40.6368679,
+    "lon": 109.8681644
+  },
+  "tags": {
+    "amenity": "driving_school",
+    "education": "driving_school",
+    "name": "荣通驾校（青山分校）"
+  }
+},
+{
+  "type": "way",
+  "id": 1147514081,
+  "center": {
+    "lat": 40.5554398,
+    "lon": 109.7356427
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "官将村卫生室"
+  }
+},
+{
+  "type": "way",
+  "id": 1149785595,
+  "center": {
+    "lat": 40.6916045,
+    "lon": 109.9631175
+  },
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "way",
+  "id": 1151375164,
+  "center": {
+    "lat": 40.5875901,
+    "lon": 110.0533130
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "公园路小学转龙藏分校"
+  }
+},
+{
+  "type": "way",
+  "id": 1151723637,
+  "center": {
+    "lat": 40.6603768,
+    "lon": 109.7996803
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "62",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "乌兰道",
+    "amenity": "school",
+    "name": "包头市特殊教育学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1152352278,
+  "center": {
+    "lat": 40.6693305,
+    "lon": 109.7927093
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "240",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "团结大街",
+    "amenity": "driving_school",
+    "name": "骏腾驾校"
+  }
+},
+{
+  "type": "way",
+  "id": 1152352280,
+  "center": {
+    "lat": 40.6130187,
+    "lon": 109.8318853
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:housenumber": "10",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "阿尔丁大街",
+    "amenity": "driving_school",
+    "education": "driving_school",
+    "name": "华宇驾校"
+  }
+},
+{
+  "type": "way",
+  "id": 1152352281,
+  "center": {
+    "lat": 40.5955911,
+    "lon": 109.9090458
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "driving_school",
+    "name": "春雨驾校"
+  }
+},
+{
+  "type": "way",
+  "id": 1152352282,
+  "center": {
+    "lat": 40.6263556,
+    "lon": 109.8793520
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:housenumber": "3",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "黄河大街",
+    "amenity": "driving_school",
+    "education": "driving_school",
+    "name": "禹城驾校"
+  }
+},
+{
+  "type": "way",
+  "id": 1152621390,
+  "center": {
+    "lat": 40.5706540,
+    "lon": 109.9197850
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "fire_station",
+    "name": "包头市消防救援支队特勤大队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1152621407,
+  "center": {
+    "lat": 40.5820055,
+    "lon": 109.9327143
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:housenumber": "77",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "文昌路",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第14中学",
+    "name:en": "Baotou No.14 Middle School",
+    "name:mn": "Бугат хотын 14-р дунд сургууль",
+    "name:zh": "包头市第14中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1152680162,
+  "center": {
+    "lat": 40.6585453,
+    "lon": 109.8640409
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "青山区",
+    "addr:housenumber": "44",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "幸福路",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-9",
+    "name": "包头市第四十八中学",
+    "phone": "+86 472 619 0608",
+    "religion": "none"
+  }
+},
+{
+  "type": "way",
+  "id": 1152680166,
+  "center": {
+    "lat": 40.6603867,
+    "lon": 109.8591461
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "青山区",
+    "addr:housenumber": "15",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "望园南道",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "内蒙古赛立特尔职工医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1154732983,
+  "center": {
+    "lat": 40.6616862,
+    "lon": 109.7945064
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "37",
+    "addr:postcode": "014025",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "三八路",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市田家炳中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1154732990,
+  "center": {
+    "lat": 40.6621770,
+    "lon": 109.8036954
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "7",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "前进道",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "包钢实验二小",
+    "religion": "none"
+  }
+},
+{
+  "type": "way",
+  "id": 1154732991,
+  "center": {
+    "lat": 40.6630064,
+    "lon": 109.8038380
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "18",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "青年路",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包钢三医院国际部"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151296,
+  "center": {
+    "lat": 40.6731838,
+    "lon": 110.0494915
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "石拐区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-12",
+    "name": "包头苏蒙实验学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151297,
+  "center": {
+    "lat": 40.6786963,
+    "lon": 110.0566167
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "石拐区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-9",
+    "name": "石拐区第一中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151298,
+  "center": {
+    "lat": 40.6423144,
+    "lon": 110.0316976
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市第十五中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151299,
+  "center": {
+    "lat": 40.6724142,
+    "lon": 110.2658375
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新石拐小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151300,
+  "center": {
+    "lat": 40.6512968,
+    "lon": 109.8595149
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "青山区",
+    "addr:housenumber": "27",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "少先路",
+    "amenity": "school",
+    "education": "school",
+    "grades": "7-12",
+    "name": "内蒙古科技大学附属中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151301,
+  "center": {
+    "lat": 40.6516821,
+    "lon": 109.8607415
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "青山区",
+    "addr:housenumber": "8",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "幸福南路",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "幸福南路小学(第一校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151302,
+  "center": {
+    "lat": 40.6684635,
+    "lon": 109.8493585
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "青山区",
+    "addr:housenumber": "7",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "富强路",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "民族路小学(迎宾校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151303,
+  "center": {
+    "lat": 40.6649776,
+    "lon": 109.8481183
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头卫生学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151304,
+  "center": {
+    "lat": 40.6594935,
+    "lon": 109.8216875
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "30",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "阿吉奈道",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "钢铁大街第三小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151305,
+  "center": {
+    "lat": 40.6590344,
+    "lon": 109.8276664
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "13",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "乌兰道",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "钢铁大街第四小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1155151306,
+  "center": {
+    "lat": 40.6587294,
+    "lon": 109.8497560
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "民族路小学(万达校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1156921895,
+  "center": {
+    "lat": 40.5958999,
+    "lon": 110.0004759
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "东河区消防救援大队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1156928493,
+  "center": {
+    "lat": 40.5895704,
+    "lon": 110.0024279
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "东河区",
+    "addr:housenumber": "34",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "西脑包后街",
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "西脑包第一小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1156931704,
+  "center": {
+    "lat": 40.6055478,
+    "lon": 110.0248384
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "东河区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "grades": "7-12",
+    "name": "包头市景开中学新校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1156931705,
+  "center": {
+    "lat": 40.6012407,
+    "lon": 110.0143191
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "7-12",
+    "name": "包头市景开中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1156931706,
+  "center": {
+    "lat": 40.5807874,
+    "lon": 110.0427886
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "东河区",
+    "addr:housenumber": "32",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "环城东路",
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "康复路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1156931707,
+  "center": {
+    "lat": 40.5834966,
+    "lon": 110.0428706
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "东河区",
+    "addr:housenumber": "66",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "环城东路",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第二十八中学",
+    "phone": "+86 472 4355313"
+  }
+},
+{
+  "type": "way",
+  "id": 1158128893,
+  "center": {
+    "lat": 40.6463892,
+    "lon": 109.8411391
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:housenumber": "66",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "民族东路",
+    "amenity": "school",
+    "education": "school",
+    "name": "内蒙古科技大学实验学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1158128894,
+  "center": {
+    "lat": 40.6449980,
+    "lon": 109.8639243
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "青山区",
+    "addr:housenumber": "15",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "幸福南路",
+    "amenity": "school",
+    "education": "school",
+    "grades": "7-9",
+    "name": "包头市第四十五中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1158128901,
+  "center": {
+    "lat": 40.6317702,
+    "lon": 109.8659511
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:housenumber": "29",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "稀土路",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "稀宝康百家医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1158417053,
+  "center": {
+    "lat": 40.6046805,
+    "lon": 109.9712040
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "沙河第一小学北校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1158417057,
+  "center": {
+    "lat": 40.6054297,
+    "lon": 109.9695903
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "九原区",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "广场街",
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "包头市九原区蒙古族小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1159156034,
+  "center": {
+    "lat": 40.5604671,
+    "lon": 109.8882335
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "内蒙古博奥职业技术学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1159615026,
+  "center": {
+    "lat": 40.5536074,
+    "lon": 109.8201662
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "萨如拉街道卫生服务站"
+  }
+},
+{
+  "type": "way",
+  "id": 1159615031,
+  "center": {
+    "lat": 40.5525663,
+    "lon": 109.8208183
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "包头市消防支队九原区大队二中队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1159623754,
+  "center": {
+    "lat": 40.5971137,
+    "lon": 109.8049912
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "东方希望小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1159623761,
+  "center": {
+    "lat": 40.5706682,
+    "lon": 109.8206946
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "麻池中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1159951765,
+  "center": {
+    "lat": 40.7904820,
+    "lon": 111.5483610
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "校医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1173561827,
+  "center": {
+    "lat": 40.6107546,
+    "lon": 109.8287940
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "1-6",
+    "name": "包头师范学院实验小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1173561837,
+  "center": {
+    "lat": 40.6117893,
+    "lon": 109.8298872
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头师范学院实验幼儿园"
+  }
+},
+{
+  "type": "way",
+  "id": 1173561844,
+  "center": {
+    "lat": 40.6140278,
+    "lon": 109.8253675
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头博华医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1174192284,
+  "center": {
+    "lat": 40.6048750,
+    "lon": 109.9619346
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头朝聚眼科医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1174192297,
+  "center": {
+    "lat": 40.6074263,
+    "lon": 109.8340558
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "沼潭派出所"
+  }
+},
+{
+  "type": "way",
+  "id": 1174192323,
+  "center": {
+    "lat": 40.6170837,
+    "lon": 109.8426171
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "包头市消防救援支队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1174265499,
+  "center": {
+    "lat": 40.6761172,
+    "lon": 109.9170745
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市松石学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1174265501,
+  "center": {
+    "lat": 40.6786192,
+    "lon": 109.9032592
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市第52中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1174265507,
+  "center": {
+    "lat": 40.6330396,
+    "lon": 109.9486929
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "九原区世纪路第一小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1174265532,
+  "center": {
+    "lat": 40.5624986,
+    "lon": 109.9255447
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "北京师大包头附属学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1174265533,
+  "center": {
+    "lat": 40.5623736,
+    "lon": 109.9222495
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1174265542,
+  "center": {
+    "lat": 40.6808370,
+    "lon": 109.6802704
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "哈业脑包学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1174265544,
+  "center": {
+    "lat": 40.6829168,
+    "lon": 109.6742021
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "卜尔汉图中心幼儿园"
+  }
+},
+{
+  "type": "way",
+  "id": 1174482703,
+  "center": {
+    "lat": 40.6035866,
+    "lon": 109.9414527
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "九原区沙河第六小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1174482705,
+  "center": {
+    "lat": 40.6202337,
+    "lon": 109.9157441
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头外国语实验学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1174482712,
+  "center": {
+    "lat": 40.6271221,
+    "lon": 109.9605064
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1174490667,
+  "center": {
+    "lat": 40.6766825,
+    "lon": 110.0449307
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "石拐区人民医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1176302228,
+  "center": {
+    "lat": 40.6846665,
+    "lon": 109.8481048
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "昆北幼儿园"
+  }
+},
+{
+  "type": "way",
+  "id": 1176524877,
+  "center": {
+    "lat": 40.6022733,
+    "lon": 110.0038759
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "公园路小学(富力校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1178564872,
+  "center": {
+    "lat": 40.5810829,
+    "lon": 109.9101816
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市蒙医中医医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1178564874,
+  "center": {
+    "lat": 40.5856606,
+    "lon": 109.8981323
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "万水泉镇中心卫生院"
+  }
+},
+{
+  "type": "way",
+  "id": 1180656024,
+  "center": {
+    "lat": 40.6221178,
+    "lon": 109.8430350
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "黄河路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1180889995,
+  "center": {
+    "lat": 40.5626455,
+    "lon": 110.1884319
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市第四十七中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1180889998,
+  "center": {
+    "lat": 40.5624488,
+    "lon": 110.1807179
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1182008106,
+  "center": {
+    "lat": 40.6439471,
+    "lon": 109.8951151
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "包头市公安局"
+  }
+},
+{
+  "type": "way",
+  "id": 1182008108,
+  "center": {
+    "lat": 40.6417649,
+    "lon": 109.9009300
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1182244842,
+  "center": {
+    "lat": 40.6503340,
+    "lon": 109.9032860
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第36中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1182244843,
+  "center": {
+    "lat": 40.6566769,
+    "lon": 109.9069869
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "一机五小"
+  }
+},
+{
+  "type": "way",
+  "id": 1182244844,
+  "center": {
+    "lat": 40.6598788,
+    "lon": 109.9008941
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "一机四中"
+  }
+},
+{
+  "type": "way",
+  "id": 1182244845,
+  "center": {
+    "lat": 40.6581147,
+    "lon": 109.8993015
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "一机七小"
+  }
+},
+{
+  "type": "way",
+  "id": 1182247959,
+  "center": {
+    "lat": 40.6601813,
+    "lon": 109.8953318
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "一机一小"
+  }
+},
+{
+  "type": "way",
+  "id": 1182247960,
+  "center": {
+    "lat": 40.6610745,
+    "lon": 109.8967675
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "一机四小"
+  }
+},
+{
+  "type": "way",
+  "id": 1182247961,
+  "center": {
+    "lat": 40.6634643,
+    "lon": 109.8984288
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "一机二中"
+  }
+},
+{
+  "type": "way",
+  "id": 1182247962,
+  "center": {
+    "lat": 40.6637836,
+    "lon": 109.8931448
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "一机医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1182486850,
+  "center": {
+    "lat": 40.6616654,
+    "lon": 109.8884708
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "一机二小"
+  }
+},
+{
+  "type": "way",
+  "id": 1182486851,
+  "center": {
+    "lat": 40.6585729,
+    "lon": 109.8836939
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "文学道小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1182486852,
+  "center": {
+    "lat": 40.6572765,
+    "lon": 109.8845132
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "一机三小"
+  }
+},
+{
+  "type": "way",
+  "id": 1182486857,
+  "center": {
+    "lat": 40.6503235,
+    "lon": 109.8755654
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1182844519,
+  "center": {
+    "lat": 40.5665070,
+    "lon": 110.0065139
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包铁七中"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408941,
+  "center": {
+    "lat": 40.6679005,
+    "lon": 109.8692620
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "光荣道小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408942,
+  "center": {
+    "lat": 40.6720744,
+    "lon": 109.8591682
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "富强路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408943,
+  "center": {
+    "lat": 40.6777207,
+    "lon": 109.8641676
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "北重实验小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408944,
+  "center": {
+    "lat": 40.6733368,
+    "lon": 109.8728569
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "北重四小"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408947,
+  "center": {
+    "lat": 40.6781999,
+    "lon": 109.8708415
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408951,
+  "center": {
+    "lat": 40.6795386,
+    "lon": 109.8678940
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "北重六小"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408958,
+  "center": {
+    "lat": 40.6711849,
+    "lon": 109.8837280
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "北重五中"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408960,
+  "center": {
+    "lat": 40.6604854,
+    "lon": 109.8771263
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包医二附院"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408961,
+  "center": {
+    "lat": 40.6664818,
+    "lon": 109.8792292
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市第四医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1183408964,
+  "center": {
+    "lat": 40.6649210,
+    "lon": 109.8748169
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "哈达道小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1183695188,
+  "center": {
+    "lat": 40.6668956,
+    "lon": 109.8471670
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市肿瘤医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1183695189,
+  "center": {
+    "lat": 40.6661741,
+    "lon": 109.8508801
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "国药北方医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1184809575,
+  "center": {
+    "lat": 40.6496344,
+    "lon": 109.8499434
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "幸福南路小学(第三校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1184809576,
+  "center": {
+    "lat": 40.6460463,
+    "lon": 109.8726795
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "幸福南路小学(第二校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1185034987,
+  "center": {
+    "lat": 40.6291870,
+    "lon": 109.8531986
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "稀土路派出所"
+  }
+},
+{
+  "type": "way",
+  "id": 1185034989,
+  "center": {
+    "lat": 40.6400062,
+    "lon": 109.8630354
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "稀土高新区南开小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456253,
+  "center": {
+    "lat": 40.5847051,
+    "lon": 109.9991793
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第八中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456254,
+  "center": {
+    "lat": 40.5843812,
+    "lon": 110.0011104
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "西脑包第二小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456255,
+  "center": {
+    "lat": 40.5814256,
+    "lon": 110.0082539
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "公园路小学(西校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456256,
+  "center": {
+    "lat": 40.5822213,
+    "lon": 110.0146201
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "公园路小学(东校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456257,
+  "center": {
+    "lat": 40.5815467,
+    "lon": 110.0179972
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第一实验小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456259,
+  "center": {
+    "lat": 40.5900738,
+    "lon": 110.0161732
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "胜利路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456260,
+  "center": {
+    "lat": 40.5905434,
+    "lon": 110.0173575
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第四十中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456261,
+  "center": {
+    "lat": 40.5879439,
+    "lon": 110.0211883
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "牛桥街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456263,
+  "center": {
+    "lat": 40.5913495,
+    "lon": 110.0305766
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "工业路第二小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456264,
+  "center": {
+    "lat": 40.5877052,
+    "lon": 110.0275994
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "金龙王庙小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456265,
+  "center": {
+    "lat": 40.5836216,
+    "lon": 110.0266369
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第二十四中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456266,
+  "center": {
+    "lat": 40.5796007,
+    "lon": 110.0249910
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "环城路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456267,
+  "center": {
+    "lat": 40.5778608,
+    "lon": 110.0306221
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "东一路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456268,
+  "center": {
+    "lat": 40.5763801,
+    "lon": 110.0064291
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包铁一小"
+  }
+},
+{
+  "type": "way",
+  "id": 1186456269,
+  "center": {
+    "lat": 40.5750397,
+    "lon": 110.0142471
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包铁实验小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186509390,
+  "center": {
+    "lat": 40.5839785,
+    "lon": 110.0133407
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市中心医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1186509391,
+  "center": {
+    "lat": 40.5843219,
+    "lon": 110.0313063
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市蒙中医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1186509392,
+  "center": {
+    "lat": 40.5919965,
+    "lon": 110.0192358
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市第三医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1186859001,
+  "center": {
+    "lat": 40.5733364,
+    "lon": 110.0185411
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市第八医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1186859002,
+  "center": {
+    "lat": 40.5701546,
+    "lon": 110.0267580
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "工业路第一小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1186859009,
+  "center": {
+    "lat": 40.5888816,
+    "lon": 109.9913376
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "平禄骨科医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1188419744,
+  "center": {
+    "lat": 40.4152835,
+    "lon": 110.0368400
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "达拉特旗第二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1188419749,
+  "center": {
+    "lat": 40.4080505,
+    "lon": 110.0229530
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "达拉特旗公安局"
+  }
+},
+{
+  "type": "way",
+  "id": 1188419750,
+  "center": {
+    "lat": 40.4048326,
+    "lon": 110.0231203
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "达拉特旗第二小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1188419756,
+  "center": {
+    "lat": 40.3814609,
+    "lon": 110.0141478
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1188909757,
+  "center": {
+    "lat": 40.5856678,
+    "lon": 110.0513900
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市第三医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1188909758,
+  "center": {
+    "lat": 40.5850868,
+    "lon": 110.0477691
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头二九一医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1188909762,
+  "center": {
+    "lat": 40.5720443,
+    "lon": 110.0544158
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "环城路小学(巴东校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1189846776,
+  "center": {
+    "lat": 40.6006818,
+    "lon": 109.9823181
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市第六医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1189927128,
+  "center": {
+    "lat": 40.5934146,
+    "lon": 109.9802580
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "铁西小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1189927129,
+  "center": {
+    "lat": 40.5942590,
+    "lon": 109.9813960
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市第四十四中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1189952146,
+  "center": {
+    "lat": 40.6079948,
+    "lon": 109.9870499
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "包头市公安局东河区分局"
+  }
+},
+{
+  "type": "way",
+  "id": 1190319124,
+  "center": {
+    "lat": 40.6012138,
+    "lon": 109.9567332
+  },
+  "tags": {
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "沙河第一小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1190319125,
+  "center": {
+    "lat": 40.6030421,
+    "lon": 109.9620124
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "沙河第二小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1190319126,
+  "center": {
+    "lat": 40.5960331,
+    "lon": 109.9640167
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包头市第四十九中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1190319127,
+  "center": {
+    "lat": 40.6011258,
+    "lon": 109.9663357
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头市九原区医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1190319128,
+  "center": {
+    "lat": 40.5932462,
+    "lon": 109.9707602
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "沙河第四小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1190402183,
+  "center": {
+    "lat": 40.5933242,
+    "lon": 109.9641741
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "九原区消防队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1190402190,
+  "center": {
+    "lat": 40.5942157,
+    "lon": 109.9498526
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "沙河第五学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1190402191,
+  "center": {
+    "lat": 40.5875477,
+    "lon": 109.9650509
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "沙河第二小学南校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1190624747,
+  "center": {
+    "lat": 40.6086470,
+    "lon": 110.0070250
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "西北门小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1190624749,
+  "center": {
+    "lat": 40.6197315,
+    "lon": 109.9861227
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "二道沙河小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1192103263,
+  "center": {
+    "lat": 40.6515706,
+    "lon": 109.9487467
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "二〇二医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1192103265,
+  "center": {
+    "lat": 40.6547907,
+    "lon": 109.9435835
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "二〇二小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1192103270,
+  "center": {
+    "lat": 40.6561821,
+    "lon": 109.9443008
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "七巧板幼儿园"
+  }
+},
+{
+  "type": "way",
+  "id": 1193568849,
+  "center": {
+    "lat": 40.6530103,
+    "lon": 109.8613397
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "幸福南路小学(第一校区北校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 1193568851,
+  "center": {
+    "lat": 40.6537819,
+    "lon": 109.8608379
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "包头市公安局交通治安管理局"
+  }
+},
+{
+  "type": "way",
+  "id": 1193762739,
+  "center": {
+    "lat": 40.6861865,
+    "lon": 109.8874163
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "青山区消防救援大队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1202285870,
+  "center": {
+    "lat": 40.6051547,
+    "lon": 110.7069555
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "美岱召中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1203579797,
+  "center": {
+    "lat": 40.6069832,
+    "lon": 109.8340191
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "包头师范学院实验幼儿园沼潭分园"
+  }
+},
+{
+  "type": "way",
+  "id": 1206588766,
+  "center": {
+    "lat": 40.7454708,
+    "lon": 111.6871996
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "内蒙古大学创业学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1206588767,
+  "center": {
+    "lat": 40.7427791,
+    "lon": 111.6806312
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "内蒙古师范大学附属第二中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1206588768,
+  "center": {
+    "lat": 40.7552813,
+    "lon": 111.6676978
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "沟子板学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1208277695,
+  "center": {
+    "lat": 40.8828999,
+    "lon": 111.7657698
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "内蒙古自治区第三医院新院"
+  }
+},
+{
+  "type": "way",
+  "id": 1210260821,
+  "center": {
+    "lat": 40.6509734,
+    "lon": 109.8188708
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包钢医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1210468421,
+  "center": {
+    "lat": 40.6244373,
+    "lon": 109.9686528
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "九原区中医蒙医医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1213771929,
+  "center": {
+    "lat": 40.5568417,
+    "lon": 111.8010227
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "枫叶双语学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1213771934,
+  "center": {
+    "lat": 40.5499806,
+    "lon": 111.7910456
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市委党校新校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1214067772,
+  "center": {
+    "lat": 40.6599473,
+    "lon": 109.8142227
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包医一附院"
+  }
+},
+{
+  "type": "way",
+  "id": 1214067773,
+  "center": {
+    "lat": 40.6642472,
+    "lon": 109.8153875
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包钢第三职工医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1218721628,
+  "center": {
+    "lat": 40.6602459,
+    "lon": 109.5961567
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "阿嘎如泰苏木卫生院"
+  }
+},
+{
+  "type": "way",
+  "id": 1222264495,
+  "center": {
+    "lat": 40.6432906,
+    "lon": 109.9665577
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "沙河第三小学北校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1227306597,
+  "center": {
+    "lat": 40.6385760,
+    "lon": 109.9410425
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "包头市森林消防中队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1227306604,
+  "center": {
+    "lat": 40.6259290,
+    "lon": 109.9316112
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "包头市交警支队特勤大队"
+  }
+},
+{
+  "type": "way",
+  "id": 1227489626,
+  "center": {
+    "lat": 40.6381613,
+    "lon": 109.9479550
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "青山区公安分局"
+  }
+},
+{
+  "type": "way",
+  "id": 1227507082,
+  "center": {
+    "lat": 40.6310302,
+    "lon": 109.9226241
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "夏圣·奥尔夫学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1227923239,
+  "center": {
+    "lat": 40.6050903,
+    "lon": 109.8278729
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "包头车站派出所"
+  }
+},
+{
+  "type": "way",
+  "id": 1232951233,
+  "center": {
+    "lat": 40.5815271,
+    "lon": 109.8234163
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "麻池镇中心卫生院"
+  }
+},
+{
+  "type": "way",
+  "id": 1232951236,
+  "center": {
+    "lat": 40.5716022,
+    "lon": 109.8246023
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "麻池中心小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1232951237,
+  "center": {
+    "lat": 40.5826457,
+    "lon": 109.8358833
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "九原区沼潭南路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1234549206,
+  "center": {
+    "lat": 40.6583941,
+    "lon": 109.9280908
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "瑞星中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1239456352,
+  "center": {
+    "lat": 40.7948732,
+    "lon": 111.6488481
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特土默特学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1239456353,
+  "center": {
+    "lat": 40.8048100,
+    "lon": 111.6490466
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "回民区恒昌店巷小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1239456359,
+  "center": {
+    "lat": 40.8077043,
+    "lon": 111.7517998
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "赛罕区腾飞路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1239565310,
+  "center": {
+    "lat": 40.7964386,
+    "lon": 111.6764261
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "赛罕区第二医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1239565329,
+  "center": {
+    "lat": 40.7885782,
+    "lon": 111.7155888
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "赛罕区大学路小学滨河校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1239565332,
+  "center": {
+    "lat": 40.7868717,
+    "lon": 111.7062900
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "赛罕区锡林南路小学分校"
+  }
+},
+{
+  "type": "way",
+  "id": 1239565338,
+  "center": {
+    "lat": 40.7956548,
+    "lon": 111.7341571
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "赛罕区锡林南路小学丰州路分校"
+  }
+},
+{
+  "type": "way",
+  "id": 1239567613,
+  "center": {
+    "lat": 40.8032811,
+    "lon": 111.7887114
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "大学路小学西把栅校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1241616163,
+  "center": {
+    "lat": 40.6851803,
+    "lon": 109.8427608
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "钢三小昆北富力校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1241616181,
+  "center": {
+    "lat": 40.6878872,
+    "lon": 109.8311180
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "包29中昆北分校"
+  }
+},
+{
+  "type": "way",
+  "id": 1242148260,
+  "center": {
+    "lat": 40.5978620,
+    "lon": 109.9467973
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "包头市车管所"
+  }
+},
+{
+  "type": "way",
+  "id": 1244801564,
+  "center": {
+    "lat": 40.5950721,
+    "lon": 109.9848078
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "铁西派出所"
+  }
+},
+{
+  "type": "way",
+  "id": 1252191470,
+  "center": {
+    "lat": 40.6042924,
+    "lon": 109.8393923
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "包头文治医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1253249705,
+  "center": {
+    "lat": 40.8035653,
+    "lon": 111.6344960
+  },
+  "tags": {
+    "addr:city": "呼和浩特市",
+    "addr:district": "回民区",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "爱心巷",
+    "amenity": "school",
+    "building": "yes",
+    "grades": "0-6",
+    "name": "回民区县府街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1255699829,
+  "center": {
+    "lat": 40.8082805,
+    "lon": 111.6397132
+  },
+  "tags": {
+    "addr:city": "呼和浩特市",
+    "addr:district": "回民区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "name": "呼和浩特市第一中学（北区）"
+  }
+},
+{
+  "type": "way",
+  "id": 1255699830,
+  "center": {
+    "lat": 40.8064069,
+    "lon": 111.6413143
+  },
+  "tags": {
+    "addr:city": "呼和浩特市",
+    "addr:district": "回民区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "education": "school",
+    "name": "呼和浩特市第一中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1255719796,
+  "center": {
+    "lat": 40.8125437,
+    "lon": 111.6682655
+  },
+  "tags": {
+    "addr:city": "呼和浩特市",
+    "addr:district": "新城区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "内蒙古自治区中医医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1255719797,
+  "center": {
+    "lat": 40.8187901,
+    "lon": 111.6370111
+  },
+  "tags": {
+    "addr:city": "呼和浩特市",
+    "addr:district": "回民区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "school",
+    "name": "呼和浩特市第十六中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1266682531,
+  "center": {
+    "lat": 40.6596949,
+    "lon": 109.8067015
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "乌兰道消防站",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1266682532,
+  "center": {
+    "lat": 40.6222534,
+    "lon": 109.8023773
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "白云路消防站",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1266682533,
+  "center": {
+    "lat": 40.6710146,
+    "lon": 109.7737365
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "昆区消防二中队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1266682534,
+  "center": {
+    "lat": 40.6528924,
+    "lon": 109.8997935
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "包头消防特勤大队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1271841387,
+  "center": {
+    "lat": 40.8090583,
+    "lon": 111.6903200
+  },
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "healthcare:speciality": "oncology",
+    "name": "北京医科大学肿瘤医院内蒙古医院",
+    "operator": "医科大学",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "way",
+  "id": 1271843569,
+  "center": {
+    "lat": 40.8046933,
+    "lon": 111.6876923
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "呼和浩特市特警支队"
+  }
+},
+{
+  "type": "way",
+  "id": 1276053932,
+  "center": {
+    "lat": 40.8109041,
+    "lon": 111.6828254
+  },
+  "tags": {
+    "alt_name": "内大北区",
+    "alt_name:en": "IMU North",
+    "alt_name:zh": "内大北区",
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古大学北校区",
+    "name:en": "Inner Mongolia University (North)",
+    "name:es": "Universidad de Mongolia Interior (Norte)",
+    "name:fr": "Université de Mongolie-Intérieure (Nord)",
+    "name:pt": "Universidade da Mongólia Interior (Norte)",
+    "name:zh": "内蒙古大学北校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1276053933,
+  "center": {
+    "lat": 40.8134602,
+    "lon": 111.6928987
+  },
+  "tags": {
+    "amenity": "university",
+    "name": "内蒙古大学北校区东院"
+  }
+},
+{
+  "type": "way",
+  "id": 1281051287,
+  "center": {
+    "lat": 40.8279569,
+    "lon": 111.7143407
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "内蒙古森林消防总队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1283534713,
+  "center": {
+    "lat": 40.8043342,
+    "lon": 111.6856949
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "赛罕区南门外小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1285181547,
+  "center": {
+    "lat": 40.8433962,
+    "lon": 111.6689174
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "解放军第九六九医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1286041200,
+  "center": {
+    "lat": 40.8535789,
+    "lon": 111.7690922
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特铁路局培训基地",
+    "operator": "国铁集团"
+  }
+},
+{
+  "type": "way",
+  "id": 1286041204,
+  "center": {
+    "lat": 40.8463575,
+    "lon": 111.7339441
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "呼和浩特曙光学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1286041205,
+  "center": {
+    "lat": 40.7915661,
+    "lon": 111.7641653
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1288594363,
+  "center": {
+    "lat": 40.8937171,
+    "lon": 111.6877382
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古经贸外语职业学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1289677029,
+  "center": {
+    "lat": 40.8763606,
+    "lon": 111.6288959
+  },
+  "tags": {
+    "amenity": "university",
+    "name": "内蒙古师范大学青年政治学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1300194794,
+  "center": {
+    "lat": 40.6673039,
+    "lon": 110.0738340
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "石拐区消防救援大队",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1301226504,
+  "center": {
+    "lat": 40.6762048,
+    "lon": 109.8470302
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "京师协力实验小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1301510976,
+  "center": {
+    "lat": 40.6316114,
+    "lon": 109.8745441
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "曙光路消防站",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1302279461,
+  "center": {
+    "lat": 40.6444678,
+    "lon": 109.8203632
+  },
+  "tags": {
+    "alt_name": "包钢五中",
+    "amenity": "school",
+    "education": "school",
+    "name": "包头市第97中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1320100214,
+  "center": {
+    "lat": 40.5645338,
+    "lon": 110.0243832
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "站南路消防站",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1320102919,
+  "center": {
+    "lat": 40.5745214,
+    "lon": 110.0601244
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "民生大街消防站",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1326466843,
+  "center": {
+    "lat": 40.8705726,
+    "lon": 111.6888448
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "内蒙古警察学院",
+    "old_name": "内蒙古警察职业学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1342359616,
+  "center": {
+    "lat": 40.8417463,
+    "lon": 111.5719799
+  },
+  "tags": {
+    "addr:city": "呼和浩特",
+    "addr:province": "内蒙古",
+    "amenity": "school",
+    "name": "东乌素图小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1342687174,
+  "center": {
+    "lat": 40.8079467,
+    "lon": 111.6726436
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "锡林南路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1342808656,
+  "center": {
+    "lat": 40.4776370,
+    "lon": 111.7817222
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "乳业开发区卫生院"
+  }
+},
+{
+  "type": "way",
+  "id": 1342808657,
+  "center": {
+    "lat": 40.4760225,
+    "lon": 111.7802392
+  },
+  "tags": {
+    "amenity": "driving_school",
+    "name": "奥通驾校"
+  }
+},
+{
+  "type": "way",
+  "id": 1342808666,
+  "center": {
+    "lat": 40.4962559,
+    "lon": 111.7916270
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古丰州职业学院中山学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1342808668,
+  "center": {
+    "lat": 40.5005515,
+    "lon": 111.7900551
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古自治区税务干部学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1342808669,
+  "center": {
+    "lat": 40.5005590,
+    "lon": 111.7867955
+  },
+  "tags": {
+    "amenity": "driving_school",
+    "name": "翔盛驾驶员培训学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1343631454,
+  "center": {
+    "lat": 40.7719744,
+    "lon": 111.6287894
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "中央民族大学附属中学呼和浩特分校"
+  }
+},
+{
+  "type": "way",
+  "id": 1343655732,
+  "center": {
+    "lat": 40.8328975,
+    "lon": 111.7225674
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古开放大学（东校区）"
+  }
+},
+{
+  "type": "way",
+  "id": 1343655733,
+  "center": {
+    "lat": 40.8309520,
+    "lon": 111.7234936
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古经贸学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1343655734,
+  "center": {
+    "lat": 40.8290642,
+    "lon": 111.7245627
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古电力有限责任公司培训中心"
+  }
+},
+{
+  "type": "way",
+  "id": 1343655736,
+  "center": {
+    "lat": 40.8308484,
+    "lon": 111.7298536
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "南门外小学万达校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1343655751,
+  "center": {
+    "lat": 40.8071663,
+    "lon": 111.7288425
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第二十九中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1343655752,
+  "center": {
+    "lat": 40.8074050,
+    "lon": 111.7125324
+  },
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古农业大学（新校区）"
+  }
+},
+{
+  "type": "way",
+  "id": 1343673330,
+  "center": {
+    "lat": 40.8286909,
+    "lon": 111.7105926
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第三十九中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1343673334,
+  "center": {
+    "lat": 40.8262591,
+    "lon": 111.7173818
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古老年大学"
+  }
+},
+{
+  "type": "way",
+  "id": 1343673339,
+  "center": {
+    "lat": 40.8248380,
+    "lon": 111.7125990
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "敕勒川绿地小学乌兰分校"
+  }
+},
+{
+  "type": "way",
+  "id": 1343673340,
+  "center": {
+    "lat": 40.8191605,
+    "lon": 111.7094290
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "呼和浩特市现代信息技术学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1343673341,
+  "center": {
+    "lat": 40.8159848,
+    "lon": 111.7076558
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市敬业中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1343673349,
+  "center": {
+    "lat": 40.8039905,
+    "lon": 111.6823470
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "赛罕区大学路小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1343673350,
+  "center": {
+    "lat": 40.8051581,
+    "lon": 111.6740914
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第十八中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1343673360,
+  "center": {
+    "lat": 40.8391051,
+    "lon": 111.7197321
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第三十八中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1343784914,
+  "center": {
+    "lat": 40.8390036,
+    "lon": 111.6737950
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "土默特中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1343799810,
+  "center": {
+    "lat": 40.8093257,
+    "lon": 111.6444636
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "回民区太平街小学",
+    "name:en": "Taiping Street Primary School, Huimin District"
+  }
+},
+{
+  "type": "way",
+  "id": 1343799811,
+  "center": {
+    "lat": 40.8076458,
+    "lon": 111.6444823
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特第八中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1344059226,
+  "center": {
+    "lat": 40.7751368,
+    "lon": 111.6527581
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "呼和浩特市第一医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1344064532,
+  "center": {
+    "lat": 40.8003058,
+    "lon": 111.6468607
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "玉泉区头道巷小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1344074251,
+  "center": {
+    "lat": 40.8182589,
+    "lon": 111.7201580
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "内蒙古国际蒙医医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1344074256,
+  "center": {
+    "lat": 40.7788345,
+    "lon": 111.6823725
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "呼和浩特市妇幼保健院"
+  }
+},
+{
+  "type": "way",
+  "id": 1344168129,
+  "center": {
+    "lat": 40.5721571,
+    "lon": 111.2441699
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "乌兰夫学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1344277771,
+  "center": {
+    "lat": 40.4675474,
+    "lon": 111.7791401
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "和林格尔消防大队"
+  }
+},
+{
+  "type": "way",
+  "id": 1344481573,
+  "center": {
+    "lat": 40.7900269,
+    "lon": 111.5339929
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "金川实验学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1344488254,
+  "center": {
+    "lat": 40.8538951,
+    "lon": 111.6690420
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "内蒙古自治区公安厅"
+  }
+},
+{
+  "type": "way",
+  "id": 1344488258,
+  "center": {
+    "lat": 40.8579364,
+    "lon": 111.6671760
+  },
+  "tags": {
+    "amenity": "college",
+    "name": "内蒙古体育职业学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1344491366,
+  "center": {
+    "lat": 40.8016594,
+    "lon": 111.6713597
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第四中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1344491367,
+  "center": {
+    "lat": 40.8009119,
+    "lon": 111.6719918
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市第三十六中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1344491370,
+  "center": {
+    "lat": 40.7981523,
+    "lon": 111.6659099
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "玉泉区梁山街小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1345790362,
+  "center": {
+    "lat": 40.8843467,
+    "lon": 112.0363042
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特赛罕区青少年素质教育活动基地"
+  }
+},
+{
+  "type": "way",
+  "id": 1356657938,
+  "center": {
+    "lat": 41.0803861,
+    "lon": 111.4483782
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "武川县第三中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1371999924,
+  "center": {
+    "lat": 40.0847454,
+    "lon": 111.2811475
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "大路医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1371999928,
+  "center": {
+    "lat": 40.0872288,
+    "lon": 111.2728857
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "大路新区派出所"
+  }
+},
+{
+  "type": "way",
+  "id": 1372618786,
+  "center": {
+    "lat": 40.0786768,
+    "lon": 111.2801793
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "内蒙古工业大学资源与环境工程学院（矿业学院）"
+  }
+},
+{
+  "type": "way",
+  "id": 1374015365,
+  "center": {
+    "lat": 40.8567851,
+    "lon": 111.7528122
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1374155558,
+  "center": {
+    "lat": 40.6650311,
+    "lon": 109.6603895
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "昆区中小学综合实践学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1377143891,
+  "center": {
+    "lat": 40.8473678,
+    "lon": 111.5887504
+  },
+  "tags": {
+    "amenity": "driving_school",
+    "name": "盛达成驾校"
+  }
+},
+{
+  "type": "way",
+  "id": 1377145499,
+  "center": {
+    "lat": 40.8512750,
+    "lon": 111.5914930
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "呼和浩特市蓝天中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1377145500,
+  "center": {
+    "lat": 40.8514895,
+    "lon": 111.5898537
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "宇翔职业培训学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1377145509,
+  "center": {
+    "lat": 40.8365963,
+    "lon": 111.5986377
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "内蒙古财经大学附属学校"
+  }
+},
+{
+  "type": "way",
+  "id": 1377704671,
+  "center": {
+    "lat": 40.8714126,
+    "lon": 111.7857061
+  },
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古鸿德文理学院塔利校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1377953320,
+  "center": {
+    "lat": 40.8337925,
+    "lon": 111.7571971
+  },
+  "tags": {
+    "alt_name": "呼和浩特市公安局经济技术开发区公安分局",
+    "amenity": "police",
+    "name": "呼市公安开发区分局"
+  }
+},
+{
+  "type": "way",
+  "id": 1378315736,
+  "center": {
+    "lat": 40.6378012,
+    "lon": 109.8868829
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "赛汗塔拉消防站",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "way",
+  "id": 1379884341,
+  "center": {
+    "lat": 40.6452555,
+    "lon": 109.8036520
+  },
+  "tags": {
+    "alt_name": "包钢九中",
+    "amenity": "school",
+    "education": "school",
+    "name": "昆区九中"
+  }
+},
+{
+  "type": "way",
+  "id": 1384243072,
+  "center": {
+    "lat": 40.5566630,
+    "lon": 111.8201445
+  },
+  "tags": {
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古艺术学院云谷校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1386923257,
+  "center": {
+    "lat": 40.8113515,
+    "lon": 111.5786524
+  },
+  "tags": {
+    "alt_name": "呼和浩特市公安局交通警察支队车辆管理所",
+    "amenity": "police",
+    "name": "呼和浩特市车管所"
+  }
+},
+{
+  "type": "way",
+  "id": 1431111664,
+  "center": {
+    "lat": 40.8667636,
+    "lon": 111.7932583
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "内蒙古自治区第四医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1431528415,
+  "center": {
+    "lat": 40.8805543,
+    "lon": 111.7286680
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "新城区青山小学惠东校区"
+  }
+},
+{
+  "type": "way",
+  "id": 1432321054,
+  "center": {
+    "lat": 40.7211043,
+    "lon": 111.7325523
+  },
+  "tags": {
+    "amenity": "driving_school"
+  }
+},
+{
+  "type": "way",
+  "id": 1444859514,
+  "center": {
+    "lat": 40.6029071,
+    "lon": 109.8241594
+  },
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital",
+    "name": "普行医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1465348764,
+  "center": {
+    "lat": 40.8487133,
+    "lon": 111.7718451
+  },
+  "tags": {
+    "addr:city": "呼和浩特",
+    "addr:district": "新城区",
+    "addr:housenumber": "79",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "新华东街",
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古鸿德文理学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1465348774,
+  "center": {
+    "lat": 40.8433216,
+    "lon": 111.7696413
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "赛罕区民族小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1490208672,
+  "center": {
+    "lat": 40.7844969,
+    "lon": 111.7011055
+  },
+  "tags": {
+    "addr:city": "呼和浩特市",
+    "addr:district": "赛罕区",
+    "addr:province": "内蒙古自治区",
+    "addr:street": "包头大街",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "name": "中国人民武装警察部队内蒙古自治区总队医院",
+    "operator": "中国人民武装警察部队内蒙古自治区总队",
+    "operator:type": "government"
+  }
+},
+{
+  "type": "way",
+  "id": 1494155465,
+  "center": {
+    "lat": 41.0091811,
+    "lon": 110.0319265
+  },
+  "tags": {
+    "amenity": "fire_station",
+    "name": "固阳县消防救援大队"
+  }
+},
+{
+  "type": "way",
+  "id": 1494334181,
+  "center": {
+    "lat": 41.0252644,
+    "lon": 110.0559410
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "固阳二中"
+  }
+},
+{
+  "type": "way",
+  "id": 1494341423,
+  "center": {
+    "lat": 41.0345743,
+    "lon": 110.0588691
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "固阳新城小学"
+  }
+},
+{
+  "type": "way",
+  "id": 1522334303,
+  "center": {
+    "lat": 41.0862255,
+    "lon": 111.4446284
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "武川县医院"
+  }
+},
+{
+  "type": "way",
+  "id": 1522334307,
+  "center": {
+    "lat": 41.0897398,
+    "lon": 111.4348108
+  },
+  "tags": {
+    "amenity": "police",
+    "name": "武川县公安局"
+  }
+},
+{
+  "type": "way",
+  "id": 1522334309,
+  "center": {
+    "lat": 41.0973800,
+    "lon": 111.4461285
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "武川二中"
+  }
+},
+{
+  "type": "way",
+  "id": 1570644292,
+  "center": {
+    "lat": 40.8113528,
+    "lon": 111.7015813
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "外语学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1570644299,
+  "center": {
+    "lat": 40.8108212,
+    "lon": 111.7039766
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "国际教育学院+东区图书馆"
+  }
+},
+{
+  "type": "way",
+  "id": 1570644301,
+  "center": {
+    "lat": 40.8108369,
+    "lon": 111.7029060
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "林学院"
+  }
+},
+{
+  "type": "way",
+  "id": 1575313180,
+  "center": {
+    "lat": 40.5718675,
+    "lon": 111.8107410
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "内蒙古警察学院"
+  }
+},
+{
+  "type": "relation",
+  "id": 15328021,
+  "center": {
+    "lat": 40.6195817,
+    "lon": 109.8282179
+  },
+  "tags": {
+    "addr:city": "包头市",
+    "addr:district": "昆都仑区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "university",
+    "education": "university",
+    "name": "内蒙古科技大学",
+    "name:en": "Inner Mongolia University of Science and Technology",
+    "name:zh": "内蒙古科技大学",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 16377670,
+  "center": {
+    "lat": 40.6481225,
+    "lon": 109.9913405
+  },
+  "tags": {
+    "amenity": "college",
+    "education": "college",
+    "name": "包头师范学院九原校区",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 17283854,
+  "center": {
+    "lat": 40.8109350,
+    "lon": 111.6299880
+  },
+  "tags": {
+    "addr:city": "呼和浩特市",
+    "addr:district": "回民区",
+    "addr:province": "内蒙古自治区",
+    "amenity": "driving_school",
+    "name": "奥海驾校",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 17358577,
+  "center": {
+    "lat": 40.7561440,
+    "lon": 111.6760837
+  },
+  "tags": {
+    "alt_name": "内蒙古大学南校区",
+    "alt_name:en": "Inner Mongolia University (South)",
+    "alt_name:es": "Universidad de Mongolia Interior (Sur)",
+    "alt_name:fr": "Université de Mongolie-Intérieure (Sud)",
+    "alt_name:pt": "Universidade da Mongólia Interior (Sul)",
+    "alt_name:zh": "内蒙古大学南校区",
+    "amenity": "university",
+    "highway": "university",
+    "name": "内蒙古大学玉泉校区",
+    "short_name": "内大南区",
+    "short_name:en": "IMU South",
+    "short_name:zh": "内大南区",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>警务遥感 · 生态安全与灾害风险一张图</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/police-badge.svg">
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/vendor/leaflet/MarkerCluster.css">
+  <link rel="stylesheet" href="/vendor/leaflet/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="/static/style.css?v=20261107c">
+  <link rel="stylesheet" href="/static/scenario.css?v=20261107c">
+  <link rel="stylesheet" href="/static/police.css?v=20261107c">
+</head>
+<body>
+  <div id="boot-screen">
+    <div class="boot-logo"><img src="/assets/police-badge.svg" alt="警务遥感徽章"></div>
+    <div class="boot-title">警务遥感 · 生态安全与灾害风险一张图</div>
+    <div class="boot-sub">正在接入 Microsoft Planetary Computer 与实时气象数据…</div>
+    <div class="boot-bar"><i></i></div>
+  </div>
+
+  <header id="topbar">
+    <div class="brand">
+      <div class="brand-mark"><img src="/assets/police-badge.svg" alt="警务遥感徽章"></div>
+      <div class="brand-text">
+        <h1>警务遥感</h1>
+        <p>生态安全与灾害风险一张图 <span class="dot">·</span> 卫星发现 → 警务核查 → 证据闭环</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span class="police-clock" id="police-clock">--:--:--</span>
+      <div class="status-strip">
+        <span class="status-dot" id="status-dot"></span>
+        <span id="data-status">系统在线</span>
+        <span class="police-chip">红色 <b id="police-red">--</b></span>
+        <span class="police-chip">高发点 <b id="police-hotspots">--</b></span>
+        <span class="sep">|</span>
+        <span id="last-update">--</span>
+      </div>
+      <button id="scenario-btn" class="scenario-btn" title="输入自然条件，生成危险系数与未来 14 天时空动画">
+        <span class="scenario-btn-icon">◎</span>
+        <span>自然条件推演</span>
+      </button>
+      <button id="refresh-btn" class="refresh-btn" title="重新抓取最新 Sentinel-2/Landsat/MODIS 与实时气象，并重算危险等级">
+        <span class="refresh-icon">⟳</span>
+        <span>刷新最新地理数据</span>
+      </button>
+    </div>
+  </header>
+
+  <div id="layout">
+    <aside id="left-panel">
+      <section class="panel">
+        <div class="panel-head">
+          <h2>态势总览</h2>
+          <span class="panel-tag">LIVE</span>
+        </div>
+        <div class="kpi-grid">
+          <div class="kpi"><span class="kpi-label">历史异常</span><strong id="kpi-incidents">--</strong><em>图斑</em></div>
+          <div class="kpi"><span class="kpi-label">高发地点</span><strong id="kpi-hotspots">--</strong><em>处</em></div>
+          <div class="kpi danger"><span class="kpi-label">红色预警</span><strong id="kpi-red">--</strong><em>处</em></div>
+          <div class="kpi"><span class="kpi-label">最新影像</span><strong id="kpi-latest" class="small">--</strong><em>MPC</em></div>
+        </div>
+        <div id="police-focus" class="police-focus">
+          <i class="focus-dot"></i>
+          <div><b>今日重点警情</b><p id="police-focus-text">正在研判高发点…</p></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>危险等级</h2><span class="panel-tag">RISK</span></div>
+        <div class="level-legend">
+          <div class="level-row"><i class="level-dot red"></i><span>一级 · 红色</span><b>立即核查</b></div>
+          <div class="level-row"><i class="level-dot orange"></i><span>二级 · 橙色</span><b>24h 内</b></div>
+          <div class="level-row"><i class="level-dot yellow"></i><span>三级 · 黄色</span><b>计划核查</b></div>
+          <div class="level-row"><i class="level-dot blue"></i><span>四级 · 蓝色</span><b>关注</b></div>
+        </div>
+      </section>
+      <section class="panel panel-grow">
+        <div class="panel-head">
+          <h2 id="list-title">高发地点 Top 10</h2>
+          <span class="panel-tag" id="list-count">--</span>
+        </div>
+        <ul id="hotspot-list" class="hotspot-list">
+          <li class="empty">加载中…</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>图层与数据</h2><span class="panel-tag">LAYERS</span></div>
+        <div class="layer-list">
+          <label class="switch"><input type="checkbox" id="chk-arcgis-base" checked><span>ArcGIS 底图（天地图影像）</span></label>
+          <label class="switch"><input type="checkbox" id="chk-s2"><span>最新卫星影像（MPC）</span></label>
+          <label class="switch"><input type="checkbox" id="chk-incidents" checked><span>历史异常（53 图斑）</span></label>
+          <label class="switch"><input type="checkbox" id="chk-hotspots" checked><span>高发地点与危险等级</span></label>
+          <label class="switch"><input type="checkbox" id="chk-grid"><span>扩展风险格网</span></label>
+          <label class="switch"><input type="checkbox" id="chk-heat"><span>异常热力</span></label>
+          <label class="switch"><input type="checkbox" id="chk-police" checked><span>警务设施（示意）</span></label>
+          <label class="switch"><input type="checkbox" id="chk-routes" checked><span>巡护路线（示意）</span></label>
+          <label class="switch"><input type="checkbox" id="chk-aoi" checked><span>研究区边界</span></label>
+          <label class="switch"><input type="checkbox" id="chk-places"><span>乡镇/地名</span></label>
+        </div>
+        <div class="field-row">
+          <label class="field-label" for="natural-select">自然数据叠加</label>
+          <select id="natural-select"><option value="">不叠加</option></select>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>危险类型</h2><span class="panel-tag">17 类</span></div>
+        <select id="hazard-filter" class="wide-select">
+          <option value="all">全部（综合风险）</option>
+        </select>
+        <p class="hint">5 个已验证类别 + 12 个扩展筛查/风险类别。切换类型会改变风险格网与列表。</p>
+      </section>
+
+
+
+      <section class="panel">
+        <div class="panel-head"><h2>扩展危险类型</h2><span class="panel-tag">目录</span></div>
+        <div id="catalog-list" class="catalog-list"></div>
+      </section>
+    </aside>
+
+    <main id="map-shell">
+      <div id="map"></div>
+      <div id="map-legend" class="map-legend">
+        <span class="legend-title">危险等级</span>
+        <i class="level-dot red"></i>红
+        <i class="level-dot orange"></i>橙
+        <i class="level-dot yellow"></i>黄
+        <i class="level-dot blue"></i>蓝
+        <span class="legend-sep"></span>
+        <span id="legend-note">历史异常 + 高发点</span>
+      </div>
+      <div id="scenario-map-badge" class="scenario-map-badge hidden">
+        <span id="scenario-map-date">--</span>
+        <b id="scenario-map-score">--</b>
+      </div>
+      <div id="map-corner" class="map-corner">
+        <span>底图：ArcGIS Pro · 天地图影像 / Esri</span>
+        <span>影像：Microsoft Planetary Computer</span>
+        <span>气象：Open-Meteo</span>
+      </div>
+      <div id="refresh-overlay" class="refresh-overlay hidden">
+        <div class="refresh-card">
+          <div class="spinner"></div>
+          <h3>正在刷新最新地理数据</h3>
+          <p id="refresh-step">连接 Microsoft Planetary Computer…</p>
+          <div class="progress"><i id="refresh-bar"></i></div>
+          <p class="hint">重新抓取最新 Sentinel-2 / Landsat / MODIS 场景与实时气象，并重算危险等级。</p>
+        </div>
+      </div>
+      <div id="toast" class="toast hidden"></div>
+    </main>
+
+    <aside id="right-panel">
+      <section class="panel detail-panel" id="detail-panel">
+        <div class="panel-head"><h2>高发点详情</h2><span class="panel-tag">DETAIL</span></div>
+        <div id="detail-body" class="detail-body">
+          <div class="empty-state">
+            <div class="empty-icon">◎</div>
+            <p>点击地图上的高发点或左侧列表</p>
+            <span>查看危险等级、判据、可达性与处置建议</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>最新自然数据</h2><span class="panel-tag">MPC</span></div>
+        <div id="natural-list" class="natural-list"><div class="empty">加载中…</div></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>实时气象</h2><span class="panel-tag" id="weather-time">--</span></div>
+        <div id="weather-panel" class="weather-panel"><div class="empty">加载中…</div></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>风险模型 · MATLAB AHP</h2><span class="panel-tag">MODEL</span></div>
+        <div id="model-panel" class="model-panel">
+          <div class="empty">加载中…</div>
+        </div>
+        <div class="model-actions">
+          <button id="btn-model" class="ghost-btn">重算风险模型（MATLAB）</button>
+          <button id="btn-arcgis" class="ghost-btn">导出 ArcGIS 专题图</button>
+        </div>
+        <div id="model-output" class="model-output"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>警务任务（演示）</h2><span class="panel-tag" id="task-count">0</span></div>
+        <ul id="task-list" class="task-list"><li class="empty">暂无任务</li></ul>
+      </section>
+    </aside>
+  </div>
+
+
+  <div id="scenario-backdrop" class="scenario-backdrop hidden"></div>
+  <aside id="scenario-drawer" class="scenario-drawer hidden" aria-label="自然条件推演">
+    <div class="scenario-aurora"></div>
+    <header class="scenario-head">
+      <div class="scenario-head-main">
+        <img class="scenario-badge" src="/assets/police-badge.svg" alt="警务遥感徽章">
+        <div>
+          <div class="scenario-kicker">POLICE REMOTE SENSING · SPATIOTEMPORAL SIMULATION</div>
+          <h2>警务遥感 · 自然条件推演</h2>
+          <p>输入自然数据，生成危险系数，并用 14 天逐日格网动画回答“什么时候、哪里最危险”。</p>
+        </div>
+      </div>
+      <button id="scenario-close" class="scenario-close" title="关闭">×</button>
+    </header>
+    <div class="scenario-scroll">
+      <section class="scenario-section">
+        <div class="section-head"><span>01 场景输入</span><span class="section-hint">点击地图可改点位</span></div>
+        <div class="scenario-location">
+          <div><span>当前点位</span><b id="scenario-location">111.0500, 40.9000</b></div>
+          <button id="scenario-pick" class="mini-btn">在地图上选点</button>
+        </div>
+        <div class="form-grid">
+          <label class="field"><span>灾种</span><select id="sc-hazard"></select></label>
+          <label class="field"><span>推演天数</span><select id="sc-days"><option value="7">7 天</option><option value="14" selected>14 天</option></select></label>
+          <label class="field"><span>气温 °C</span><input id="sc-temp" type="number" step="0.1"></label>
+          <label class="field"><span>相对湿度 %</span><input id="sc-humidity" type="number" step="1"></label>
+          <label class="field"><span>风速 km/h</span><input id="sc-wind" type="number" step="0.1"></label>
+          <label class="field"><span>当日降雨 mm</span><input id="sc-precip" type="number" step="0.1"></label>
+          <label class="field"><span>土壤湿度 m³/m³</span><input id="sc-soil" type="number" step="0.01"></label>
+          <label class="field"><span>前 3 天累计降雨 mm</span><input id="sc-rain3" type="number" step="1"></label>
+          <label class="field"><span>前 7 天累计降雨 mm</span><input id="sc-rain7" type="number" step="1"></label>
+          <label class="field"><span>坡度 °</span><input id="sc-slope" type="number" step="0.1"></label>
+          <label class="field"><span>高程 m</span><input id="sc-elev" type="number" step="1"></label>
+          <label class="field"><span>NDVI 0-1</span><input id="sc-ndvi" type="number" step="0.01"></label>
+          <label class="field"><span>距道路 km</span><input id="sc-road" type="number" step="0.1"></label>
+          <label class="field"><span>历史异常数</span><input id="sc-hist" type="number" step="1"></label>
+        </div>
+        <div class="scenario-sliders">
+          <label class="slider-row"><span>降雨倍率 <b id="sc-rain-factor-label">1.0×</b></span><input id="sc-rain-factor" type="range" min="0.5" max="3" step="0.1" value="1"></label>
+          <label class="slider-row"><span>温度偏移 <b id="sc-temp-offset-label">0°C</b></span><input id="sc-temp-offset" type="range" min="-8" max="12" step="1" value="0"></label>
+          <label class="slider-row"><span>风速倍率 <b id="sc-wind-factor-label">1.0×</b></span><input id="sc-wind-factor" type="range" min="0.5" max="2" step="0.1" value="1"></label>
+        </div>
+        <div class="scenario-actions">
+          <button id="sc-assess" class="primary-btn">计算当前危险系数</button>
+          <button id="sc-run" class="accent-btn">开始时空推演</button>
+        </div>
+        <p class="scenario-note">危险系数是早期预警指数，不是确定性灾害预报；未来气象来自 Open-Meteo，空间帧覆盖研究区 180 个格网。</p>
+      </section>
+
+      <section class="scenario-section result-section">
+        <div class="section-head"><span>02 危险系数</span><span id="sc-result-tag" class="panel-tag">READY</span></div>
+        <div class="gauge-wrap">
+          <div id="sc-gauge" class="gauge" style="--p:0;--c:#0a84ff">
+            <div class="gauge-inner"><strong id="sc-score">--</strong><span id="sc-level">等待计算</span></div>
+          </div>
+          <div class="gauge-meta">
+            <h3 id="sc-hazard-title">火灾风险</h3>
+            <p id="sc-message">输入自然条件后计算危险系数，或直接开始 14 天时空推演。</p>
+            <div id="sc-badges" class="sc-badges"></div>
+          </div>
+        </div>
+        <div id="sc-factors" class="factor-list"></div>
+      </section>
+
+      <section class="scenario-section">
+        <div class="section-head"><span>03 未来时间轴</span><span class="panel-tag">14 DAYS</span></div>
+        <div class="timeline-wrap"><canvas id="sc-chart" width="620" height="200"></canvas></div>
+        <div class="anim-controls">
+          <button id="sc-play" class="play-btn">▶</button>
+          <input id="sc-slider" type="range" min="0" max="0" value="0">
+          <span id="sc-date" class="anim-date">--</span>
+          <select id="sc-speed" class="speed-select"><option value="1200">1×</option><option value="700">2×</option><option value="350">4×</option></select>
+        </div>
+        <div class="scenario-legend"><span>低</span><i class="lg blue"></i><i class="lg yellow"></i><i class="lg orange"></i><i class="lg red"></i><span>高</span><span id="sc-map-note" class="section-hint"></span></div>
+      </section>
+
+      <section class="scenario-section model-note">
+        <details>
+          <summary>模型说明与开源参考</summary>
+          <p>物理经验隶属度 + AHP 权重：高温、低湿、大风、累计降雨、土壤湿度、坡度、高程、NDVI、道路可达性映射到 0~100 危险系数。未来 14 天气象来自 Open-Meteo，研究区 180 个格网按高程订正、坡度、历史异常密度逐日重算。</p>
+          <p>参考方法：cffdrs（加拿大 FWI 火险）、滑坡降雨 ID 阈值、SPI/SPEI 干旱指数、AHP/模糊综合评判。详见 docs/MODEL.md。</p>
+        </details>
+      </section>
+    </div>
+  </aside>
+
+  <footer id="footer">
+    <span>数据源：Microsoft Planetary Computer · Open-Meteo · 青山卫士任务二检测结果</span>
+    <span>专题图：ArcGIS Pro 3.5 · 风险模型：MATLAB R2025b</span>
+    <span class="warn">演示说明：警务点位/路网为示意数据；扩展风险为筛查结果，需人工核查。</span>
+  </footer>
+
+  <script src="/vendor/leaflet/leaflet.js"></script>
+  <script src="/vendor/leaflet/leaflet-heat.js"></script>
+  <script src="/vendor/leaflet/leaflet.markercluster.js"></script>
+  <script src="/vendor/echarts.min.js?v=20261107c"></script>
+  <script src="/static/app.js?v=20261107c"></script>
+  <script src="/static/scenario.js?v=20261107c"></script>
+</body>
+</html>

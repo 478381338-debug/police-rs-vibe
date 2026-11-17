@@ -1,0 +1,110 @@
+/* L2 · 驾驶舱：顶部场景带 + 中部三栏 + 底部仪表轨
+   结构变化：场景从"左栏第一块"提升为贯穿全宽的命令带；时间线从右栏竖排改成底部横向事件轨；
+   影像对比降级为右下角仪表格。整页像一张有上下巴的控制台。 */
+
+body.lab-l2 { background: #070b10; }
+
+body.lab-l2 .ts-main {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) 332px;
+  grid-template-rows: 86px minmax(0, 1fr) 212px;
+  grid-template-areas:
+    "scenario scenario scenario"
+    "net      topo     case"
+    "patch    timeline vision";
+  gap: 10px;
+  padding: 10px 14px 12px;
+  overflow: hidden;
+}
+body.lab-l2 .ts-col { display: contents; }
+body.lab-l2 .ts-panel { margin: 0; min-width: 0; min-height: 0; }
+
+body.lab-l2 .scenario-panel { grid-area: scenario; }
+body.lab-l2 .net-panel { grid-area: net; display: flex; flex-direction: column; }
+body.lab-l2 .topo-panel { grid-area: topo; display: flex; flex-direction: column; }
+body.lab-l2 .case-panel { grid-area: case; overflow: hidden; }
+body.lab-l2 .patch-panel { grid-area: patch; display: flex; flex-direction: column; overflow: hidden; }
+body.lab-l2 .timeline-panel { grid-area: timeline; display: flex; flex-direction: column; overflow: hidden; }
+body.lab-l2 .vision-panel { grid-area: vision; display: flex; flex-direction: column; overflow: hidden; }
+
+/* ---------- 顶部命令带 ---------- */
+body.lab-l2 .scenario-panel {
+  display: grid;
+  grid-template-columns: 186px repeat(4, minmax(0, 1fr)) 178px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+}
+body.lab-l2 .scenario-panel .panel-head {
+  margin: 0; padding: 0; border: 0; flex-direction: column; align-items: flex-start; gap: 2px;
+}
+body.lab-l2 .scenario-panel .panel-head h2 { font-size: 15px; }
+body.lab-l2 .scenario-panel .panel-tag { position: static; transform: none; }
+body.lab-l2 #scenario-grid { display: contents; }
+body.lab-l2 .scenario-card {
+  min-height: 56px; padding: 7px 11px; border-radius: 8px;
+  display: flex; flex-direction: column; justify-content: center; gap: 2px;
+}
+body.lab-l2 .scenario-card b { font-size: 14px; }
+body.lab-l2 .scenario-card span { font-size: 9px; letter-spacing: 1.2px; }
+body.lab-l2 #scenario-desc,
+body.lab-l2 .scenario-panel .sim-note { display: none; }
+body.lab-l2 .scenario-panel .ts-btn.primary {
+  height: 42px; border-radius: 8px; font-size: 13px;
+}
+
+/* ---------- 左：6G 网络孪生 ---------- */
+body.lab-l2 .net-panel .net-chart { flex: 1 1 auto; height: auto !important; min-height: 120px; }
+body.lab-l2 .net-panel .slice-block { flex: 0 0 auto; margin-top: 4px; }
+
+/* ---------- 中：地球 ---------- */
+body.lab-l2 .topo-panel .topo-stage { flex: 1 1 auto; height: auto; min-height: 0; }
+body.lab-l2 .topo-panel .topo-note { margin-top: 6px; }
+body.lab-l2 .topo-panel .t3-callouts { display: none; }
+
+/* ---------- 右：案件（完整展示） ---------- */
+body.lab-l2 .case-panel .case-box { overflow-y: auto; }
+body.lab-l2 .case-panel .case-legal {
+  max-height: 74px; overflow: hidden;
+  mask-image: linear-gradient(#000 74%, transparent);
+}
+
+/* ---------- 底部左：候选图斑（紧凑行） ---------- */
+body.lab-l2 .patch-panel .patch-list {
+  flex: 1 1 auto; min-height: 0; overflow-y: auto;
+  display: grid; grid-template-columns: 1fr; gap: 0;
+}
+body.lab-l2 .patch-row { padding: 4px 8px; }
+body.lab-l2 .patch-area { font-size: 9px; }
+
+/* ---------- 底部中：横向事件轨 ---------- */
+body.lab-l2 #timeline {
+  flex: 1 1 auto; min-height: 0;
+  display: flex; flex-direction: row; gap: 0;
+  overflow-x: auto; overflow-y: hidden;
+  padding: 10px 0 4px 0;
+  position: relative;
+  mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent);
+}
+body.lab-l2 #timeline::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 16px; height: 1px;
+  background: linear-gradient(90deg, rgba(56, 225, 255, 0.5), rgba(56, 225, 255, 0.08));
+}
+body.lab-l2 #timeline li {
+  flex: 0 0 138px; position: relative;
+  border-left: 0; padding: 12px 12px 0 0;
+}
+body.lab-l2 #timeline li::before { left: 0; top: 2px; }
+body.lab-l2 #timeline .t-time { font-size: 9px; }
+body.lab-l2 #timeline .t-title { font-size: 11px; line-height: 1.35; }
+body.lab-l2 #timeline .t-desc {
+  font-size: 9px; line-height: 1.35; color: #7d9db3;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* ---------- 底部右：影像对比（横条） ---------- */
+body.lab-l2 .vision-panel .plan-bar { margin: 0 0 6px; }
+body.lab-l2 .vision-panel .compare { flex: 1 1 auto; height: auto; min-height: 96px; }
+body.lab-l2 .vision-panel .vision-metrics,
+body.lab-l2 .vision-panel .vision-note { display: none; }
+body.lab-l2 .vision-panel #vision-tools { display: flex; gap: 6px; }

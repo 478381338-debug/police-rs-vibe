@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>多场景研判 · 警务遥感</title>
+  <link rel="icon" type="image/png" href="/assets/police-badge-160.png">
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/static/operations.css?v=20261109a">
+</head>
+<body>
+  <div id="ops-gate" class="ops-gate" hidden>
+    <div class="gate-card">
+      <img src="/assets/police-badge-learning.png" alt="警徽">
+      <h1>多场景研判</h1>
+      <p>需要先登录案件工作台，研判页复用同一会话和权限。</p>
+      <a class="btn btn-primary" href="/workspace?next=/operations">去登录</a>
+    </div>
+  </div>
+
+  <div id="ops-app" hidden>
+    <header class="ops-header">
+      <div class="ops-brand">
+        <img src="/assets/police-badge-learning.png" alt="警徽">
+        <div>
+          <h1>多场景研判</h1>
+          <p>生态警务 · 灾害应急 · 活动安保 · 线性巡护 · 部门协同</p>
+        </div>
+      </div>
+      <div class="ops-actions">
+        <a class="btn btn-ghost" href="/">返回遥感地图</a>
+        <a class="btn btn-ghost" href="/aircase">空中办案</a>
+        <a class="btn btn-ghost" href="/workspace">案件工作台</a>
+        <span id="ops-user" class="user-chip">--</span>
+        <button id="ops-logout" class="btn btn-ghost" type="button">退出</button>
+        <a class="btn btn-ghost" href="/__gate/logout" data-gate-exit style="display:none" title="退出演示访问口令">退出访问</a>
+      </div>
+    </header>
+
+    <main class="ops-main">
+      <nav class="ops-tabs" id="ops-tabs">
+        <button class="tab active" data-tab="eco" type="button"><b>01</b> 生态警务</button>
+        <button class="tab" data-tab="emergency" type="button"><b>02</b> 灾害应急</button>
+        <button class="tab" data-tab="event" type="button"><b>03</b> 活动安保</button>
+        <button class="tab" data-tab="linear" type="button"><b>04</b> 线性巡护</button>
+        <button class="tab" data-tab="referral" type="button"><b>05</b> 部门协同</button>
+      </nav>
+
+      <div class="ops-layout">
+        <aside class="ops-panel">
+          <section class="panel active" id="panel-eco">
+            <div class="panel-head"><div><p class="eyebrow">ECO PIPELINE</p><h2>案件闭环总览</h2></div><span class="panel-tag">LIVE</span></div>
+            <div class="kpi-grid" id="eco-kpis"></div>
+            <p class="panel-note">这里只统计系统内已建案件，不代表辖区全部线索；核查结论按 confirmed/(confirmed+excluded) 计算，inconclusive 不计入分母。</p>
+            <h3 class="sub-head">最近案件</h3>
+            <div id="eco-cases" class="ops-list"></div>
+            <h3 class="sub-head">高优先级线索</h3>
+            <div id="eco-hotspots" class="ops-list"></div>
+          </section>
+
+          <section class="panel" id="panel-emergency" hidden>
+            <div class="panel-head"><div><p class="eyebrow">EMERGENCY</p><h2>灾害应急态势</h2></div></div>
+            <div class="form-row">
+              <label>灾种
+                <select id="em-hazard">
+                  <option value="">全部灾种</option>
+                  <option value="fire_risk">森林火险</option>
+                  <option value="flood_risk">洪涝风险</option>
+                  <option value="drought_risk">干旱风险</option>
+                  <option value="geohazard_risk">地质灾害风险</option>
+                </select>
+              </label>
+              <button id="em-refresh" class="btn btn-primary btn-sm" type="button">刷新研判</button>
+            </div>
+            <div id="em-summary" class="ops-summary"></div>
+            <h3 class="sub-head">优先处置格网</h3>
+            <div id="em-alerts" class="ops-list"></div>
+            <h3 class="sub-head">气象参考</h3>
+            <div id="em-weather" class="ops-note"></div>
+          </section>
+
+          <section class="panel" id="panel-event" hidden>
+            <div class="panel-head"><div><p class="eyebrow">EVENT SECURITY</p><h2>大型活动安保</h2></div></div>
+            <form id="event-form" class="ops-form">
+              <label>活动名称<input name="name" value="大型群众性活动" maxlength="80"></label>
+              <div class="form-row">
+                <label>经度<input name="lon" type="number" step="0.000001" value="111.67" required></label>
+                <label>纬度<input name="lat" type="number" step="0.000001" value="40.82" required></label>
+              </div>
+              <div class="form-row">
+                <label>外围半径 km<input name="radius_km" type="number" step="0.1" min="0.2" max="10" value="3"></label>
+                <label>预计人数<input name="people" type="number" min="0" max="1000000" value="5000"></label>
+              </div>
+              <label>安保等级
+                <select name="level"><option>三级</option><option>二级</option><option>一级</option></select>
+              </label>
+              <button class="btn btn-primary" type="submit">生成圈层研判</button>
+            </form>
+            <div id="event-result" class="ops-result"></div>
+          </section>
+
+          <section class="panel" id="panel-linear" hidden>
+            <div class="panel-head"><div><p class="eyebrow">LINEAR PATROL</p><h2>线性巡护走廊</h2></div></div>
+            <form id="linear-form" class="ops-form">
+              <label>任务名称<input name="title" value="管线/林区巡护" maxlength="80"></label>
+              <div class="form-row">
+                <label>起点经度<input name="start_lon" type="number" step="0.000001" value="111.60" required></label>
+                <label>起点纬度<input name="start_lat" type="number" step="0.000001" value="40.80" required></label>
+              </div>
+              <div class="form-row">
+                <label>终点经度<input name="end_lon" type="number" step="0.000001" value="111.75" required></label>
+                <label>终点纬度<input name="end_lat" type="number" step="0.000001" value="40.85" required></label>
+              </div>
+              <div class="form-row">
+                <label>采样间距 km<input name="sample_km" type="number" step="any" min="0.2" max="20" value="5"></label>
+                <label>走廊缓冲 km<input name="buffer_km" type="number" step="any" min="0.1" max="10" value="2"></label>
+              </div>
+              <button class="btn btn-primary" type="submit">生成巡护走廊</button>
+            </form>
+            <div id="linear-result" class="ops-result"></div>
+            <div class="download-row">
+              <button id="linear-kml" class="btn btn-ghost" type="button" disabled>下载 KML</button>
+              <button id="linear-csv" class="btn btn-ghost" type="button" disabled>下载 CSV</button>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-referral" hidden>
+            <div class="panel-head"><div><p class="eyebrow">INTERAGENCY</p><h2>跨部门协同</h2></div></div>
+            <form id="referral-form" class="ops-form">
+              <label>案件<select name="case_id" id="referral-case" required></select></label>
+              <label>协同部门<select name="department" id="referral-department" required></select></label>
+              <div class="form-row">
+                <label>联系人<input name="contact" maxlength="120" placeholder="姓名/电话"></label>
+                <label>反馈期限<input name="due_at" type="date"></label>
+              </div>
+              <label>移送说明<textarea name="note" rows="3" maxlength="1000" placeholder="已确认的问题、移送依据、需要对方反馈的事项"></textarea></label>
+              <button class="btn btn-primary" type="submit">建立移送台账</button>
+            </form>
+            <p class="panel-note">只有核查结论为“确认问题”或案件已复核/归档时才能移送；这里只建协同台账，不替代法定行刑衔接程序。</p>
+            <div id="referral-result" class="ops-result"></div>
+            <h3 class="sub-head">移送台账</h3>
+            <div id="referral-list" class="ops-list"></div>
+          </section>
+        </aside>
+
+        <section class="ops-map-wrap">
+          <div id="ops-map"></div>
+          <div class="map-hint">公开遥感底图 · 桌面推演，不作为正式预警或安保方案</div>
+        </section>
+      </div>
+    </main>
+    <div id="ops-toast" class="toast" hidden></div>
+  </div>
+
+  <script src="/vendor/leaflet/leaflet.js"></script>
+  <script src="/static/operations.js?v=20261116tile1"></script>
+  <script src="/static/gate-exit.js?v=20261111gate1"></script>
+</body>
+</html>

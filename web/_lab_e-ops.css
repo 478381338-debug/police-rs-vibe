@@ -1,0 +1,206 @@
+/* 方案 E · OPS 监控台
+   参考：grafana/grafana 77.8k★、netdata/netdata 81.4k★（2026-11-11 核对）
+   特征：石墨底、1px 细线、无发光、等宽数字、高密度运维面板 */
+:root {
+  --ts-bg: #0b0c0e;
+  --ts-panel: #111217;
+  --ts-line: #24272e;
+  --ts-line-strong: #3a3f48;
+  --ts-text: #d8d9da;
+  --ts-muted: #9a9ea6;
+  --ts-dim: #6b7078;
+  --ts-cyan: #ff9830;
+  --ts-blue: #5794f2;
+  --ts-green: #73bf69;
+  --ts-amber: #ff9830;
+  --ts-red: #f2495c;
+  --ts-violet: #b877d9;
+  --ts-mono: "Cascadia Mono", "JetBrains Mono", Consolas, monospace;
+}
+
+body { background: #0b0c0e; font-family: "Segoe UI", "Microsoft YaHei", sans-serif; }
+
+.ts-bg {
+  background:
+    radial-gradient(1100px 560px at 50% -18%, rgba(255, 152, 48, 0.055), transparent 62%),
+    linear-gradient(180deg, #0d0f12 0%, #08090b 100%);
+}
+.ts-bg::after {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: none;
+  opacity: 0.55;
+}
+
+.ts-header {
+  background: #0e1013;
+  border-bottom: 1px solid #24272e;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+.ts-logo {
+  width: 34px; height: 34px;
+  clip-path: none; border-radius: 3px;
+  background: #ff9830; color: #111;
+  box-shadow: none;
+  font-size: 12px; letter-spacing: 0;
+}
+.ts-brand h1 { font-size: 16px; font-weight: 600; letter-spacing: 0; color: #f4f5f5; }
+.ts-brand h1 span { color: #ff9830; opacity: 1; font-size: 9px; letter-spacing: 0.16em; }
+.ts-brand p { color: #8e9299; font-size: 10px; letter-spacing: 0.02em; }
+
+.pill {
+  height: 23px; border-radius: 2px;
+  border-color: #33373f; background: #16181d; color: #9a9ea6;
+  font-size: 9.5px; letter-spacing: 0.02em;
+}
+.pill.sim { color: #ff9830; border-color: rgba(255, 152, 48, 0.38); background: rgba(255, 152, 48, 0.06); }
+.pill.ok { color: #73bf69; border-color: rgba(115, 191, 105, 0.38); background: rgba(115, 191, 105, 0.06); }
+.pill.info { color: #5794f2; border-color: rgba(87, 148, 242, 0.38); background: rgba(87, 148, 242, 0.06); }
+.ts-nav a { color: #9a9ea6; font-size: 11px; }
+.ts-nav a:hover { color: #ff9830; }
+
+.ts-panel {
+  border-radius: 3px;
+  border-color: #24272e;
+  background: #111217;
+  box-shadow: none;
+  padding: 8px 10px 9px;
+}
+.ts-panel::before {
+  left: 0; right: 0; top: 0; height: 1px;
+  background: #24272e; opacity: 1;
+}
+.panel-head {
+  align-items: center;
+  margin: 0 -10px 7px;
+  padding: 5px 10px 6px;
+  border-bottom: 1px solid #24272e;
+  background: #16181d;
+}
+.eyebrow { color: #7b8189; font-size: 8px; letter-spacing: 0.12em; }
+.panel-head h2 { font-size: 12.5px; font-weight: 600; letter-spacing: 0; color: #e6e8ea; }
+.panel-tag {
+  border-radius: 2px; border-color: #33373f;
+  background: #1b1d22; color: #aeb3ba; font-size: 9px;
+}
+
+.scenario-card {
+  border-radius: 2px; border-color: #2b2f36;
+  background: #0e1013;
+}
+.scenario-card:hover { border-color: #3a3f48; transform: none; }
+.scenario-card.active {
+  border-color: #ff9830;
+  background: rgba(255, 152, 48, 0.07);
+  box-shadow: inset 2px 0 0 #ff9830;
+}
+.scenario-card.active b { color: #ff9830; }
+.scenario-card small { color: #7b8189; }
+.panel-desc, .sim-note, .topo-note, .vision-note, .disclaimer { color: #8e9299; }
+
+.ts-btn {
+  border-radius: 2px; border-color: #33373f;
+  background: #1b1d22; color: #d8d9da;
+  box-shadow: none;
+}
+.ts-btn.primary {
+  border-color: #ff9830; background: #ff9830; color: #131313;
+  box-shadow: none;
+}
+.ts-btn.ghost { background: transparent; color: #c9ccd1; }
+
+.kpi {
+  border-radius: 2px; border-color: #24272e;
+  background: #0e1013;
+}
+.kpi label { color: #8e9299; font-size: 8.5px; letter-spacing: 0.02em; }
+.kpi b { color: #f4f5f5; font-size: 16px; text-shadow: none; }
+.kpi b.ok, .kpi b.green { color: #73bf69; }
+.kpi b.warn { color: #ff9830; }
+.kpi b.cyan { color: #5794f2; }
+.kpi em { color: #6b7078; }
+
+.net-chart canvas, .net-chart svg { filter: hue-rotate(58deg) saturate(0.85) brightness(0.98); }
+#globe-viz canvas { filter: saturate(0.58) brightness(0.9) contrast(1.05); }
+
+.slice-track { border-radius: 1px; background: #1d2026; }
+.slice-track i { border-radius: 1px; background: #ff9830; box-shadow: none; }
+.slice-head em, .slice-row span, .slice-row em { color: #8e9299; }
+
+.topo-stage {
+  border-radius: 3px; border-color: #24272e; background: #0a0b0d;
+  box-shadow: none;
+}
+.topo-stage.is-outage { box-shadow: inset 0 0 34px rgba(242, 73, 92, 0.14); }
+.t3-callout {
+  border-radius: 2px; border-color: #33373f;
+  background: rgba(17, 18, 23, 0.9); color: #c9ccd1;
+}
+.t3-callout i { background: #ff9830; box-shadow: none; }
+.t3-callout.is-standby { color: #ffd28a; border-color: rgba(255, 176, 32, 0.45); }
+.t3-callout.is-offline { color: #ffb3c1; border-color: rgba(242, 73, 92, 0.5); }
+.t3-callout.is-offline i { background: #f2495c; box-shadow: none; }
+.t3-hud {
+  border-radius: 2px; border-color: #24272e;
+  background: rgba(14, 16, 19, 0.92); color: #d8d9da;
+}
+.t3-hud b { color: #f4f5f5; }
+.t3-hud em { color: #8e9299; }
+.t3-value { color: #9a9ea6; }
+.t3-value b { color: #ff9830; }
+
+.compare { border-radius: 2px; border-color: #24272e; }
+.cmp-label { border-radius: 2px; }
+.chip {
+  border-radius: 2px; border-color: #33373f;
+  background: #16181d; color: #9a9ea6;
+}
+.chip.active { border-color: #ff9830; color: #ff9830; background: rgba(255, 152, 48, 0.08); }
+
+.vm { border-radius: 2px; border-color: #24272e; background: #0e1013; }
+.vm label { color: #8e9299; }
+.vm b { color: #f4f5f5; }
+.vm b.green { color: #73bf69; }
+.vm b.amber { color: #ff9830; }
+.vm b.cyan { color: #5794f2; }
+
+.patch-row { border-bottom-color: #1d2026; }
+.patch-row:hover { background: rgba(255, 152, 48, 0.05); }
+.patch-row.selected { background: rgba(255, 152, 48, 0.09); }
+.patch-id { color: #ff9830; }
+.patch-class { color: #c9ccd1; }
+.patch-class i { background: #ff9830; }
+.patch-conf { color: #73bf69; }
+.patch-area { color: #9a9ea6; }
+
+.value-strip > div {
+  border-radius: 2px; border-color: #24272e;
+  background: #0e1013;
+}
+.value-strip b { color: #ff9830; }
+.value-strip span { color: #d8d9da; }
+.value-strip small { color: #8e9299; }
+
+.timeline li { border-left-color: #24272e; }
+.timeline li::before { box-shadow: none; background: #ff9830; }
+.timeline li.phase-vision::before { background: #b877d9; }
+.timeline li.phase-ai::before { background: #73bf69; }
+.timeline li.phase-case::before { background: #ff9830; }
+.timeline li.phase-report::before { background: #5794f2; }
+.t-time { color: #7b8189; }
+.t-title { color: #e6e8ea; }
+.t-desc { color: #9a9ea6; }
+
+.case-no { color: #ff9830; }
+.case-title { color: #f4f5f5; }
+.case-meta span { color: #8e9299; }
+.case-meta b { color: #c9ccd1; }
+.case-legal li { color: #aeb3ba; }
+.case-legal li::before { color: #ff9830; }
+.case-legal li b { color: #e8d9bd; }
+.case-tags span { border-radius: 2px; border-color: #33373f; background: #16181d; color: #9a9ea6; }
+.empty { color: #6b7078; }
+
+/* 1366×768 下法条列表行距放宽，避免中文字面挤压 */
+.case-legal li { line-height: 1.62; }

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>警务遥感 · 界面视觉样本</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif}
+  body{overflow:hidden;background:#0b111a;color:#eaf2ff}
+  .app{height:100vh;display:grid;grid-template-rows:64px 1fr;position:relative}
+  .top{display:flex;align-items:center;gap:18px;padding:0 24px;border-bottom:1px solid var(--line);background:var(--top);z-index:5}
+  .brand{display:flex;align-items:center;gap:12px;min-width:250px}
+  .badge{width:36px;height:42px;flex:none;filter:drop-shadow(0 0 10px var(--glow))}
+  .brand b{display:block;font-size:19px;letter-spacing:2px;line-height:1.15}
+  .brand small{display:block;font-size:10px;opacity:.58;letter-spacing:1.2px;margin-top:4px}
+  .top .crumbs{font-size:11px;opacity:.55;letter-spacing:.5px}
+  .top .spacer{flex:1}
+  .live{display:flex;align-items:center;gap:7px;font-size:11px;opacity:.8}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
+  .time{font-variant-numeric:tabular-nums;font-size:13px;letter-spacing:1px}
+  .main{display:grid;grid-template-columns:300px 1fr;min-height:0;position:relative}
+  .side{padding:18px 16px;border-right:1px solid var(--line);background:var(--side);overflow:hidden}
+  .eyebrow{font-size:10px;letter-spacing:2.2px;opacity:.5;margin:0 0 10px}
+  .kpis{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px}
+  .kpi{padding:12px;border:1px solid var(--line);background:var(--card);border-radius:var(--r)}
+  .kpi b{display:block;font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+  .kpi span{display:block;font-size:10px;opacity:.6;margin-top:7px}
+  .kpi.hot b{color:var(--hot)}
+  .block{border-top:1px solid var(--line);padding-top:13px;margin-top:13px}
+  .block h3{font-size:11px;letter-spacing:1.4px;margin:0 0 9px;opacity:.72;font-weight:600}
+  .row{display:flex;align-items:center;justify-content:space-between;padding:7px 0;font-size:11px;border-bottom:1px dashed var(--dash)}
+  .row:last-child{border-bottom:0}
+  .row em{font-style:normal;font-size:10px;opacity:.55}
+  .pri{display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;border-radius:50%;font-size:10px;font-weight:700;color:#08101a;background:var(--p1);margin-right:8px}
+  .p2{background:var(--p2)} .p3{background:var(--p3)}
+  .layers{display:grid;gap:6px;font-size:11px;opacity:.8}
+  .layers label{display:flex;align-items:center;gap:8px}
+  .sw{width:12px;height:12px;border-radius:3px;border:1px solid var(--line);display:inline-block}
+  .sw.on{background:var(--accent);border-color:var(--accent);box-shadow:0 0 8px var(--glow)}
+  .map{position:relative;overflow:hidden;background:#0a1420}
+  .map img.base{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:var(--mapfilter);transform:scale(1.02)}
+  .map:after{content:"";position:absolute;inset:0;background:var(--mapveil);pointer-events:none}
+  .grid-lines{position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:80px 80px;opacity:.45;pointer-events:none}
+  .aoi{position:absolute;left:43%;top:30%;width:34%;height:32%;border:2px solid var(--accent);background:var(--aoifill);box-shadow:0 0 24px var(--glow);border-radius:3px}
+  .aoi:before{content:"研究区 AOI";position:absolute;left:8px;top:-24px;font-size:10px;letter-spacing:1px;color:var(--accent);white-space:nowrap}
+  .cell{position:absolute;width:6.5%;height:8%;background:var(--p2);opacity:.8;border:1px solid rgba(255,255,255,.24)}
+  .c1{left:45.2%;top:34.1%}.c2{left:52.1%;top:37.2%;background:var(--p1)}.c3{left:48.3%;top:45.4%;background:var(--p3)}.c4{left:55.2%;top:45.9%;background:var(--p2)}
+  .c5{left:58.1%;top:36.8%;background:var(--p3)}.c6{left:43.5%;top:40.7%;background:var(--p2)}.c7{left:51.0%;top:50.4%;background:var(--p1);opacity:.55}
+  .detail{position:absolute;right:22px;top:22px;width:288px;padding:17px;background:var(--float);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(14px);box-shadow:var(--shadow)}
+  .detail .tag{font-size:9px;letter-spacing:1.6px;color:var(--accent);margin-bottom:8px}
+  .detail h2{margin:0 0 5px;font-size:18px;letter-spacing:1px}
+  .detail .sub{font-size:10px;opacity:.55;margin-bottom:14px}
+  .detail .big{display:flex;align-items:baseline;gap:8px;margin:4px 0 12px}
+  .detail .big b{font-size:38px;line-height:1;color:var(--hot);font-variant-numeric:tabular-nums}
+  .detail .big span{font-size:10px;opacity:.55}
+  .bar{height:5px;background:var(--dash);border-radius:9px;overflow:hidden;margin:7px 0 10px}
+  .bar i{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--p3),var(--hot));border-radius:9px}
+  .meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:10px;opacity:.72}
+  .meta span{display:block;opacity:.5;font-size:9px;margin-bottom:2px}
+  .modes{position:absolute;left:22px;top:22px;display:flex;gap:6px;padding:4px;background:var(--float);border:1px solid var(--line);border-radius:9px;backdrop-filter:blur(10px)}
+  .modes button{border:0;background:transparent;color:var(--fg);padding:7px 12px;border-radius:6px;font-size:10px;letter-spacing:1px;cursor:pointer}
+  .modes button.on{background:var(--accent);color:var(--accent-fg);box-shadow:0 0 14px var(--glow)}
+  .legend{position:absolute;left:22px;bottom:20px;display:flex;gap:13px;padding:9px 13px;background:var(--float);border:1px solid var(--line);border-radius:8px;font-size:9px;backdrop-filter:blur(10px)}
+  .legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+  .scale{position:absolute;right:24px;bottom:20px;font-size:9px;opacity:.52;letter-spacing:1px}
+  .watermark{position:absolute;right:24px;bottom:44px;font-size:9px;opacity:.35;letter-spacing:1.5px}
+
+  /* 1 浅色政务 GIS */
+  body[data-style="light"]{--top:#fff;--side:#f5f7fa;--card:#fff;--float:rgba(255,255,255,.96);--line:#dbe3ec;--dash:#e8edf3;--fg:#0b2545;--accent:#1f6feb;--accent-fg:#fff;--hot:#c62828;--ok:#138a5b;--p1:#e04b4b;--p2:#ef9b3d;--p3:#e3c04a;--glow:rgba(31,111,235,.15);--mapfilter:saturate(.62) brightness(1.08) contrast(.94);--mapveil:linear-gradient(90deg,rgba(246,249,252,.28),transparent 35%,rgba(255,255,255,.1));--grid:rgba(11,37,69,.035);--aoifill:rgba(31,111,235,.08);--shadow:0 16px 40px rgba(22,49,80,.14);--r:10px;color:var(--fg);background:#f5f7fa}
+  body[data-style="light"] .brand b{font-family:"Microsoft YaHei",sans-serif}
+  /* 2 深色玻璃 */
+  body[data-style="glass"]{--top:rgba(5,12,25,.82);--side:rgba(6,15,30,.72);--card:rgba(17,35,60,.48);--float:rgba(10,24,43,.72);--line:rgba(104,197,255,.2);--dash:rgba(104,197,255,.14);--fg:#eaf7ff;--accent:#35e0ff;--accent-fg:#021018;--hot:#ff6b8a;--ok:#47f5b1;--p1:#ff5470;--p2:#ffb547;--p3:#ffe66b;--glow:rgba(53,224,255,.45);--mapfilter:saturate(.85) brightness(.72) contrast(1.12);--mapveil:linear-gradient(180deg,rgba(2,10,20,.15),rgba(2,10,20,.62)),radial-gradient(circle at 65% 35%,transparent,rgba(2,10,20,.45));--grid:rgba(53,224,255,.05);--aoifill:rgba(53,224,255,.09);--shadow:0 0 40px rgba(0,0,0,.5);--r:16px;color:var(--fg);background:radial-gradient(1200px 800px at 70% 10%,#0b2e4a 0%,#050c18 55%,#03070e 100%)}
+  body[data-style="glass"] .top{backdrop-filter:blur(18px)}
+  body[data-style="glass"] .detail,.modes,.legend{backdrop-filter:blur(20px)}
+  /* 3 战术测绘 */
+  body[data-style="tactical"]{--top:#151a1d;--side:#151a1d;--card:rgba(255,138,42,.04);--float:rgba(18,23,26,.94);--line:#3a3f3d;--dash:#2b302e;--fg:#e8e3d6;--accent:#ff8a2a;--accent-fg:#17130c;--hot:#ff5a36;--ok:#b9d94a;--p1:#ff5a36;--p2:#ff9f43;--p3:#d9c76a;--glow:rgba(255,138,42,.35);--mapfilter:sepia(.25) saturate(.55) brightness(.62) contrast(1.25);--mapveil:linear-gradient(180deg,rgba(10,13,14,.15),rgba(10,13,14,.72));--grid:rgba(255,138,42,.07);--aoifill:rgba(255,138,42,.08);--shadow:0 0 0 1px rgba(255,138,42,.08),0 18px 50px rgba(0,0,0,.45);--r:2px;color:var(--fg);background:#101416;font-family:"Consolas","Microsoft YaHei",monospace}
+  body[data-style="tactical"] .brand b{font-family:"Consolas","Microsoft YaHei",monospace;letter-spacing:3px}
+  body[data-style="tactical"] .top:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:repeating-linear-gradient(90deg,var(--accent) 0 20px,transparent 20px 34px);opacity:.7}
+  body[data-style="tactical"] .map:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 39px,rgba(255,138,42,.045) 39px 40px);z-index:1}
+  /* 4 编辑级极简 */
+  body[data-style="editorial"]{--top:#f2efe8;--side:#f2efe8;--card:transparent;--float:rgba(242,239,232,.96);--line:#1d1d1b;--dash:#c9c4b8;--fg:#1b1b19;--accent:#1f4fd8;--accent-fg:#fff;--hot:#d6362f;--ok:#1d7a52;--p1:#d6362f;--p2:#d98c2b;--p3:#b9a33b;--glow:rgba(31,79,216,.1);--mapfilter:saturate(.55) contrast(.92) brightness(1.04);--mapveil:linear-gradient(90deg,rgba(242,239,232,.45),transparent 40%);--grid:rgba(27,27,25,.04);--aoifill:rgba(31,79,216,.06);--shadow:0 0 0 1px #1d1d1b;--r:0px;color:var(--fg);background:#f2efe8;font-family:Georgia,"Songti SC","SimSun",serif}
+  body[data-style="editorial"] .top{border-bottom:2px solid var(--fg)}
+  body[data-style="editorial"] .brand b{font-size:24px;letter-spacing:6px;font-weight:400}
+  body[data-style="editorial"] .brand small{font-family:"Microsoft YaHei",sans-serif;letter-spacing:2px}
+  body[data-style="editorial"] .side{border-right:2px solid var(--fg)}
+  body[data-style="editorial"] .kpis{grid-template-columns:1fr;gap:0}
+  body[data-style="editorial"] .kpi{border:0;border-bottom:1px solid var(--dash);border-radius:0;padding:10px 0}
+  body[data-style="editorial"] .kpi b{font-family:"Microsoft YaHei",sans-serif;font-size:34px}
+  body[data-style="editorial"] .detail{border-width:2px;box-shadow:none;backdrop-filter:none}
+  body[data-style="editorial"] .modes{border-width:2px;box-shadow:none;background:var(--top)}
+  body[data-style="editorial"] .legend{box-shadow:none;border-width:1px}
+  body[data-style="editorial"] .eyebrow,body[data-style="editorial"] .block h3{font-family:"Microsoft YaHei",sans-serif}
+  body[data-style="editorial"] .detail h2{font-weight:400;letter-spacing:2px}
+  body[data-style="editorial"] .detail .big b{font-family:"Microsoft YaHei",sans-serif}
+
+  /* 05 Tabler · 明亮蓝白工作台 */
+  body[data-style="tabler"]{--top:#fff;--side:#f6f8fb;--card:#fff;--float:rgba(255,255,255,.97);--line:#e6e9ef;--dash:#edf0f4;--fg:#182433;--accent:#206bc4;--accent-fg:#fff;--hot:#d63939;--ok:#2fb344;--p1:#d63939;--p2:#f59f00;--p3:#f6c343;--glow:rgba(32,107,196,.14);--mapfilter:saturate(.72) brightness(1.06) contrast(.94);--mapveil:linear-gradient(90deg,rgba(255,255,255,.22),transparent 34%,rgba(255,255,255,.08));--grid:rgba(24,36,51,.035);--aoifill:rgba(32,107,196,.07);--shadow:0 10px 30px rgba(24,36,51,.1);--r:8px;color:var(--fg);background:#f6f8fb}
+  body[data-style="tabler"] .top{box-shadow:0 1px 0 #e6e9ef,0 6px 20px rgba(24,36,51,.04)}
+  body[data-style="tabler"] .brand b{color:#182433}
+  body[data-style="tabler"] .kpi{border-top:3px solid var(--accent)}
+  body[data-style="tabler"] .kpi.hot{border-top-color:var(--hot)}
+  body[data-style="tabler"] .detail .big b{color:var(--accent)}
+  body[data-style="tabler"] .modes button.on{background:var(--accent);color:#fff}
+  body[data-style="tabler"] .legend{box-shadow:0 6px 20px rgba(24,36,51,.08)}
+
+  /* 06 Ant Design Pro · 亮蓝数据工作台 */
+  body[data-style="antpro"]{--top:#fff;--side:#f7f9fc;--card:#f0f7ff;--float:rgba(255,255,255,.98);--line:#e6f0fb;--dash:#eaf2fb;--fg:#102039;--accent:#1677ff;--accent-fg:#fff;--hot:#ff4d4f;--ok:#00b96b;--p1:#ff4d4f;--p2:#fa8c16;--p3:#fadb14;--glow:rgba(22,119,255,.16);--mapfilter:saturate(.7) brightness(1.07) contrast(.92);--mapveil:linear-gradient(90deg,rgba(247,249,252,.44),transparent 44%);--grid:rgba(22,119,255,.04);--aoifill:rgba(22,119,255,.07);--shadow:0 8px 28px rgba(22,119,255,.12);--r:6px;color:var(--fg);background:#f7f9fc}
+  body[data-style="antpro"] .top{border-bottom:2px solid #1677ff}
+  body[data-style="antpro"] .brand b{color:#1677ff}
+  body[data-style="antpro"] .kpi{border:1px solid #d6e8ff;background:linear-gradient(180deg,#f7fbff,#fff)}
+  body[data-style="antpro"] .kpi b{color:#1677ff}
+  body[data-style="antpro"] .kpi.hot b{color:#ff4d4f}
+  body[data-style="antpro"] .side{background:linear-gradient(180deg,#f7f9fc,#eef6ff)}
+  body[data-style="antpro"] .detail .big b{color:#1677ff}
+  body[data-style="antpro"] .modes button.on{background:#1677ff;color:#fff}
+
+  /* 07 AdminLTE · 青绿亮色管理台 */
+  body[data-style="adminlte"]{--top:#12a8b8;--side:#ffffff;--card:#ffffff;--float:rgba(255,255,255,.98);--line:#e1e8ed;--dash:#edf1f3;--fg:#1f2d3d;--accent:#17a2b8;--accent-fg:#fff;--hot:#dc3545;--ok:#28a745;--p1:#dc3545;--p2:#ffc107;--p3:#20c997;--glow:rgba(23,162,184,.18);--mapfilter:saturate(.78) brightness(1.06) contrast(.92);--mapveil:linear-gradient(90deg,rgba(255,255,255,.2),transparent 42%);--grid:rgba(31,45,61,.035);--aoifill:rgba(23,162,184,.08);--shadow:0 8px 24px rgba(31,45,61,.12);--r:5px;color:var(--fg);background:#f1f4f7}
+  body[data-style="adminlte"] .top{color:#fff;border-bottom:0;box-shadow:0 2px 8px rgba(0,0,0,.16)}
+  body[data-style="adminlte"] .brand b,body[data-style="adminlte"] .brand small,body[data-style="adminlte"] .crumbs,body[data-style="adminlte"] .live{color:#fff;opacity:1}
+  body[data-style="adminlte"] .kpi{border-left:4px solid var(--accent);box-shadow:0 2px 8px rgba(31,45,61,.07)}
+  body[data-style="adminlte"] .kpi.hot{border-left-color:var(--hot)}
+  body[data-style="adminlte"] .detail .big b{color:var(--hot)}
+  body[data-style="adminlte"] .modes button.on{background:var(--accent);color:#fff}
+  body[data-style="adminlte"] .legend{border-top:3px solid var(--accent)}
+
+  /* 08 GeoNode / MapStore · 地图优先亮色 */
+  body[data-style="geonode"]{--top:#fff;--side:rgba(255,255,255,.94);--card:rgba(255,255,255,.84);--float:rgba(255,255,255,.94);--line:#dce6e8;--dash:#e8eff0;--fg:#173a3e;--accent:#ee7d2c;--accent-fg:#fff;--hot:#d94f3d;--ok:#0f9d8a;--p1:#d94f3d;--p2:#ee9c2c;--p3:#2eb8a6;--glow:rgba(238,125,44,.26);--mapfilter:saturate(.92) brightness(1.1) contrast(.88);--mapveil:linear-gradient(90deg,rgba(255,255,255,.34),transparent 30%,rgba(255,255,255,.06));--grid:rgba(15,157,138,.05);--aoifill:rgba(238,125,44,.1);--shadow:0 14px 34px rgba(23,58,62,.18);--r:8px;color:var(--fg);background:#f7fbfb}
+  body[data-style="geonode"] .top{background:rgba(255,255,255,.92);backdrop-filter:blur(16px)}
+  body[data-style="geonode"] .brand b{color:#0f5e5a}
+  body[data-style="geonode"] .side{box-shadow:12px 0 30px rgba(23,58,62,.08);z-index:2}
+  body[data-style="geonode"] .kpi{border:1px solid #d7e9e7;background:rgba(255,255,255,.9)}
+  body[data-style="geonode"] .kpi.hot b{color:#d94f3d}
+  body[data-style="geonode"] .detail .big b{color:#ee7d2c}
+  body[data-style="geonode"] .modes button.on{background:#ee7d2c;color:#fff}
+  body[data-style="geonode"] .legend{border-color:#cfe4e2;background:rgba(255,255,255,.92)}
+</style>
+</head>
+<body data-style="light">
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <svg class="badge" viewBox="0 0 80 92" aria-hidden="true"><path d="M40 3 72 15v27c0 22-14 37-32 47C22 79 8 64 8 42V15Z" fill="#0d3b66" stroke="#d8b45a" stroke-width="4"/><circle cx="40" cy="39" r="18" fill="#d8b45a"/><path d="m40 25 4.4 9.2 10.1 1.3-7.4 7 1.9 10-9-4.9-9 4.9 1.9-10-7.4-7 10.1-1.3Z" fill="#0d3b66"/><text x="40" y="76" text-anchor="middle" font-size="12" fill="#f3e3b3" font-family="Microsoft YaHei">警务遥感</text></svg>
+      <div><b>警务遥感</b><small>生态安全与灾害风险 · 核查指挥台</small></div>
+    </div>
+    <div class="crumbs">全国态势 / 内蒙古重点区 / 当前危险指数</div>
+    <div class="spacer"></div>
+    <div class="live"><i class="dot"></i> 数据已接入</div>
+    <div class="time">2026-11-07&nbsp;&nbsp;11:18</div>
+  </header>
+  <div class="main">
+    <aside class="side">
+      <p class="eyebrow">TODAY / 核查态势</p>
+      <div class="kpis">
+        <div class="kpi hot"><b>4</b><span>一级核查点</span></div>
+        <div class="kpi"><b>68.2</b><span>当前危险指数峰值</span></div>
+        <div class="kpi"><b>6</b><span>较高危险格网</span></div>
+        <div class="kpi"><b>766.6万</b><span>研究区人口</span></div>
+      </div>
+      <div class="block">
+        <h3>核查优先级</h3>
+        <div class="row"><span><i class="pri">1</i>HS-026 盗采痕迹</span><em>79.3</em></div>
+        <div class="row"><span><i class="pri p2">2</i>HS-014 盗采</span><em>78.5</em></div>
+        <div class="row"><span><i class="pri p2">2</i>HS-025 盗采</span><em>76.7</em></div>
+        <div class="row"><span><i class="pri p3">3</i>HS-017 雪线变化</span><em>73.4</em></div>
+      </div>
+      <div class="block">
+        <h3>图层 / 数据</h3>
+        <div class="layers">
+          <label><i class="sw on"></i>当前危险指数格网</label>
+          <label><i class="sw on"></i>中国省界 / 研究区</label>
+          <label><i class="sw"></i>气象采样点（实时）</label>
+          <label><i class="sw"></i>人口暴露 / OSM 设施</label>
+        </div>
+      </div>
+      <div class="block">
+        <h3>数据时效</h3>
+        <div class="row"><span>气象</span><em>11:00 更新</em></div>
+        <div class="row"><span>NDVI / 遥感</span><em>16 天合成</em></div>
+        <div class="row"><span>DEM / 人口</span><em>本地基线</em></div>
+      </div>
+    </aside>
+    <main class="map">
+      <img class="base" src="/assets/gmt_china_mercator.jpg" alt="中国地形底图">
+      <div class="grid-lines"></div>
+      <div class="aoi"></div>
+      <div class="cell c1"></div><div class="cell c2"></div><div class="cell c3"></div><div class="cell c4"></div><div class="cell c5"></div><div class="cell c6"></div><div class="cell c7"></div>
+      <div class="modes"><button class="on">2D</button><button>3D</button><button>全国</button><button>研究区</button></div>
+      <section class="detail">
+        <div class="tag">PRIORITY / 一级核查</div>
+        <h2>HS-026 盗采痕迹</h2>
+        <div class="sub">内蒙古重点区 · 最近异常 2026-10-28</div>
+        <div class="big"><b>68.2</b><span>当前危险 / 100</span></div>
+        <div class="bar"><i></i></div>
+        <div class="meta">
+          <div><span>历史核查优先级</span>79.3 / 一级</div>
+          <div><span>14 天预测峰值</span>71.2 · 11-10</div>
+          <div><span>主导因子</span>干旱 / 火险</div>
+          <div><span>人口暴露</span>12.4 万</div>
+        </div>
+      </section>
+      <div class="legend"><span><i style="background:var(--p1)"></i>一级</span><span><i style="background:var(--p2)"></i>二级</span><span><i style="background:var(--p3)"></i>三级</span><span><i style="background:var(--accent)"></i>研究区</span></div>
+      <div class="watermark">DEM · Open-Meteo · MODIS · WorldPop · OSM</div>
+      <div class="scale">0 &nbsp; 250 &nbsp; 500 km</div>
+    </main>
+  </div>
+</div>
+<script>
+  const style = new URLSearchParams(location.search).get('style') || 'light';
+  document.body.dataset.style = style;
+  document.title = '警务遥感 · ' + ({light:'浅色政务 GIS',glass:'深色玻璃指挥中心',tactical:'战术测绘沙盘',editorial:'编辑级极简',tabler:'Tabler 明亮蓝白',antpro:'Ant Design Pro 亮蓝',adminlte:'AdminLTE 青绿',geonode:'GeoNode 地图优先'}[style] || style);
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>警务遥感 · 明亮风格样本（GitHub 模板参考）</title>
+<style>
+  :root{--bg:#f4f7fa;--panel:#fff;--line:#dfe7ef;--text:#14253a;--muted:#65788c;--blue:#1677ff;--teal:#12a8b8;--orange:#ee7d2c}
+  *{box-sizing:border-box}body{margin:0;background:#f4f7fa;color:var(--text);font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif}
+  .wrap{max-width:1320px;margin:0 auto;padding:34px 26px 60px}
+  header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:24px}
+  h1{font-size:24px;letter-spacing:2px;margin:0 0 7px}p.sub{margin:0;color:var(--muted);font-size:12px;line-height:1.7}
+  .note{font-size:11px;color:var(--muted);text-align:right;line-height:1.7}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(20,37,58,.07)}
+  figure img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#eef3f7}
+  figcaption{padding:14px 16px}
+  .caprow{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  figcaption b{display:block;font-size:14px;letter-spacing:.8px;margin-bottom:5px}
+  figcaption span{display:block;color:var(--muted);font-size:11px;line-height:1.65}
+  .ref{display:inline-block;margin-top:8px;font-size:10px;color:#1677ff;text-decoration:none;border-bottom:1px dashed #9dc4ff}
+  .open{flex:none;text-decoration:none;color:#fff;background:var(--blue);font-size:11px;padding:8px 12px;border-radius:6px;font-weight:700}
+  .open.t{background:var(--teal)}.open.o{background:var(--orange)}
+  footer{color:var(--muted);font-size:11px;line-height:1.8;margin-top:24px;border-top:1px solid var(--line);padding-top:16px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}header{display:block}.note{text-align:left;margin-top:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div><h1>四套明亮风格样本</h1><p class="sub">参考 GitHub 上星标高、仍在维护的开源管理台 / GIS 模板，重新组织成警务遥感的信息层级；全部为浅色亮色系。</p></div>
+    <div class="note">样本数据：一级核查 4 · 当前危险 68.2 · 人口 766.6 万<br>地图底图：本地 GMT 中国地形 · 研究区为示意叠加</div>
+  </header>
+  <div class="grid">
+    <figure>
+      <img src="/assets/style_tabler.png" alt="Tabler 明亮蓝白工作台">
+      <figcaption>
+        <div class="caprow"><div><b>05 · Tabler · 蓝白工作台</b><span>白底 + 细边框 + 蓝色主色，顶部导航和圆角卡片；接近现代政务后台。</span><a class="ref" href="https://github.com/tabler/tabler" target="_blank">GitHub: tabler/tabler · 42.0k★ · MIT</a></div><a class="open" href="/static/style_preview.html?style=tabler" target="_blank">全屏</a></div>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/style_antpro.png" alt="Ant Design Pro 亮蓝数据工作台">
+      <figcaption>
+        <div class="caprow"><div><b>06 · Ant Design Pro · 亮蓝数据台</b><span>高密度表格/卡片、亮蓝强调、浅蓝分层；适合核查任务多、需要快速扫读的场景。</span><a class="ref" href="https://github.com/ant-design/ant-design-pro" target="_blank">GitHub: ant-design/ant-design-pro · 38.9k★ · MIT</a></div><a class="open" href="/static/style_preview.html?style=antpro" target="_blank">全屏</a></div>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/style_adminlte.png" alt="AdminLTE 青绿管理台">
+      <figcaption>
+        <div class="caprow"><div><b>07 · AdminLTE · 青绿管理台</b><span>青绿顶栏 + 白侧栏 + 彩色状态条；稳重、明亮，适合日常值班和打印。</span><a class="ref" href="https://github.com/ColorlibHQ/AdminLTE" target="_blank">GitHub: ColorlibHQ/AdminLTE · 45.7k★ · MIT</a></div><a class="open t" href="/static/style_preview.html?style=adminlte" target="_blank">全屏</a></div>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/style_geonode.png" alt="GeoNode 地图优先亮色">
+      <figcaption>
+        <div class="caprow"><div><b>08 · GeoNode / MapStore · 地图优先</b><span>地图占据主视野，白色浮层、橙色研究区、青绿风险格网；最接近开源 GIS 产品。</span><a class="ref" href="https://github.com/geonode/geonode" target="_blank">GitHub: geonode/geonode · 1.7k★ · 活跃</a></div><a class="open o" href="/static/style_preview.html?style=geonode" target="_blank">全屏</a></div>
+      </figcaption>
+    </figure>
+  </div>
+  <footer>推荐顺序：如果偏“日常警务工作台”，选 05 或 07；如果偏“数据研判/大屏”，选 06；如果希望地图最大、最像专业 GIS，选 08。选定后我会把正式页面整套换成该风格，并继续完成 NDVI、本地核查样本和可交互 3D。</footer>
+</div>
+</body>
+</html>
