@@ -8,12 +8,13 @@ map remains MapLibre.  The endpoint is intentionally server-side and cached.
 from __future__ import annotations
 
 import os
+import shutil
 import subprocess
 from pathlib import Path
 
 from app import config
 
-GMT = Path(r"D:\数学建模工具\GMT\gmt6\bin\gmt.exe")
+GMT = Path(os.environ.get("GMT_EXE") or shutil.which("gmt") or "gmt")
 DEM = config.DATA / "external" / "china_land_0p1.tif"
 OUTLINE = config.DATA / "external" / "china_outline.gmt"
 PROVINCES = config.DATA / "external" / "china_provinces.gmt"

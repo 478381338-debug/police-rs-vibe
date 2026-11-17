@@ -2,7 +2,7 @@ from pathlib import Path
 import shutil
 import arcpy
 
-ROOT = Path(r"E:/警务遥感")
+ROOT = Path(__file__).resolve().parents[1]
 ARC = ROOT / "arcgis"
 TMP = ARC / "_tmp"
 TMP.mkdir(parents=True, exist_ok=True)

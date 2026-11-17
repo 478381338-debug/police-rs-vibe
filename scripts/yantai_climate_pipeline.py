@@ -29,8 +29,8 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-_CA = Path(r"C:\Users\lenovo\cacert.pem")
-if _CA.exists():
+_CA = os.environ.get("REQUESTS_CA_BUNDLE") or os.environ.get("SSL_CERT_FILE")
+if _CA and Path(_CA).exists():
     for _key in ("GDAL_CURL_CA_BUNDLE", "PROJ_CURL_CA_BUNDLE", "GDAL_HTTP_CAINFO"):
         os.environ.setdefault(_key, str(_CA))
 

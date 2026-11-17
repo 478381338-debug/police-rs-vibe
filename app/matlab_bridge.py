@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import os
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -18,7 +20,13 @@ def _decode(bs: bytes) -> str:
 
 
 def _matlab_exe() -> str | None:
-    for p in (r"D:\MATLAB\bin\matlab.exe", r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe"):
+    env = os.environ.get("MATLAB_EXE")
+    if env and Path(env).exists():
+        return env
+    found = shutil.which("matlab")
+    if found:
+        return found
+    for p in (r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe",):
         if Path(p).exists():
             return p
     return None

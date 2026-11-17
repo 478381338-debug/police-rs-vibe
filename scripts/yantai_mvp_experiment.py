@@ -20,8 +20,8 @@ import time
 from datetime import date
 from pathlib import Path
 
-_CA = Path(r"C:\Users\lenovo\cacert.pem")
-if _CA.exists():
+_CA = os.environ.get("REQUESTS_CA_BUNDLE") or os.environ.get("SSL_CERT_FILE")
+if _CA and Path(_CA).exists():
     for _k in ("GDAL_CURL_CA_BUNDLE", "PROJ_CURL_CA_BUNDLE", "GDAL_HTTP_CAINFO"):
         os.environ[_k] = str(_CA)
 

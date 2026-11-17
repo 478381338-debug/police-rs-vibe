@@ -3,9 +3,9 @@ from __future__ import annotations
 import argparse, json, os, time
 from pathlib import Path
 
-# Windows 中文路径下 GDAL 的 CA 路径无法解码；必须在 import rasterio 前指定 ASCII 证书。
-_CA = r"C:\Users\lenovo\cacert.pem"
-if Path(_CA).exists():
+# Windows 中文路径下 GDAL 的 CA 路径无法解码；优先使用环境变量中的 ASCII 证书。
+_CA = os.environ.get("REQUESTS_CA_BUNDLE") or os.environ.get("SSL_CERT_FILE")
+if _CA and Path(_CA).exists():
     for _k in ("GDAL_CURL_CA_BUNDLE", "PROJ_CURL_CA_BUNDLE", "GDAL_HTTP_CAINFO"):
         os.environ[_k] = _CA
 
