@@ -29,7 +29,7 @@
 ## 3. 生成与复现
 
 ```bat
-cd /d E:\警务遥感
+cd /d <repo>
 .venv\Scripts\python.exe crawler\open_data.py
 .venv\Scripts\python.exe crawler\clip_population.py
 "C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" arcgis\export_open_data.py
@@ -72,6 +72,6 @@ web/assets/
 
 - 中国省界：`data/china_provinces.json`，35 个要素（34 个省级单元 + `100000_JD` 南海断续线），来自公开 DataV 边界数据；正式发布应以自然资源部门标准地图为准。
 - 中国 DEM：`crawler/china_dem.py` 从 AWS Terrarium z6 拼接、重投影，产物 `data/external/china_dem.tif`、`china_dem_3857.tif`、`china_land_0p1.tif`。
-- GMT 6.7.0：`D:\数学建模工具\GMT\gmt6in\gmt.exe`，生成 `web/assets/gmt_china_2d.jpg`、`gmt_china_3d.jpg`、`gmt_china_mercator.jpg`；详细命令与限制见 `docs/GMT.md`。
+- GMT 6.7.0（通过 PATH 或环境变量 `GMT_EXE` 指定可执行文件）：生成 `web/assets/gmt_china_2d.jpg`、`gmt_china_3d.jpg`、`gmt_china_mercator.jpg`；未安装 GMT 时相关入口自动隐藏。
 - 网页：全国尺度用 OpenTopoMap + 真实省界；`2D 地图 / 3D 中国` 切换；3D 用 MapLibre GL JS（BSD-3-Clause）交互，ECharts GL 兜底；GMT 是静态制图，两者不要混淆。
 - 研究区清晰度：zoom ≥ 6 自动隐藏 GMT 全国底图，显示 ArcGIS 高分辨率研究区底图；AOI 金色框与风险格网保持可见。
