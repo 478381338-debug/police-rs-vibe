@@ -39,6 +39,9 @@ ppt/
 docs/video/audio/
 docs/video/segments/
 docs/video/_frames/
+docs/video/audio_broadcast/
+docs/video/segments_broadcast/
+docs/video/_frames_broadcast/
 docs/report/
 docs/style-lab/
 
